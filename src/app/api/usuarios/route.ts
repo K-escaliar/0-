@@ -7,9 +7,16 @@ const supabaseAdmin = createClient(
   { auth: { autoRefreshToken: false, persistSession: false } }
 )
 
+// Domínio técnico interno — o usuário só digita o nome de usuário
+const DOMINIO_INTERNO = '@cdi.local'
+
 export async function POST(req: NextRequest) {
   try {
-    const { nome, email, senha, role } = await req.json()
+    const { nome, usuario, senha, role } = await req.json()
+
+    const usuarioLimpo = String(usuario).trim().toLowerCase().replace(/\s+/g, '')
+    if (!usuarioLimpo) return NextResponse.json({ error: 'Usuário inválido' }, { status: 400 })
+    const email = usuarioLimpo + DOMINIO_INTERNO
 
     const { data: authData, error: authError } = await supabaseAdmin.auth.admin.createUser({
       email,
@@ -17,9 +24,14 @@ export async function POST(req: NextRequest) {
       email_confirm: true,
     })
 
-    if (authError) return NextResponse.json({ error: authError.message }, { status: 400 })
+    if (authError) {
+      const msg = authError.message.includes('already')
+        ? 'Já existe um usuário com esse nome.'
+        : authError.message
+      return NextResponse.json({ error: msg }, { status: 400 })
+    }
 
-    await supabaseAdmin.from('profiles').insert({
+    await supabaseAdmin.from('profiles').upsert({
       id: authData.user.id,
       nome,
       email,

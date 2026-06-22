@@ -18,26 +18,9 @@ create table if not exists profiles (
   created_at timestamptz not null default now()
 );
 
--- Trigger para criar profile automaticamente ao cadastrar usuário
-create or replace function handle_new_user()
-returns trigger as $$
-begin
-  insert into profiles (id, nome, email, role)
-  values (
-    new.id,
-    coalesce(new.raw_user_meta_data->>'nome', split_part(new.email, '@', 1)),
-    new.email,
-    coalesce(new.raw_user_meta_data->>'role', 'atendente')
-  )
-  on conflict (id) do nothing;
-  return new;
-end;
-$$ language plpgsql security definer;
-
-drop trigger if exists on_auth_user_created on auth.users;
-create trigger on_auth_user_created
-  after insert on auth.users
-  for each row execute procedure handle_new_user();
+-- OBS: Não usamos trigger em auth.users porque o GoTrue (Supabase Auth) falha
+-- ao executar triggers de schema customizado durante a criação do usuário.
+-- O profile é criado explicitamente pela API (/api/usuarios) e pelo script de admin.
 
 -- ============================================================
 -- TABELA: exames

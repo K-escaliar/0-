@@ -9,7 +9,7 @@ export default function AdminUsuariosPage() {
   const [usuarios, setUsuarios] = useState<any[]>([])
   const [modal, setModal] = useState(false)
   const [editando, setEditando] = useState<any | null>(null)
-  const [form, setForm] = useState({ nome: '', email: '', senha: '', role: 'atendente' as 'atendente' | 'admin' })
+  const [form, setForm] = useState({ nome: '', usuario: '', senha: '', role: 'atendente' as 'atendente' | 'admin' })
   const [salvando, setSalvando] = useState(false)
 
   useEffect(() => { carregar() }, [])
@@ -19,19 +19,21 @@ export default function AdminUsuariosPage() {
     if (data) setUsuarios(data)
   }
 
-  function abrirModal(usuario?: any) {
-    if (usuario) {
-      setEditando(usuario)
-      setForm({ nome: usuario.nome, email: usuario.email, senha: '', role: usuario.role })
+  function abrirModal(u?: any) {
+    if (u) {
+      setEditando(u)
+      // Recupera o nome de usuário a partir do e-mail técnico (usuario@cdi.local)
+      const usuarioNome = (u.email || '').split('@')[0]
+      setForm({ nome: u.nome, usuario: usuarioNome, senha: '', role: u.role })
     } else {
       setEditando(null)
-      setForm({ nome: '', email: '', senha: '', role: 'atendente' })
+      setForm({ nome: '', usuario: '', senha: '', role: 'atendente' })
     }
     setModal(true)
   }
 
   async function salvar() {
-    if (!form.nome.trim() || !form.email.trim()) return toast.error('Nome e e-mail são obrigatórios.')
+    if (!form.nome.trim() || !form.usuario.trim()) return toast.error('Nome e usuário são obrigatórios.')
     if (!editando && !form.senha) return toast.error('Senha é obrigatória para novo usuário.')
     setSalvando(true)
     try {
@@ -43,7 +45,7 @@ export default function AdminUsuariosPage() {
         const res = await fetch('/api/usuarios', {
           method: 'POST',
           headers: { 'Content-Type': 'application/json' },
-          body: JSON.stringify({ nome: form.nome, email: form.email, senha: form.senha, role: form.role }),
+          body: JSON.stringify({ nome: form.nome, usuario: form.usuario, senha: form.senha, role: form.role }),
         })
         const json = await res.json()
         if (!res.ok) throw new Error(json.error)
@@ -90,7 +92,7 @@ export default function AdminUsuariosPage() {
               </div>
               <div>
                 <h3 className="font-semibold text-gray-900">{u.nome}</h3>
-                <p className="text-sm text-gray-500">{u.email}</p>
+                <p className="text-sm text-gray-500">Usuário: {(u.email || '').split('@')[0]}</p>
               </div>
             </div>
             <div className="flex items-center gap-3">
@@ -120,8 +122,9 @@ export default function AdminUsuariosPage() {
               </div>
               {!editando && (
                 <div>
-                  <label className="block text-sm font-medium text-gray-700 mb-1">E-mail *</label>
-                  <input type="email" value={form.email} onChange={e => setForm(f => ({ ...f, email: e.target.value }))} className="input-field" />
+                  <label className="block text-sm font-medium text-gray-700 mb-1">Usuário *</label>
+                  <input type="text" value={form.usuario} onChange={e => setForm(f => ({ ...f, usuario: e.target.value }))} className="input-field" placeholder="ex: maria (sem espaços)" autoCapitalize="none" />
+                  <p className="text-xs text-gray-400 mt-1">É com este nome que a pessoa fará login. Sem espaços ou acentos.</p>
                 </div>
               )}
               {!editando && (

@@ -5,8 +5,11 @@ import { createClient } from '@/lib/supabase/client'
 import toast from 'react-hot-toast'
 import { Eye, EyeOff, LogIn } from 'lucide-react'
 
+// Domínio técnico interno — o usuário nunca vê isso, só digita o nome de usuário
+const DOMINIO_INTERNO = '@cdi.local'
+
 export default function LoginPage() {
-  const [email, setEmail] = useState('')
+  const [usuario, setUsuario] = useState('')
   const [senha, setSenha] = useState('')
   const [mostrarSenha, setMostrarSenha] = useState(false)
   const [carregando, setCarregando] = useState(false)
@@ -17,9 +20,11 @@ export default function LoginPage() {
     e.preventDefault()
     setCarregando(true)
     try {
+      // Converte o nome de usuário em e-mail técnico para o Supabase
+      const email = usuario.trim().toLowerCase() + DOMINIO_INTERNO
       const { error } = await supabase.auth.signInWithPassword({ email, password: senha })
       if (error) {
-        toast.error('E-mail ou senha incorretos.')
+        toast.error('Usuário ou senha incorretos.')
         return
       }
       router.push('/agendamento')
@@ -45,15 +50,16 @@ export default function LoginPage() {
 
         <form onSubmit={handleLogin} className="space-y-5">
           <div>
-            <label className="block text-sm font-medium text-gray-700 mb-1">E-mail</label>
+            <label className="block text-sm font-medium text-gray-700 mb-1">Usuário</label>
             <input
-              type="email"
-              value={email}
-              onChange={(e) => setEmail(e.target.value)}
+              type="text"
+              value={usuario}
+              onChange={(e) => setUsuario(e.target.value)}
               className="input-field"
-              placeholder="seu@email.com"
+              placeholder="seu usuário"
               required
-              autoComplete="email"
+              autoComplete="username"
+              autoCapitalize="none"
             />
           </div>
 
