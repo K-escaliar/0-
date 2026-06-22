@@ -4,6 +4,7 @@ import { createClient } from '@/lib/supabase/client'
 import toast from 'react-hot-toast'
 import { CalendarPlus, Search, X, AlertTriangle, CheckCircle, Copy, Check, ChevronDown } from 'lucide-react'
 import { gerarMensagemWhatsApp, ENDERECOS, formatDate } from '@/lib/utils'
+import AvisosBanner from '@/components/AvisosBanner'
 import type { Exame, Convenio } from '@/types'
 
 const CONVENIOS_PADRAO = ['Particular', 'Unimed', 'Bradesco Saúde', 'BRF', 'Sul América', 'CASSI', 'Infinity', 'Postal', 'MedService', 'Economy Brasil', 'Consórcio', 'Pax Vida', 'CDL', 'Outro']
@@ -108,8 +109,37 @@ export default function AgendamentoPage() {
       }
     }
 
+    // Regra de SEGURANÇA da sedação: 1 exame com sedação a cada 30 dias por paciente
+    const sedSelecionados = form.examesSelecionados.filter(e => e.requer_sedacao)
+    if (sedSelecionados.length > 1) {
+      novosErros.push('Por segurança, exames com sedação devem ser feitos 1 a cada 30 dias. Agende apenas 1 exame com sedação por vez — o segundo deve ser marcado 30 dias depois.')
+    }
+    const nomeLimpo = form.pacienteNome.trim()
+    if (sedSelecionados.length >= 1 && nomeLimpo && form.data) {
+      const dataEscolhida = new Date(form.data + 'T00:00:00')
+      const ini = new Date(dataEscolhida); ini.setDate(ini.getDate() - 30)
+      const fim = new Date(dataEscolhida); fim.setDate(fim.getDate() + 30)
+      const fmt = (d: Date) => d.toISOString().slice(0, 10)
+      const sedIds = exames.filter(e => e.requer_sedacao).map(e => e.id)
+      if (sedIds.length > 0) {
+        const { data: ags } = await supabase
+          .from('agendamentos')
+          .select('data, paciente_nome, exames:agendamento_exames(exame_id)')
+          .ilike('paciente_nome', nomeLimpo)
+          .gte('data', fmt(ini))
+          .lte('data', fmt(fim))
+        for (const ag of ags ?? []) {
+          const temSed = (ag.exames ?? []).some((x: any) => sedIds.includes(x.exame_id))
+          if (temSed) {
+            novosErros.push(`Este paciente já tem um exame com sedação em ${formatDate(ag.data)}. Por segurança, exames com sedação só podem ser feitos 1 a cada 30 dias.`)
+            break
+          }
+        }
+      }
+    }
+
     return { erros: novosErros, avisos: novosAvisos }
-  }, [form, convenios])
+  }, [form, convenios, exames])
 
   useEffect(() => {
     if (form.unidade && form.examesSelecionados.length > 0) {
@@ -121,7 +151,7 @@ export default function AgendamentoPage() {
       setErros([])
       setAvisos([])
     }
-  }, [form.unidade, form.examesSelecionados, validar])
+  }, [form.unidade, form.examesSelecionados, form.pacienteNome, form.data, validar])
 
   async function handleSubmit(e: React.FormEvent) {
     e.preventDefault()
@@ -208,6 +238,7 @@ export default function AgendamentoPage() {
 
   return (
     <div className="p-6 max-w-4xl mx-auto">
+      <AvisosBanner />
       <div className="flex items-center gap-3 mb-6">
         <div className="p-2 bg-blue-100 rounded-lg">
           <CalendarPlus className="text-blue-700" size={24} />

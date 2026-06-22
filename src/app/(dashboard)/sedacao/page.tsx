@@ -1,15 +1,28 @@
 'use client'
 import { useState, useEffect } from 'react'
 import { createClient } from '@/lib/supabase/client'
-import { Bed, AlertTriangle, Info } from 'lucide-react'
+import toast from 'react-hot-toast'
+import { Bed, AlertTriangle, Info, Pencil, Check, X, CalendarClock } from 'lucide-react'
 
 export default function SedacaoPage() {
   const supabase = createClient()
   const [sedacoes, setSedacoes] = useState<any[]>([])
   const [carregando, setCarregando] = useState(true)
+  const [isAdmin, setIsAdmin] = useState(false)
+  const [taxa, setTaxa] = useState('800')
+  const [editandoTaxa, setEditandoTaxa] = useState(false)
+  const [novaTaxa, setNovaTaxa] = useState('800')
 
   useEffect(() => {
     async function carregar() {
+      const { data: { user } } = await supabase.auth.getUser()
+      if (user) {
+        const { data: profile } = await supabase.from('profiles').select('role').eq('id', user.id).single()
+        setIsAdmin(profile?.role === 'admin')
+      }
+      const { data: cfg } = await supabase.from('configuracoes').select('valor').eq('chave', 'taxa_anestesista').single()
+      if (cfg?.valor) { setTaxa(cfg.valor); setNovaTaxa(cfg.valor) }
+
       const { data } = await supabase
         .from('exames_sedacao')
         .select('*, exame:exames(nome, categoria)')
@@ -19,6 +32,15 @@ export default function SedacaoPage() {
     }
     carregar()
   }, [])
+
+  async function salvarTaxa() {
+    const valor = novaTaxa.replace(/[^\d.,]/g, '').replace(',', '.')
+    if (!valor || isNaN(Number(valor))) { toast.error('Valor inválido.'); return }
+    await supabase.from('configuracoes').upsert({ chave: 'taxa_anestesista', valor, updated_at: new Date().toISOString() })
+    setTaxa(valor)
+    setEditandoTaxa(false)
+    toast.success('Valor atualizado!')
+  }
 
   return (
     <div className="p-6 max-w-4xl mx-auto">
@@ -30,6 +52,19 @@ export default function SedacaoPage() {
           <p className="text-amber-700 mt-1">
             Exames com sedação são agendados <strong>somente pela nossa enfermeira Francieli</strong>.
             Não agende diretamente — informe o paciente e transfira para a enfermeira.
+          </p>
+        </div>
+      </div>
+
+      {/* Regra de segurança 30 dias */}
+      <div className="bg-red-50 border-2 border-red-300 rounded-xl p-4 mb-6 flex items-start gap-3">
+        <CalendarClock size={24} className="text-red-600 flex-shrink-0 mt-0.5" />
+        <div>
+          <p className="font-bold text-red-800">Regra de segurança</p>
+          <p className="text-red-700 mt-1">
+            Cada paciente pode fazer <strong>apenas 1 exame com sedação a cada 30 dias</strong>. Se o paciente
+            tiver 2 exames com sedação, faça o primeiro e marque o segundo somente 30 dias depois.
+            O sistema bloqueia automaticamente agendamentos fora dessa regra.
           </p>
         </div>
       </div>
@@ -67,9 +102,32 @@ export default function SedacaoPage() {
             <p className="font-medium text-gray-700 mb-2">Valores (particular):</p>
             <div className="space-y-2 text-sm">
               <div className="bg-white rounded-lg p-3 border border-blue-100">
-                <p className="font-semibold text-gray-900">Taxa do Anestesista</p>
-                <p className="text-gray-600">Até 2 exames: <span className="font-bold text-blue-700">R$ 800,00</span></p>
-                <p className="text-gray-600">Acima de 2: <span className="font-bold text-blue-700">R$ 1.600,00</span></p>
+                <div className="flex items-center justify-between">
+                  <p className="font-semibold text-gray-900">Taxa do Anestesista (1 sedação)</p>
+                  {isAdmin && !editandoTaxa && (
+                    <button onClick={() => setEditandoTaxa(true)} className="text-blue-600 hover:text-blue-800" title="Alterar valor">
+                      <Pencil size={14} />
+                    </button>
+                  )}
+                </div>
+                {editandoTaxa ? (
+                  <div className="flex items-center gap-2 mt-1">
+                    <span className="text-gray-600">R$</span>
+                    <input
+                      type="text"
+                      value={novaTaxa}
+                      onChange={e => setNovaTaxa(e.target.value)}
+                      className="input-field py-1 w-28"
+                      autoFocus
+                    />
+                    <button onClick={salvarTaxa} className="p-1.5 bg-green-100 text-green-700 rounded-lg hover:bg-green-200"><Check size={14} /></button>
+                    <button onClick={() => { setEditandoTaxa(false); setNovaTaxa(taxa) }} className="p-1.5 bg-gray-100 text-gray-600 rounded-lg hover:bg-gray-200"><X size={14} /></button>
+                  </div>
+                ) : (
+                  <p className="text-gray-600 mt-1">
+                    Valor: <span className="font-bold text-blue-700 text-base">R$ {Number(taxa).toLocaleString('pt-BR', { minimumFractionDigits: 2 })}</span>
+                  </p>
+                )}
                 <p className="text-xs text-gray-400 mt-1">Pagamento direto com anestesista + NF</p>
               </div>
               <div className="bg-white rounded-lg p-3 border border-blue-100">

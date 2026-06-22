@@ -144,6 +144,29 @@ create table if not exists exames_sedacao (
 );
 
 -- ============================================================
+-- TABELA: configuracoes (valores editáveis, ex: taxa do anestesista)
+-- ============================================================
+create table if not exists configuracoes (
+  chave text primary key,
+  valor text not null,
+  updated_at timestamptz not null default now()
+);
+insert into configuracoes (chave, valor) values ('taxa_anestesista', '800') on conflict (chave) do nothing;
+
+-- ============================================================
+-- TABELA: avisos (novidades/comunicados com expiração)
+-- ============================================================
+create table if not exists avisos (
+  id uuid primary key default uuid_generate_v4(),
+  titulo text not null,
+  mensagem text not null,
+  expira_em timestamptz,
+  ativo boolean not null default true,
+  criado_por uuid references profiles(id),
+  created_at timestamptz not null default now()
+);
+
+-- ============================================================
 -- ROW LEVEL SECURITY
 -- ============================================================
 
@@ -158,6 +181,8 @@ alter table agendamentos enable row level security;
 alter table agendamento_exames enable row level security;
 alter table rede_externa enable row level security;
 alter table exames_sedacao enable row level security;
+alter table configuracoes enable row level security;
+alter table avisos enable row level security;
 
 -- Políticas: usuários autenticados podem ler tudo
 create policy "Autenticados leem profiles" on profiles for select using (auth.role() = 'authenticated');
@@ -171,6 +196,8 @@ create policy "Autenticados gerenciam agendamentos" on agendamentos for all usin
 create policy "Autenticados gerenciam agendamento_exames" on agendamento_exames for all using (auth.role() = 'authenticated');
 create policy "Autenticados leem rede_externa" on rede_externa for all using (auth.role() = 'authenticated');
 create policy "Autenticados leem exames_sedacao" on exames_sedacao for all using (auth.role() = 'authenticated');
+create policy "Autenticados gerenciam configuracoes" on configuracoes for all using (auth.role() = 'authenticated');
+create policy "Autenticados gerenciam avisos" on avisos for all using (auth.role() = 'authenticated');
 
 -- ============================================================
 -- DADOS INICIAIS: Exames
