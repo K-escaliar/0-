@@ -384,23 +384,5 @@ end $$;
 -- ============================================================
 -- EXAMES COM SEDAÇÃO
 -- ============================================================
-do $$
-declare
-  exame_id uuid;
-  exames_sedacao_nomes text[] := ARRAY[
-    'Enterotomografia',
-    'Enterorressonância',
-    'RM Multiparamétrica de Próstata'
-  ];
-  nome_exame text;
-begin
-  foreach nome_exame in array exames_sedacao_nomes loop
-    select id into exame_id from exames where nome = nome_exame limit 1;
-    if exame_id is not null then
-      update exames set requer_sedacao = true where id = exame_id;
-      insert into exames_sedacao (exame_id, indicacoes, restricoes)
-      values (exame_id, 'Pacientes ansiosos ou que não conseguem permanecer imóveis durante o exame. Crianças acima de 2 anos.', 'Somente agendado pela enfermeira Francieli. Taxa de anestesista: R$ 800 (até 2 exames) / R$ 1.600 (acima de 2). Sedação: R$ 483. Crianças menores de 2 anos não são atendidas.')
-      on conflict do nothing;
-    end if;
-  end loop;
-end $$;
+-- Nenhum exame vem marcado para sedação por padrão (exames de abdome NÃO levam sedação).
+-- O administrador define os exames que realmente necessitam de sedação pelo painel.
