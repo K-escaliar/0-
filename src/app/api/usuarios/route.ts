@@ -1,9 +1,20 @@
 import { NextRequest, NextResponse } from 'next/server'
 import { createClient } from '@supabase/supabase-js'
 
+const limpar = (v: string | undefined) => {
+  let out = ''
+  const s = v ?? ''
+  for (let i = 0; i < s.length; i++) {
+    const c = s.charCodeAt(i)
+    if (c === 0xfeff || c === 0x200b || c === 13 || c === 10) continue
+    out += s[i]
+  }
+  return out.trim()
+}
+
 const supabaseAdmin = createClient(
-  process.env.NEXT_PUBLIC_SUPABASE_URL!,
-  process.env.SUPABASE_SERVICE_ROLE_KEY!,
+  limpar(process.env.NEXT_PUBLIC_SUPABASE_URL),
+  limpar(process.env.SUPABASE_SERVICE_ROLE_KEY),
   { auth: { autoRefreshToken: false, persistSession: false } }
 )
 
