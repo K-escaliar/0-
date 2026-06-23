@@ -2,7 +2,7 @@
 import { useState, useEffect } from 'react'
 import { createClient } from '@/lib/supabase/client'
 import { ClipboardList, Search, Filter, Calendar, User, Building2, CheckCircle } from 'lucide-react'
-import { formatDate } from '@/lib/utils'
+import { formatDate, formatDateTime } from '@/lib/utils'
 
 export default function HistoricoPage() {
   const supabase = createClient()
@@ -143,7 +143,7 @@ export default function HistoricoPage() {
           {agendamentosFiltrados.map((ag) => {
             const examesNomes = ag.exames?.map((e: any) => e.exame?.nome).filter(Boolean) ?? []
             return (
-              <div key={ag.id} className="card hover:shadow-md transition-shadow">
+              <div key={ag.id} className="card hover:shadow-md transition-shadow relative pb-6">
                 <div className="flex items-start justify-between flex-wrap gap-3">
                   <div className="flex-1 min-w-0">
                     <div className="flex items-center gap-2 mb-1">
@@ -182,6 +182,11 @@ export default function HistoricoPage() {
                     )}
                   </div>
                 </div>
+                {ag.created_at && (
+                  <span className="absolute bottom-2 right-3 text-[11px] text-gray-400 whitespace-nowrap">
+                    Registrado em {formatDateTime(ag.created_at)}
+                  </span>
+                )}
               </div>
             )
           })}

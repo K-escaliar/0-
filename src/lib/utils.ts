@@ -9,6 +9,14 @@ export function formatDate(date: string): string {
   }
 }
 
+export function formatDateTime(date: string): string {
+  try {
+    return format(parseISO(date), "dd/MM/yyyy 'às' HH:mm", { locale: ptBR })
+  } catch {
+    return date
+  }
+}
+
 export function formatDateLong(date: string): string {
   try {
     return format(parseISO(date), "EEEE, dd 'de' MMMM 'de' yyyy", { locale: ptBR })
