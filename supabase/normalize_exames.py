@@ -95,6 +95,8 @@ def antecedencia_min(cat):
 def norm_preparo(prep, cat):
     if not prep: return None
     p = prep.strip().strip('-').strip()
+    # remove numeracao de pagina do rodape do PDF ("Página 12.") que vaza no fim do preparo
+    p = re.sub(r'\s*P[áa]gina\s*\d+\s*\.?\s*$', '', p, flags=re.IGNORECASE).strip()
     if not p or p in ('.', '-'):
         return None  # sem preparo especifico
     for a, b in TYPOS.items():

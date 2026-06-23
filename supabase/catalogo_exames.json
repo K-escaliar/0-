@@ -93,7 +93,7 @@
   "nome_original": "ANGIORESSONANCIA ARTERIAL COXA ESQUERDA · Gerado automaticamente",
   "categoria": "Ressonância",
   "codigo_tuss": "41101553",
-  "preparo": "JJejum de 4 horas. Trazer exames anteriores, se tiver. Chegar com 30 minutos de antecedência. Sem adorno, sem tatuagem recente 30 dias, Sem cabelo úmido. Caso tenha marca-passo ou algum dispositivo metálico, necessário ser informado anteriormente. Página 1.",
+  "preparo": "JJejum de 4 horas. Trazer exames anteriores, se tiver. Chegar com 30 minutos de antecedência. Sem adorno, sem tatuagem recente 30 dias, Sem cabelo úmido. Caso tenha marca-passo ou algum dispositivo metálico, necessário ser informado anteriormente.",
   "valor_particular": "854,25",
   "valor_unimed279": null,
   "valor_unimed_completa": "135,31"
@@ -214,7 +214,7 @@
   "nome_original": "ANGIORESSONANCIA ARTERIAL PERNA ESQUERDA",
   "categoria": "Ressonância",
   "codigo_tuss": "41101553",
-  "preparo": "Jejum de 4 horas. Trazer exames anteriores, se tiver. Chegar com 30 minutos de antecedência. Sem adorno, sem tatuagem recente 30 dias, Sem cabelo úmido. Caso tenha marca-passo ou algum dispositivo metálico, necessário ser informado anteriormente. Página 26.",
+  "preparo": "Jejum de 4 horas. Trazer exames anteriores, se tiver. Chegar com 30 minutos de antecedência. Sem adorno, sem tatuagem recente 30 dias, Sem cabelo úmido. Caso tenha marca-passo ou algum dispositivo metálico, necessário ser informado anteriormente.",
   "valor_particular": "854,25",
   "valor_unimed279": null,
   "valor_unimed_completa": "135,31"
@@ -236,7 +236,7 @@
   "nome_original": "ANGIORESSONANCIA ARTERIAL TORAX · Gerado automaticamente",
   "categoria": "Ressonância",
   "codigo_tuss": null,
-  "preparo": "Jejum de 4 horas. Trazer exames anteriores, se tiver. Chegar com 30 minutos de antecedência. Sem adorno, sem tatuagem recente 30 dias, Sem cabelo úmido. Caso tenha marca-passo ou algum dispositivo metálico, necessário ser informado anteriormente. Página 2.",
+  "preparo": "Jejum de 4 horas. Trazer exames anteriores, se tiver. Chegar com 30 minutos de antecedência. Sem adorno, sem tatuagem recente 30 dias, Sem cabelo úmido. Caso tenha marca-passo ou algum dispositivo metálico, necessário ser informado anteriormente.",
   "valor_particular": "854,25",
   "valor_unimed279": null,
   "valor_unimed_completa": null
@@ -379,7 +379,7 @@
   "nome_original": "ANGIORESSONANCIA VENOSA PE ESQUERDO · Gerado automaticamente",
   "categoria": "Ressonância",
   "codigo_tuss": null,
-  "preparo": "SEM ESMALTE jejum de 4 horas. Trazer exames anteriores, se tiver. Chegar com 30 minutos de antecedência. Página 3.",
+  "preparo": "SEM ESMALTE jejum de 4 horas. Trazer exames anteriores, se tiver. Chegar com 30 minutos de antecedência.",
   "valor_particular": "854,25",
   "valor_unimed279": null,
   "valor_unimed_completa": null
@@ -544,7 +544,7 @@
   "nome_original": "ANGIOTOMOGRAFIA ARTERIAL TORAX",
   "categoria": "Tomografia",
   "codigo_tuss": "41001419",
-  "preparo": "Jejum de 4 horas. Trazer exames anteriores, se tiver. Chegar com 15 minutos de antecedência. Página 27.",
+  "preparo": "Jejum de 4 horas. Trazer exames anteriores, se tiver. Chegar com 15 minutos de antecedência.",
   "valor_particular": "1.232,50",
   "valor_unimed279": null,
   "valor_unimed_completa": "153,61"
@@ -599,7 +599,7 @@
   "nome_original": "ANGIOTOMOGRAFIA VENOSA MEMBRO SUPERIOR DIREITO · Gerado automaticamente",
   "categoria": "Tomografia",
   "codigo_tuss": null,
-  "preparo": "Jejum de 4 horas Trazer exames anteriores e pedido médico Página 4.",
+  "preparo": "Jejum de 4 horas Trazer exames anteriores e pedido médico",
   "valor_particular": "1.232,50",
   "valor_unimed279": null,
   "valor_unimed_completa": null
@@ -731,7 +731,7 @@
   "nome_original": "DOPPLER COLORIDO TRANSFONTANELA",
   "categoria": "Ultrassom",
   "codigo_tuss": "40901351",
-  "preparo": "Página 28.",
+  "preparo": null,
   "valor_particular": "357,00",
   "valor_unimed279": null,
   "valor_unimed_completa": "150,53"
@@ -863,7 +863,7 @@
   "nome_original": "ENTERORESSONANCIA · Gerado automaticamente",
   "categoria": "Ressonância",
   "codigo_tuss": "41101170",
-  "preparo": "Jejum 8 horas Trazer exames anteriores, se tiver. Chegar com 30 minutos de antecedência. Sem adorno, sem tatuagem recente 30 dias, Sem cabelo úmido. Caso tenha marca-passo ou algum dispositivo metálico, necessário ser informado anteriormente. Página 5.",
+  "preparo": "Jejum 8 horas Trazer exames anteriores, se tiver. Chegar com 30 minutos de antecedência. Sem adorno, sem tatuagem recente 30 dias, Sem cabelo úmido. Caso tenha marca-passo ou algum dispositivo metálico, necessário ser informado anteriormente.",
   "valor_particular": "1.704,25",
   "valor_unimed279": null,
   "valor_unimed_completa": "135,31"
@@ -973,7 +973,7 @@
   "nome_original": "RM ACROMOCLAVICULAR ESQUERDA · Gerado automaticamente",
   "categoria": "Ressonância",
   "codigo_tuss": null,
-  "preparo": "Trazer exames anteriores, se tiver. Chegar com 30 minutos de antecedência. Sem adorno, sem tatuagem recente 30 dias, Sem cabelo úmido. Caso tenha marca-passo ou algum dispositivo metálico, necessário ser informado anteriormente. Página 6.",
+  "preparo": "Trazer exames anteriores, se tiver. Chegar com 30 minutos de antecedência. Sem adorno, sem tatuagem recente 30 dias, Sem cabelo úmido. Caso tenha marca-passo ou algum dispositivo metálico, necessário ser informado anteriormente.",
   "valor_particular": "854,25",
   "valor_unimed279": null,
   "valor_unimed_completa": null
@@ -1028,7 +1028,7 @@
   "nome_original": "RM BACIA",
   "categoria": "Ressonância",
   "codigo_tuss": "41101278",
-  "preparo": "Trazer exames anteriores, se tiver. Chegar com 30 minutos de antecedência. Sem adorno, sem tatuagem recente 30 dias, Sem cabelo úmido. Caso tenha marca-passo ou algum dispositivo metálico, necessário ser informado anteriormente. Página 30.",
+  "preparo": "Trazer exames anteriores, se tiver. Chegar com 30 minutos de antecedência. Sem adorno, sem tatuagem recente 30 dias, Sem cabelo úmido. Caso tenha marca-passo ou algum dispositivo metálico, necessário ser informado anteriormente.",
   "valor_particular": "854,25",
   "valor_unimed279": null,
   "valor_unimed_completa": "135,31"
@@ -1116,7 +1116,7 @@
   "nome_original": "RM COCCIX · Gerado automaticamente",
   "categoria": "Ressonância",
   "codigo_tuss": null,
-  "preparo": "Trazer exames anteriores, se tiver. Chegar com 30 minutos de antecedência. Sem adorno, sem tatuagem recente 30 dias, Sem cabelo úmido. Caso tenha marca-passo ou algum dispositivo metálico, necessário ser informado anteriormente. Página 7.",
+  "preparo": "Trazer exames anteriores, se tiver. Chegar com 30 minutos de antecedência. Sem adorno, sem tatuagem recente 30 dias, Sem cabelo úmido. Caso tenha marca-passo ou algum dispositivo metálico, necessário ser informado anteriormente.",
   "valor_particular": "854,25",
   "valor_unimed279": null,
   "valor_unimed_completa": null
@@ -1259,7 +1259,7 @@
   "nome_original": "RM JOELHO DIREITO · Gerado automaticamente",
   "categoria": "Ressonância",
   "codigo_tuss": "41101316",
-  "preparo": "Razer exames anteriores, se tiver. Chegar com 30 minutos de antecedência. Sem adorno, sem tatuagem recente 30 dias, Sem cabelo úmido. Caso tenha marca-passo ou algum dispositivo metálico, necessário ser informado anteriormente. Página 35.",
+  "preparo": "Razer exames anteriores, se tiver. Chegar com 30 minutos de antecedência. Sem adorno, sem tatuagem recente 30 dias, Sem cabelo úmido. Caso tenha marca-passo ou algum dispositivo metálico, necessário ser informado anteriormente.",
   "valor_particular": "854,25",
   "valor_unimed279": null,
   "valor_unimed_completa": "135,31"
@@ -1347,7 +1347,7 @@
   "nome_original": "RM ORBITA",
   "categoria": "Ressonância",
   "codigo_tuss": "41101073",
-  "preparo": "Jejum 4 horas Trazer exames anteriores, se tiver. Chegar com 30 minutos de antecedência. Sem adorno, sem tatuagem recente 30 dias, Sem cabelo úmido. Caso tenha marca-passo ou algum dispositivo metálico, necessário ser informado anteriormente. Página 36.",
+  "preparo": "Jejum 4 horas Trazer exames anteriores, se tiver. Chegar com 30 minutos de antecedência. Sem adorno, sem tatuagem recente 30 dias, Sem cabelo úmido. Caso tenha marca-passo ou algum dispositivo metálico, necessário ser informado anteriormente.",
   "valor_particular": "854,25",
   "valor_unimed279": null,
   "valor_unimed_completa": "135,31"
@@ -1380,7 +1380,7 @@
   "nome_original": "RM PE ESQUERDO · Gerado automaticamente",
   "categoria": "Ressonância",
   "codigo_tuss": "41101308",
-  "preparo": "Trazer exames anteriores, se tiver. Chegar com 30 minutos de antecedência. Sem adorno, sem tatuagem recente 30 dias, Sem cabelo úmido. Caso tenha marca-passo ou algum dispositivo metálico, necessário ser informado anteriormente. Página 9.",
+  "preparo": "Trazer exames anteriores, se tiver. Chegar com 30 minutos de antecedência. Sem adorno, sem tatuagem recente 30 dias, Sem cabelo úmido. Caso tenha marca-passo ou algum dispositivo metálico, necessário ser informado anteriormente.",
   "valor_particular": "854,25",
   "valor_unimed279": null,
   "valor_unimed_completa": "135,31"
@@ -1391,7 +1391,7 @@
   "nome_original": "RM PELVE",
   "categoria": "Ressonância",
   "codigo_tuss": "41101189",
-  "preparo": "Jejum de 8 horas. Trazer exames anteriores, se tiver. Chegar com 30 minutos de antecedência. Sem adorno, sem tatuagem recente 30 dias, Sem cabelo úmido. Caso tenha marca-passo ou algum dispositivo metálico, necessário ser informado anteriormente. PELVE MASCULINO jejum DE 8 HORAS TOMAR UM COMPRIMIDO DE DULCOLAX AS 8H E AS 14H do dia anterior ao exame PELVE FEMiNINA PREPAROS PARA O EXAME DE MAPEAMENTO DE ENDOMETRIOSE: - Este exame deve ser realizado preferencialmente fora do período menstrual, exceto em casos de urgência ou em casos específicos solicitados pelo médico. - Tomar 01 comprimido de Ducolax (Bisacodil 5 mg) às 8 horas e outro às 14 horas. no dia anterior do exame. - Durante todo o dia, mantenha uma dieta leve (exemplo: suco de frutas somente coado, água, chá, café, água de coco, pão francês, bolacha de água e sal, sopa magra coada (sem sólidos) de caldo de carne ou frango, macarrão com molho vermelho ou alho e óleo (sem carne ou queijo ralado), purê de batata, arroz branco). - Não consumir: leite e derivados, verduras cruas, bagaço de frutas, salada de folhas, frituras, feijão, grão-debico, milho, lentilha, ervilha, sementes e similares. - Uma hora antes do exame, aplicar (via retal) 01 bisnaga de Phosfoenema. Página 37.",
+  "preparo": "Jejum de 8 horas. Trazer exames anteriores, se tiver. Chegar com 30 minutos de antecedência. Sem adorno, sem tatuagem recente 30 dias, Sem cabelo úmido. Caso tenha marca-passo ou algum dispositivo metálico, necessário ser informado anteriormente. PELVE MASCULINO jejum DE 8 HORAS TOMAR UM COMPRIMIDO DE DULCOLAX AS 8H E AS 14H do dia anterior ao exame PELVE FEMiNINA PREPAROS PARA O EXAME DE MAPEAMENTO DE ENDOMETRIOSE: - Este exame deve ser realizado preferencialmente fora do período menstrual, exceto em casos de urgência ou em casos específicos solicitados pelo médico. - Tomar 01 comprimido de Ducolax (Bisacodil 5 mg) às 8 horas e outro às 14 horas. no dia anterior do exame. - Durante todo o dia, mantenha uma dieta leve (exemplo: suco de frutas somente coado, água, chá, café, água de coco, pão francês, bolacha de água e sal, sopa magra coada (sem sólidos) de caldo de carne ou frango, macarrão com molho vermelho ou alho e óleo (sem carne ou queijo ralado), purê de batata, arroz branco). - Não consumir: leite e derivados, verduras cruas, bagaço de frutas, salada de folhas, frituras, feijão, grão-debico, milho, lentilha, ervilha, sementes e similares. - Uma hora antes do exame, aplicar (via retal) 01 bisnaga de Phosfoenema.",
   "valor_particular": "854,25",
   "valor_unimed279": null,
   "valor_unimed_completa": "135,31"
@@ -1468,7 +1468,7 @@
   "nome_original": "RM PUNHO ESQUERDO",
   "categoria": "Ressonância",
   "codigo_tuss": "41101316",
-  "preparo": "Vir SEM esmalte. jejum de 4 horas. Trazer exames anteriores. Chegar com 30 minutos de antecedência. Página 38.",
+  "preparo": "Vir SEM esmalte. jejum de 4 horas. Trazer exames anteriores. Chegar com 30 minutos de antecedência.",
   "valor_particular": "854,25",
   "valor_unimed279": null,
   "valor_unimed_completa": "135,31"
@@ -1490,7 +1490,7 @@
   "nome_original": "RM QUADRIL ESQUERDO · Gerado automaticamente",
   "categoria": "Ressonância",
   "codigo_tuss": "41101316",
-  "preparo": "Trazer exames anteriores, se tiver. Chegar com 30 minutos de antecedência. Sem adorno, sem tatuagem recente 30 dias, Sem cabelo úmido. Caso tenha marca-passo ou algum dispositivo metálico, necessário ser informado anteriormente. Página 10.",
+  "preparo": "Trazer exames anteriores, se tiver. Chegar com 30 minutos de antecedência. Sem adorno, sem tatuagem recente 30 dias, Sem cabelo úmido. Caso tenha marca-passo ou algum dispositivo metálico, necessário ser informado anteriormente.",
   "valor_particular": "854,25",
   "valor_unimed279": null,
   "valor_unimed_completa": "135,31"
@@ -1710,7 +1710,7 @@
   "nome_original": "RX ARTICULACAO ESTERNOCLAVICULAR ESQUERDA · Gerado automaticamente",
   "categoria": "Raio-X",
   "codigo_tuss": "40803023",
-  "preparo": "Página 11.",
+  "preparo": null,
   "valor_particular": "93,50",
   "valor_unimed279": null,
   "valor_unimed_completa": "30,45"
@@ -1886,7 +1886,7 @@
   "nome_original": "RX COLUNA LOMBAR 3 INCIDENCIAS",
   "categoria": "Raio-X",
   "codigo_tuss": "40802051",
-  "preparo": "Página 40.",
+  "preparo": null,
   "valor_particular": "106,25",
   "valor_unimed279": null,
   "valor_unimed_completa": "30,45"
@@ -2084,7 +2084,7 @@
   "nome_original": "RX JOELHO ESQUERDO · Gerado automaticamente",
   "categoria": "Raio-X",
   "codigo_tuss": "40804054",
-  "preparo": "Página 12.",
+  "preparo": null,
   "valor_particular": "93,50",
   "valor_unimed279": null,
   "valor_unimed_completa": "25,37"
@@ -2128,7 +2128,7 @@
   "nome_original": "RX MAOS E PUNHO PARA IDADE OSSEA",
   "categoria": "Raio-X",
   "codigo_tuss": "40803139",
-  "preparo": "Página 22.",
+  "preparo": null,
   "valor_particular": "110,50",
   "valor_unimed279": null,
   "valor_unimed_completa": "24,53"
@@ -2238,7 +2238,7 @@
   "nome_original": "RX PE DIREITO",
   "categoria": "Raio-X",
   "codigo_tuss": "40804097",
-  "preparo": "Página 41.",
+  "preparo": null,
   "valor_particular": "93,50",
   "valor_unimed279": null,
   "valor_unimed_completa": "24,53"
@@ -2469,7 +2469,7 @@
   "nome_original": "RX URETROCISTOGRAFIA RETROGADA · Gerado automaticamente",
   "categoria": "Raio-X",
   "codigo_tuss": "40807096",
-  "preparo": "Página 13.",
+  "preparo": null,
   "valor_particular": "412,25",
   "valor_unimed279": null,
   "valor_unimed_completa": "75,27"
@@ -2502,7 +2502,7 @@
   "nome_original": "TC ABDOME SUPERIOR",
   "categoria": "Tomografia",
   "codigo_tuss": "41001109",
-  "preparo": "TC COM CONTRASTE Lactantes deverão suspender a amamentação 48 horas após o uso do contraste endovenoso. (cid:127) Crianças menores de 1 (um) ano = Nao necessita jejum.. (cid:127) Crianças de 1 (um) a 4 (quatro) anos = jejum de 4 horas. (cid:127) Crianças maiores de 5 (cinco) anos = jejum de 8 horas. (cid:127) Adultos: jejum de 08 horas. Realizar refeições leves (evite derivados do leite, líquidos gaseificados, feijão, carnes de porco e carne vermelha, entre outros) no dia anterior. Bexiga parcialmente cheia. Chegar com 15 minutos de antecedência. Trazer exames anteriores. Página 42.",
+  "preparo": "TC COM CONTRASTE Lactantes deverão suspender a amamentação 48 horas após o uso do contraste endovenoso. (cid:127) Crianças menores de 1 (um) ano = Nao necessita jejum.. (cid:127) Crianças de 1 (um) a 4 (quatro) anos = jejum de 4 horas. (cid:127) Crianças maiores de 5 (cinco) anos = jejum de 8 horas. (cid:127) Adultos: jejum de 08 horas. Realizar refeições leves (evite derivados do leite, líquidos gaseificados, feijão, carnes de porco e carne vermelha, entre outros) no dia anterior. Bexiga parcialmente cheia. Chegar com 15 minutos de antecedência. Trazer exames anteriores.",
   "valor_particular": "748,00",
   "valor_unimed279": null,
   "valor_unimed_completa": "135,31"
@@ -2678,7 +2678,7 @@
   "nome_original": "TC COXA DIREITA · Gerado automaticamente",
   "categoria": "Tomografia",
   "codigo_tuss": null,
-  "preparo": "SEM ADORNOS Página 14.",
+  "preparo": "SEM ADORNOS",
   "valor_particular": "701,25",
   "valor_unimed279": null,
   "valor_unimed_completa": null
@@ -2843,7 +2843,7 @@
   "nome_original": "TC PELVE",
   "categoria": "Tomografia",
   "codigo_tuss": "41001117",
-  "preparo": "TC COM CONTRASTE: Lactantes não amamentar por 48h apos o exame. (cid:127) Crianças menores de 1 (um) ano = Nao necessita jejum.. (cid:127) Crianças de 1 (um) a 4 (quatro) anos = jejum de 4 horas. (cid:127) Crianças maiores de 5 (cinco) anos = jejum de 8 horas. (cid:127) Adultos: jejum de 08 horas. Realizar refeições leves no dia anterior (evite derivados do leite, líquidos gaseificados, feijão, carnes de porco e carne vermelha, entre outros). Bexiga parcialmente cheia. Chegar com 15 minutos de antecedência. Trazer exames anteriores. Página 43.",
+  "preparo": "TC COM CONTRASTE: Lactantes não amamentar por 48h apos o exame. (cid:127) Crianças menores de 1 (um) ano = Nao necessita jejum.. (cid:127) Crianças de 1 (um) a 4 (quatro) anos = jejum de 4 horas. (cid:127) Crianças maiores de 5 (cinco) anos = jejum de 8 horas. (cid:127) Adultos: jejum de 08 horas. Realizar refeições leves no dia anterior (evite derivados do leite, líquidos gaseificados, feijão, carnes de porco e carne vermelha, entre outros). Bexiga parcialmente cheia. Chegar com 15 minutos de antecedência. Trazer exames anteriores.",
   "valor_particular": "748,00",
   "valor_unimed279": null,
   "valor_unimed_completa": "135,31"
@@ -2909,7 +2909,7 @@
   "nome_original": "TC QUADRIL DIREITO · Gerado automaticamente",
   "categoria": "Tomografia",
   "codigo_tuss": "41001141",
-  "preparo": "Página 15.",
+  "preparo": null,
   "valor_particular": "701,25",
   "valor_unimed279": null,
   "valor_unimed_completa": "135,31"
@@ -3096,7 +3096,7 @@
   "nome_original": "US ABDOME SUPERIOR · Gerado automaticamente",
   "categoria": "Ultrassom",
   "codigo_tuss": "40901130",
-  "preparo": "Jejum de 08 horas, e se possível trazer exames comparativos anteriores. Chegar com 15 minutos de antecedência. Página 16.",
+  "preparo": "Jejum de 08 horas, e se possível trazer exames comparativos anteriores. Chegar com 15 minutos de antecedência.",
   "valor_particular": "153,00",
   "valor_unimed279": null,
   "valor_unimed_completa": "93,03"
@@ -3140,7 +3140,7 @@
   "nome_original": "US APARELHO URINARIO FEMININO",
   "categoria": "Ultrassom",
   "codigo_tuss": "40901769",
-  "preparo": "Vir com a bexiga cheia. Trazer exames anteriores. Chegar com 15 minutos de antecedência. Página 44.",
+  "preparo": "Vir com a bexiga cheia. Trazer exames anteriores. Chegar com 15 minutos de antecedência.",
   "valor_particular": "153,00",
   "valor_unimed279": null,
   "valor_unimed_completa": "93,03"
@@ -3459,7 +3459,7 @@
   "nome_original": "US MANDIBULA · Gerado automaticamente",
   "categoria": "Ultrassom",
   "codigo_tuss": null,
-  "preparo": "Página 17.",
+  "preparo": null,
   "valor_particular": "153,00",
   "valor_unimed279": null,
   "valor_unimed_completa": null
@@ -3800,7 +3800,7 @@
   "nome_original": "US PUNHO DIREITO · Gerado automaticamente",
   "categoria": "Ultrassom",
   "codigo_tuss": "40901220",
-  "preparo": "Página 18.",
+  "preparo": null,
   "valor_particular": "153,00",
   "valor_unimed279": null,
   "valor_unimed_completa": "76,11"
@@ -3811,7 +3811,7 @@
   "nome_original": "US PUNHO ESQUERDO",
   "categoria": "Ultrassom",
   "codigo_tuss": "40901220",
-  "preparo": "Página 24.",
+  "preparo": null,
   "valor_particular": "153,00",
   "valor_unimed279": null,
   "valor_unimed_completa": "76,11"
@@ -3910,7 +3910,7 @@
   "nome_original": "US RETROPERITONIO",
   "categoria": "Ultrassom",
   "codigo_tuss": "40901149",
-  "preparo": "Página 45.",
+  "preparo": null,
   "valor_particular": "153,00",
   "valor_unimed279": null,
   "valor_unimed_completa": "105,71"
@@ -4031,7 +4031,7 @@
   "nome_original": "USG ORGAOS SUPERFICIAIS (TIREOIDE OU ESCROTO OU PENIS · Gerado automaticamente",
   "categoria": "Ultrassom",
   "codigo_tuss": "40901203",
-  "preparo": "Sem preparo, trazer exames anteriores. Chegar com 15 minutos de antecedência. Página 19.",
+  "preparo": "Sem preparo, trazer exames anteriores. Chegar com 15 minutos de antecedência.",
   "valor_particular": "153,00",
   "valor_unimed279": null,
   "valor_unimed_completa": "76,11"
@@ -4273,7 +4273,7 @@
   "nome_original": "PUNCAO ORIENTADA POR TOMOGRAFIA · Gerado automaticamente",
   "categoria": "Tomografia",
   "codigo_tuss": "40809170",
-  "preparo": "Página 29.",
+  "preparo": null,
   "valor_particular": null,
   "valor_unimed279": null,
   "valor_unimed_completa": "147,20"
@@ -4383,7 +4383,7 @@
   "nome_original": "RM COLUNA LOMBAR ESPECIALISTA · Gerado automaticamente",
   "categoria": "Ressonância",
   "codigo_tuss": "41101227",
-  "preparo": "Trazer exames anteriores, se tiver. Chegar com 30 minutos de antecedência. Sem adorno, sem tatuagem recente 30 dias, Sem cabelo úmido. Caso tenha marca-passo ou algum dispositivo metálico, necessário ser informado anteriormente. Página 31.",
+  "preparo": "Trazer exames anteriores, se tiver. Chegar com 30 minutos de antecedência. Sem adorno, sem tatuagem recente 30 dias, Sem cabelo úmido. Caso tenha marca-passo ou algum dispositivo metálico, necessário ser informado anteriormente.",
   "valor_particular": null,
   "valor_unimed279": null,
   "valor_unimed_completa": "135,31"
@@ -4394,7 +4394,7 @@
   "nome_original": "RM CORACAO MORFOLOGICO E FUNCIONAL · Gerado automaticamente",
   "categoria": "Ressonância",
   "codigo_tuss": "41101138",
-  "preparo": "Ao e necessário jejum Suspender 48 antes do exame alimentos que contenham xantina e cafeina, chimarrao ,cafe, cafe descafeinado, cha, bebida alcoolica, refrigerante e chocolate Suspender 48 antes do exame medicamentos Aminofilina, Teofilina, Bamifix, Antigripais,Relaxante musculares e analgesicos Trazer resultados de exame laboratorial de Creatinina recente (Ate 90 dias) para portadores de diabetes, hipertensao, doença renal e/ou maiores de 60. Falta desses exames pode ocasionar suspensao do exame Sem adornos, Cabelo nao úmido. Dispositivos e implantes metalicos necessário aviso previo. Evitar o uso de joias (aliança, relógio, piercing, brinco, etc.). Suspender 48h antes os seguintes medicamentos para asma/ enfisema pulmonar: Aminofilina, teofilina, bamifix. Trazer exames anteriores referente ao coração (cirurgia, cateterismo, etc.) 24 horas antes do exame fazer uma dieta sem xantina e cafeína (chá, café, café descafeinado, bebida alcoólica, refrigerante, chocolate e chimarrão), medicamentos que contenham cafeína como: antigripais, relaxantes musculares e analgésicos. É obrigatório a presença de um acompanhante para pacientes com idade inferior a 18 anos e superior a 65 anos. Trazer resultado de exame laboratorial de creatinina recente (até 90 dias), para portadores de diabetes, hipertensão, doença renal e/ou maiores de 60 anos. A falta do resultado da creatinina, nas condições acima mencionadas, poderá ocasionar a suspensão do exame. Caso tenha realizado tatuagem ou maquiagem definitiva nos últimos 15 dias não poderá realizar o exame. ***************** *********CONTRAINDICAÇÕES********************* ***** (cid:127) Peso de 180kg para Ressonância em Sumaré; 150kg em Jundiaí; 150kg em Indaiatuba e Hortolândia e em Campinas até 200kg RM 3Tesla demais até 150kg. (cid:127) Circunferência torácica e abdominal acima de 160cm (cid:127) Expansores mamários dos tipos MCGHAN ou INFALL (cid:127) Próteses Penianas dos tipos DURAPHASE e OMNIPHASE (cid:127) Marca-passo cardíaco (cid:127) HOLTER (cid:127) Desfibrilador implantável (cid:127) Aparelhos Auditivos não removíveis (cid:127) Implante (Prótese) Coclear/Otológicos (cid:127) Clips de Aneurisma Cerebral Ferromagnético colocados antes de 1995 (cid:127) Cápsula endoscópica (cid:127) Bombas de infusão (Inclusive implantáveis) (cid:127) Cateter de SWAN-GANZ e outros com eletrodos (cid:127) Clamp Carotídeo do tipo POPEN-BLAYLOCK (cid:127) Fixadores ortopédicos externos não removíveis (cid:127) Monitor de PIC (Pressão Intracraniana) (cid:127) Neuro-estimulador (cid:127) Halos Cranianos ******* ATENÇÃO ******* (cid:127) TATUAGEM OU MAQUIAGEM DEFINITIVA: Pacientes com tatuagem ou maquiagem definitiva podem realizar o exame somente após 15 dias de pigmentação. (cid:127) CÍLIOS POSTIÇOS: Necessário retirar cílios postiços magnéticos (cola/imã). (cid:127) LACTANTES: Suspender a amamentação 24 horas caso realize Ressonância Magnética com a necessidade de contraste venoso. (cid:127) GESTANTES: Confirmar com seu médico a possibilidade de realizar o exame de Ressonância Magnética. Contraindicado no primeiro trimestre de gestação. (cid:127) PRÓTESES MAMÁRIAS: Mulheres com Próteses precisam aguardar 15 dias após a cirurgia para realizar Ressonância Magnética. (cid:127) PRÓTESES ORTOPÉDICAS: Pacientes com próteses ortopédicas, placas, parafusos, pinos é necessário aguardar 15 dias após a cirurgia. (cid:127) PRÓTESES PENIANAS: Homens com próteses penianas precisam aguardar 15 dias após a cirurgia para realizar Ressonância Magnética. NOS DEMAIS CASOS, ENTRAR EM CONTATO PARA VERIFICAR A PERMISSÃO. Página 32.",
+  "preparo": "Ao e necessário jejum Suspender 48 antes do exame alimentos que contenham xantina e cafeina, chimarrao ,cafe, cafe descafeinado, cha, bebida alcoolica, refrigerante e chocolate Suspender 48 antes do exame medicamentos Aminofilina, Teofilina, Bamifix, Antigripais,Relaxante musculares e analgesicos Trazer resultados de exame laboratorial de Creatinina recente (Ate 90 dias) para portadores de diabetes, hipertensao, doença renal e/ou maiores de 60. Falta desses exames pode ocasionar suspensao do exame Sem adornos, Cabelo nao úmido. Dispositivos e implantes metalicos necessário aviso previo. Evitar o uso de joias (aliança, relógio, piercing, brinco, etc.). Suspender 48h antes os seguintes medicamentos para asma/ enfisema pulmonar: Aminofilina, teofilina, bamifix. Trazer exames anteriores referente ao coração (cirurgia, cateterismo, etc.) 24 horas antes do exame fazer uma dieta sem xantina e cafeína (chá, café, café descafeinado, bebida alcoólica, refrigerante, chocolate e chimarrão), medicamentos que contenham cafeína como: antigripais, relaxantes musculares e analgésicos. É obrigatório a presença de um acompanhante para pacientes com idade inferior a 18 anos e superior a 65 anos. Trazer resultado de exame laboratorial de creatinina recente (até 90 dias), para portadores de diabetes, hipertensão, doença renal e/ou maiores de 60 anos. A falta do resultado da creatinina, nas condições acima mencionadas, poderá ocasionar a suspensão do exame. Caso tenha realizado tatuagem ou maquiagem definitiva nos últimos 15 dias não poderá realizar o exame. ***************** *********CONTRAINDICAÇÕES********************* ***** (cid:127) Peso de 180kg para Ressonância em Sumaré; 150kg em Jundiaí; 150kg em Indaiatuba e Hortolândia e em Campinas até 200kg RM 3Tesla demais até 150kg. (cid:127) Circunferência torácica e abdominal acima de 160cm (cid:127) Expansores mamários dos tipos MCGHAN ou INFALL (cid:127) Próteses Penianas dos tipos DURAPHASE e OMNIPHASE (cid:127) Marca-passo cardíaco (cid:127) HOLTER (cid:127) Desfibrilador implantável (cid:127) Aparelhos Auditivos não removíveis (cid:127) Implante (Prótese) Coclear/Otológicos (cid:127) Clips de Aneurisma Cerebral Ferromagnético colocados antes de 1995 (cid:127) Cápsula endoscópica (cid:127) Bombas de infusão (Inclusive implantáveis) (cid:127) Cateter de SWAN-GANZ e outros com eletrodos (cid:127) Clamp Carotídeo do tipo POPEN-BLAYLOCK (cid:127) Fixadores ortopédicos externos não removíveis (cid:127) Monitor de PIC (Pressão Intracraniana) (cid:127) Neuro-estimulador (cid:127) Halos Cranianos ******* ATENÇÃO ******* (cid:127) TATUAGEM OU MAQUIAGEM DEFINITIVA: Pacientes com tatuagem ou maquiagem definitiva podem realizar o exame somente após 15 dias de pigmentação. (cid:127) CÍLIOS POSTIÇOS: Necessário retirar cílios postiços magnéticos (cola/imã). (cid:127) LACTANTES: Suspender a amamentação 24 horas caso realize Ressonância Magnética com a necessidade de contraste venoso. (cid:127) GESTANTES: Confirmar com seu médico a possibilidade de realizar o exame de Ressonância Magnética. Contraindicado no primeiro trimestre de gestação. (cid:127) PRÓTESES MAMÁRIAS: Mulheres com Próteses precisam aguardar 15 dias após a cirurgia para realizar Ressonância Magnética. (cid:127) PRÓTESES ORTOPÉDICAS: Pacientes com próteses ortopédicas, placas, parafusos, pinos é necessário aguardar 15 dias após a cirurgia. (cid:127) PRÓTESES PENIANAS: Homens com próteses penianas precisam aguardar 15 dias após a cirurgia para realizar Ressonância Magnética. NOS DEMAIS CASOS, ENTRAR EM CONTATO PARA VERIFICAR A PERMISSÃO.",
   "valor_particular": null,
   "valor_unimed279": null,
   "valor_unimed_completa": "169,14"
@@ -4405,7 +4405,7 @@
   "nome_original": "RM CORACAO MORFOLOGICO E FUNCIONAL + PERFUSAO + ESTRESSE · Gerado automaticamente",
   "categoria": "Ressonância",
   "codigo_tuss": "41101146",
-  "preparo": "Ao e necessário jejum Suspender 48 antes do exame alimentos que contenham xantina e cafeina, chimarrao ,cafe, cafe descafeinado, cha, bebida alcoolica, refrigerante e chocolate Suspender 48 antes do exame medicamentos Aminofilina, Teofilina, Bamifix, Antigripais,Relaxante musculares e analgesicos Trazer resultados de exame laboratorial de Creatinina recente (Ate 90 dias) para portadores de diabetes, hipertensao, doença renal e/ou maiores de 60. Falta desses exames pode ocasionar suspensao do exame Sem adornos, Cabelo nao úmido. Dispositivos e implantes metalicos necessário aviso previo. Página 33.",
+  "preparo": "Ao e necessário jejum Suspender 48 antes do exame alimentos que contenham xantina e cafeina, chimarrao ,cafe, cafe descafeinado, cha, bebida alcoolica, refrigerante e chocolate Suspender 48 antes do exame medicamentos Aminofilina, Teofilina, Bamifix, Antigripais,Relaxante musculares e analgesicos Trazer resultados de exame laboratorial de Creatinina recente (Ate 90 dias) para portadores de diabetes, hipertensao, doença renal e/ou maiores de 60. Falta desses exames pode ocasionar suspensao do exame Sem adornos, Cabelo nao úmido. Dispositivos e implantes metalicos necessário aviso previo.",
   "valor_particular": null,
   "valor_unimed279": null,
   "valor_unimed_completa": "135,18"
@@ -4416,7 +4416,7 @@
   "nome_original": "RM CORACAO MORFOLOGICO E FUNCIONAL + PERFUSAO + VIABILID · Gerado automaticamente",
   "categoria": "Ressonância",
   "codigo_tuss": "41101154",
-  "preparo": "Ao e necessário jejum Suspender 48 antes do exame alimentos que contenham xantina e cafeina, chimarrao ,cafe, cafe descafeinado, cha, bebida alcoolica, refrigerante e chocolate Suspender 48 antes do exame medicamentos Aminofilina, Teofilina, Bamifix, Antigripais,Relaxante musculares e analgesicos Trazer resultados de exame laboratorial de Creatinina recente (Ate 90 dias) para portadores de diabetes, hipertensao, doença renal e/ou maiores de 60. Falta desses exames pode ocasionar suspensao do exame Sem adornos, Cabelo nao úmido. Dispositivos e implantes metalicos necessário aviso previo. Evitar o uso de joias (aliança, relógio, piercing, brinco, etc.). Suspender 48h antes os seguintes medicamentos para asma/ enfisema pulmonar: Aminofilina, teofilina, bamifix. Trazer exames anteriores referente ao coração (cirurgia, cateterismo, etc.) 24 horas antes do exame fazer uma dieta sem xantina e cafeína (chá, café, café descafeinado, bebida alcoólica, refrigerante, chocolate e chimarrão), medicamentos que contenham cafeína como: antigripais, relaxantes musculares e analgésicos. É obrigatório a presença de um acompanhante para pacientes com idade inferior a 18 anos e superior a 65 anos. Trazer resultado de exame laboratorial de creatinina recente (até 90 dias), para portadores de diabetes, hipertensão, doença renal e/ou maiores de 60 anos. A falta do resultado da creatinina, nas condições acima mencionadas, poderá ocasionar a suspensão do exame. Caso tenha realizado tatuagem ou maquiagem definitiva nos últimos 15 dias não poderá realizar o exame. ***************** *********CONTRAINDICAÇÕES********************* ***** (cid:127) Peso de 180kg para Ressonância em Sumaré; 150kg em Jundiaí; 150kg em Indaiatuba e Hortolândia e em Campinas até 200kg RM 3Tesla demais até 150kg. (cid:127) Circunferência torácica e abdominal acima de 160cm (cid:127) Expansores mamários dos tipos MCGHAN ou INFALL (cid:127) Próteses Penianas dos tipos DURAPHASE e OMNIPHASE (cid:127) Marca-passo cardíaco (cid:127) HOLTER (cid:127) Desfibrilador implantável (cid:127) Aparelhos Auditivos não removíveis (cid:127) Implante (Prótese) Coclear/Otológicos (cid:127) Clips de Aneurisma Cerebral Ferromagnético colocados antes de 1995 (cid:127) Cápsula endoscópica (cid:127) Bombas de infusão (Inclusive implantáveis) (cid:127) Cateter de SWAN-GANZ e outros com eletrodos (cid:127) Clamp Carotídeo do tipo POPEN-BLAYLOCK (cid:127) Fixadores ortopédicos externos não removíveis (cid:127) Monitor de PIC (Pressão Intracraniana) (cid:127) Neuro-estimulador (cid:127) Halos Cranianos ******* ATENÇÃO ******* (cid:127) TATUAGEM OU MAQUIAGEM DEFINITIVA: Pacientes com tatuagem ou maquiagem definitiva podem realizar o exame somente após 15 dias de pigmentação. (cid:127) CÍLIOS POSTIÇOS: Necessário retirar cílios postiços magnéticos (cola/imã). (cid:127) LACTANTES: Suspender a amamentação 24 horas caso realize Ressonância Magnética com a necessidade de contraste venoso. (cid:127) GESTANTES: Confirmar com seu médico a possibilidade de realizar o exame de Ressonância Magnética. Contraindicado no primeiro trimestre de gestação. (cid:127) PRÓTESES MAMÁRIAS: Mulheres com Próteses precisam aguardar 15 dias após a cirurgia para realizar Ressonância Magnética. (cid:127) PRÓTESES ORTOPÉDICAS: Pacientes com próteses ortopédicas, placas, parafusos, pinos é necessário aguardar 15 dias após a cirurgia. (cid:127) PRÓTESES PENIANAS: Homens com próteses penianas precisam aguardar 15 dias após a cirurgia para realizar Ressonância Magnética. NOS DEMAIS CASOS, ENTRAR EM CONTATO PARA VERIFICAR A PERMISSÃO. Página 34.",
+  "preparo": "Ao e necessário jejum Suspender 48 antes do exame alimentos que contenham xantina e cafeina, chimarrao ,cafe, cafe descafeinado, cha, bebida alcoolica, refrigerante e chocolate Suspender 48 antes do exame medicamentos Aminofilina, Teofilina, Bamifix, Antigripais,Relaxante musculares e analgesicos Trazer resultados de exame laboratorial de Creatinina recente (Ate 90 dias) para portadores de diabetes, hipertensao, doença renal e/ou maiores de 60. Falta desses exames pode ocasionar suspensao do exame Sem adornos, Cabelo nao úmido. Dispositivos e implantes metalicos necessário aviso previo. Evitar o uso de joias (aliança, relógio, piercing, brinco, etc.). Suspender 48h antes os seguintes medicamentos para asma/ enfisema pulmonar: Aminofilina, teofilina, bamifix. Trazer exames anteriores referente ao coração (cirurgia, cateterismo, etc.) 24 horas antes do exame fazer uma dieta sem xantina e cafeína (chá, café, café descafeinado, bebida alcoólica, refrigerante, chocolate e chimarrão), medicamentos que contenham cafeína como: antigripais, relaxantes musculares e analgésicos. É obrigatório a presença de um acompanhante para pacientes com idade inferior a 18 anos e superior a 65 anos. Trazer resultado de exame laboratorial de creatinina recente (até 90 dias), para portadores de diabetes, hipertensão, doença renal e/ou maiores de 60 anos. A falta do resultado da creatinina, nas condições acima mencionadas, poderá ocasionar a suspensão do exame. Caso tenha realizado tatuagem ou maquiagem definitiva nos últimos 15 dias não poderá realizar o exame. ***************** *********CONTRAINDICAÇÕES********************* ***** (cid:127) Peso de 180kg para Ressonância em Sumaré; 150kg em Jundiaí; 150kg em Indaiatuba e Hortolândia e em Campinas até 200kg RM 3Tesla demais até 150kg. (cid:127) Circunferência torácica e abdominal acima de 160cm (cid:127) Expansores mamários dos tipos MCGHAN ou INFALL (cid:127) Próteses Penianas dos tipos DURAPHASE e OMNIPHASE (cid:127) Marca-passo cardíaco (cid:127) HOLTER (cid:127) Desfibrilador implantável (cid:127) Aparelhos Auditivos não removíveis (cid:127) Implante (Prótese) Coclear/Otológicos (cid:127) Clips de Aneurisma Cerebral Ferromagnético colocados antes de 1995 (cid:127) Cápsula endoscópica (cid:127) Bombas de infusão (Inclusive implantáveis) (cid:127) Cateter de SWAN-GANZ e outros com eletrodos (cid:127) Clamp Carotídeo do tipo POPEN-BLAYLOCK (cid:127) Fixadores ortopédicos externos não removíveis (cid:127) Monitor de PIC (Pressão Intracraniana) (cid:127) Neuro-estimulador (cid:127) Halos Cranianos ******* ATENÇÃO ******* (cid:127) TATUAGEM OU MAQUIAGEM DEFINITIVA: Pacientes com tatuagem ou maquiagem definitiva podem realizar o exame somente após 15 dias de pigmentação. (cid:127) CÍLIOS POSTIÇOS: Necessário retirar cílios postiços magnéticos (cola/imã). (cid:127) LACTANTES: Suspender a amamentação 24 horas caso realize Ressonância Magnética com a necessidade de contraste venoso. (cid:127) GESTANTES: Confirmar com seu médico a possibilidade de realizar o exame de Ressonância Magnética. Contraindicado no primeiro trimestre de gestação. (cid:127) PRÓTESES MAMÁRIAS: Mulheres com Próteses precisam aguardar 15 dias após a cirurgia para realizar Ressonância Magnética. (cid:127) PRÓTESES ORTOPÉDICAS: Pacientes com próteses ortopédicas, placas, parafusos, pinos é necessário aguardar 15 dias após a cirurgia. (cid:127) PRÓTESES PENIANAS: Homens com próteses penianas precisam aguardar 15 dias após a cirurgia para realizar Ressonância Magnética. NOS DEMAIS CASOS, ENTRAR EM CONTATO PARA VERIFICAR A PERMISSÃO.",
   "valor_particular": null,
   "valor_unimed279": null,
   "valor_unimed_completa": "169,14"
@@ -4647,7 +4647,7 @@
   "nome_original": "RM TORNOZELO DIREITO ESPECIALISTA · Gerado automaticamente",
   "categoria": "Ressonância",
   "codigo_tuss": "41101316",
-  "preparo": "Jejum 4 horas Trazer exames anteriores, se tiver. Chegar com 30 minutos de antecedência. Sem adorno, sem tatuagem recente 30 dias, Sem cabelo úmido. Caso tenha marca-passo ou algum dispositivo metálico, necessário ser informado anteriormente. Página 39.",
+  "preparo": "Jejum 4 horas Trazer exames anteriores, se tiver. Chegar com 30 minutos de antecedência. Sem adorno, sem tatuagem recente 30 dias, Sem cabelo úmido. Caso tenha marca-passo ou algum dispositivo metálico, necessário ser informado anteriormente.",
   "valor_particular": null,
   "valor_unimed279": null,
   "valor_unimed_completa": "135,31"
