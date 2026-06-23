@@ -78,6 +78,20 @@ create table if not exists medico_exames (
 );
 
 -- ============================================================
+-- TABELA: medico_responsabilidades (responsável por TC/RM/RX por unidade)
+-- Populada por supabase/populate-medicos.mjs a partir da Lista de Especialistas.
+-- ============================================================
+create table if not exists medico_responsabilidades (
+  id uuid primary key default uuid_generate_v4(),
+  medico_id uuid not null references medicos(id) on delete cascade,
+  modalidade text not null check (modalidade in ('TC','RM','RX')),
+  unidade text not null,
+  escopo text,
+  ordem int not null default 0,
+  created_at timestamptz not null default now()
+);
+
+-- ============================================================
 -- TABELA: convenios
 -- ============================================================
 create table if not exists convenios (
