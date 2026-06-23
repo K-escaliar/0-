@@ -21,6 +21,8 @@ try {
     doppler: /doppler/i,
     dopTireoide: /doppler.*tireoide|tireoide.*doppler/i,
     biopsia: /biopsia|puncao|punç/i,
+    // US que o CDI 13 de Maio NAO faz (Atendimento de Exames, itens 15 e 18)
+    nao13: /morfolog|transluc|estruturas superficiais/i,
   }
   const links = [] // {medico_id, exame_id, realiza}
   for (const e of us.rows) {
@@ -33,12 +35,15 @@ try {
     if (geral) links.push({ m: claudio, e: e.id, r: true })
     else if (isMama || isGyn || isBio) links.push({ m: claudio, e: e.id, r: false })
 
-    // MIOSO (13): tudo menos mamas; mamas = nao faz
-    if (isMama) links.push({ m: mioso, e: e.id, r: false })
+    const nao13 = re.nao13.test(n) // morfologico/translucencia/estruturas superficiais
+
+    // MIOSO (13): tudo menos mamas e os que o 13 nao faz
+    if (isMama || nao13) links.push({ m: mioso, e: e.id, r: false })
     else links.push({ m: mioso, e: e.id, r: true })
 
-    // MARTUCCI (13): mamas sim; doppler (nao tireoide) nao; geral/gyn sim; doppler tireoide sim
-    if (isMama) links.push({ m: martucci, e: e.id, r: true })
+    // MARTUCCI (13): mamas sim; doppler (nao tireoide) nao; os que o 13 nao faz = nao; resto sim
+    if (nao13) links.push({ m: martucci, e: e.id, r: false })
+    else if (isMama) links.push({ m: martucci, e: e.id, r: true })
     else if (isDop && !isDopTir) links.push({ m: martucci, e: e.id, r: false })
     else links.push({ m: martucci, e: e.id, r: true })
   }
