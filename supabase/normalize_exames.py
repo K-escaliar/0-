@@ -2,7 +2,7 @@
 """Mescla as 3 secoes do PDF por codigo, normaliza nome/categoria/preparo e anexa precos.
 Saida: catalogo_exames.json (lista unica de exames com 3 valores por plano).
 """
-import json, re, sys
+import json, re, sys, unicodedata
 
 d = json.load(open('exames_pdf.json', encoding='utf-8'))
 P = {e['codigo']: e for e in d['particular']}
@@ -81,7 +81,11 @@ def norm_nome(nome):
             out.append(wu)
         else:
             out.append(w.capitalize())
-    return ' '.join(out)
+    nome_final = ' '.join(out)
+    # remover acentos e pontuacao dos nomes (preferencia da clinica)
+    nome_final = ''.join(ch for ch in unicodedata.normalize('NFD', nome_final) if unicodedata.category(ch) != 'Mn')
+    nome_final = re.sub(r'[^A-Za-z0-9 ]+', ' ', nome_final)
+    return re.sub(r'\s+', ' ', nome_final).strip()
 
 # ---- preparo: limpeza de typos + antecedencia por categoria ----
 TYPOS = {

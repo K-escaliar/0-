@@ -23,7 +23,7 @@
  },
  {
   "codigo": "ANRMAOAB",
-  "nome": "Angiorressonância Aorta Abdominal",
+  "nome": "Angiorressonancia Aorta Abdominal",
   "nome_original": "ANGIORESSONANCIA AORTA ABDOMINAL",
   "categoria": "Ressonância",
   "codigo_tuss": "41101340",
@@ -34,7 +34,7 @@
  },
  {
   "codigo": "ANRMAOTO",
-  "nome": "Angiorressonância Aorta Torácica",
+  "nome": "Angiorressonancia Aorta Toracica",
   "nome_original": "ANGIORESSONANCIA AORTA TORACICA",
   "categoria": "Ressonância",
   "codigo_tuss": "41101332",
@@ -45,7 +45,7 @@
  },
  {
   "codigo": "ANRMABRE",
-  "nome": "Angiorressonância Arterial Antebraço Esquerdo",
+  "nome": "Angiorressonancia Arterial Antebraco Esquerdo",
   "nome_original": "ANGIORESSONANCIA ARTERIAL ANTEBRACO ESQUERDO",
   "categoria": "Ressonância",
   "codigo_tuss": null,
@@ -56,7 +56,7 @@
  },
  {
   "codigo": "ANRMARBD",
-  "nome": "Angiorressonância Arterial Braço Direito",
+  "nome": "Angiorressonancia Arterial Braco Direito",
   "nome_original": "ANGIORESSONANCIA ARTERIAL BRACO DIREITO",
   "categoria": "Ressonância",
   "codigo_tuss": null,
@@ -67,7 +67,7 @@
  },
  {
   "codigo": "ANRMARBE",
-  "nome": "Angiorressonância Arterial Braço Esquerdo",
+  "nome": "Angiorressonancia Arterial Braco Esquerdo",
   "nome_original": "ANGIORESSONANCIA ARTERIAL BRACO ESQUERDO",
   "categoria": "Ressonância",
   "codigo_tuss": null,
@@ -78,7 +78,7 @@
  },
  {
   "codigo": "ANRMACXD",
-  "nome": "Angiorressonância Arterial Coxa Direita",
+  "nome": "Angiorressonancia Arterial Coxa Direita",
   "nome_original": "ANGIORESSONANCIA ARTERIAL COXA DIREITA",
   "categoria": "Ressonância",
   "codigo_tuss": "41101553",
@@ -89,7 +89,7 @@
  },
  {
   "codigo": "ANRMACXE",
-  "nome": "Angiorressonância Arterial Coxa Esquerda",
+  "nome": "Angiorressonancia Arterial Coxa Esquerda",
   "nome_original": "ANGIORESSONANCIA ARTERIAL COXA ESQUERDA · Gerado automaticamente",
   "categoria": "Ressonância",
   "codigo_tuss": "41101553",
@@ -100,7 +100,7 @@
  },
  {
   "codigo": "ANRMARCR",
-  "nome": "Angiorressonância Arterial Crânio",
+  "nome": "Angiorressonancia Arterial Cranio",
   "nome_original": "ANGIORESSONANCIA ARTERIAL CRANIO",
   "categoria": "Ressonância",
   "codigo_tuss": "41101537",
@@ -111,7 +111,7 @@
  },
  {
   "codigo": "ANRMABRD",
-  "nome": "Angiorressonância Arterial de Antebraço Direito",
+  "nome": "Angiorressonancia Arterial de Antebraco Direito",
   "nome_original": "ANGIORESSONANCIA ARTERIAL DE ANTEBRACO DIREITO",
   "categoria": "Ressonância",
   "codigo_tuss": null,
@@ -122,7 +122,7 @@
  },
  {
   "codigo": "ANRMAJOD",
-  "nome": "Angiorressonância Arterial Joelho Direito",
+  "nome": "Angiorressonancia Arterial Joelho Direito",
   "nome_original": "ANGIORESSONANCIA ARTERIAL JOELHO DIREITO",
   "categoria": "Ressonância",
   "codigo_tuss": null,
@@ -133,7 +133,7 @@
  },
  {
   "codigo": "ANRMAJOE",
-  "nome": "Angiorressonância Arterial Joelho Esquerdo",
+  "nome": "Angiorressonancia Arterial Joelho Esquerdo",
   "nome_original": "ANGIORESSONANCIA ARTERIAL JOELHO ESQUERDO",
   "categoria": "Ressonância",
   "codigo_tuss": null,
@@ -144,7 +144,7 @@
  },
  {
   "codigo": "ANRMAMAD",
-  "nome": "Angiorressonância Arterial Mão Direita",
+  "nome": "Angiorressonancia Arterial Mao Direita",
   "nome_original": "ANGIORESSONANCIA ARTERIAL MAO DIREITA",
   "categoria": "Ressonância",
   "codigo_tuss": null,
@@ -155,7 +155,7 @@
  },
  {
   "codigo": "ANRMAMAE",
-  "nome": "Angiorressonância Arterial Mão Esquerda",
+  "nome": "Angiorressonancia Arterial Mao Esquerda",
   "nome_original": "ANGIORESSONANCIA ARTERIAL MAO ESQUERDA",
   "categoria": "Ressonância",
   "codigo_tuss": null,
@@ -166,7 +166,7 @@
  },
  {
   "codigo": "ANRMAPED",
-  "nome": "Angiorressonância Arterial Pé Direito",
+  "nome": "Angiorressonancia Arterial Pe Direito",
   "nome_original": "ANGIORESSONANCIA ARTERIAL PE DIREITO",
   "categoria": "Ressonância",
   "codigo_tuss": "41101553",
@@ -177,7 +177,7 @@
  },
  {
   "codigo": "ANRMAPEE",
-  "nome": "Angiorressonância Arterial Pé Esquerdo",
+  "nome": "Angiorressonancia Arterial Pe Esquerdo",
   "nome_original": "ANGIORESSONANCIA ARTERIAL PE ESQUERDO",
   "categoria": "Ressonância",
   "codigo_tuss": "41101553",
@@ -188,7 +188,7 @@
  },
  {
   "codigo": "ANRMAPEL",
-  "nome": "Angiorressonância Arterial Pelve",
+  "nome": "Angiorressonancia Arterial Pelve",
   "nome_original": "ANGIORESSONANCIA ARTERIAL PELVE",
   "categoria": "Ressonância",
   "codigo_tuss": "41101596",
@@ -199,7 +199,7 @@
  },
  {
   "codigo": "ANRMAPRD",
-  "nome": "Angiorressonância Arterial Perna Direita",
+  "nome": "Angiorressonancia Arterial Perna Direita",
   "nome_original": "ANGIORESSONANCIA ARTERIAL PERNA DIREITA",
   "categoria": "Ressonância",
   "codigo_tuss": "41101553",
@@ -210,7 +210,7 @@
  },
  {
   "codigo": "ANRMAPRE",
-  "nome": "Angiorressonância Arterial Perna Esquerda",
+  "nome": "Angiorressonancia Arterial Perna Esquerda",
   "nome_original": "ANGIORESSONANCIA ARTERIAL PERNA ESQUERDA",
   "categoria": "Ressonância",
   "codigo_tuss": "41101553",
@@ -221,7 +221,7 @@
  },
  {
   "codigo": "ANRMAPES",
-  "nome": "Angiorressonância Arterial Pescoço",
+  "nome": "Angiorressonancia Arterial Pescoco",
   "nome_original": "ANGIORESSONANCIA ARTERIAL PESCOCO",
   "categoria": "Ressonância",
   "codigo_tuss": "41101618",
@@ -232,7 +232,7 @@
  },
  {
   "codigo": "ANRMATOR",
-  "nome": "Angiorressonância Arterial Tórax",
+  "nome": "Angiorressonancia Arterial Torax",
   "nome_original": "ANGIORESSONANCIA ARTERIAL TORAX · Gerado automaticamente",
   "categoria": "Ressonância",
   "codigo_tuss": null,
@@ -243,7 +243,7 @@
  },
  {
   "codigo": "ANRMVBRE",
-  "nome": "Angiorressonância Venosa Antebraço Esquerdo",
+  "nome": "Angiorressonancia Venosa Antebraco Esquerdo",
   "nome_original": "ANGIORESSONANCIA VENOSA ANTEBRACO ESQUERDO",
   "categoria": "Ressonância",
   "codigo_tuss": null,
@@ -254,7 +254,7 @@
  },
  {
   "codigo": "ANRMVRBD",
-  "nome": "Angiorressonância Venosa Braço Direito",
+  "nome": "Angiorressonancia Venosa Braco Direito",
   "nome_original": "ANGIORESSONANCIA VENOSA BRACO DIREITO",
   "categoria": "Ressonância",
   "codigo_tuss": null,
@@ -265,7 +265,7 @@
  },
  {
   "codigo": "ANRMVRBE",
-  "nome": "Angiorressonância Venosa Braço Esquerdo",
+  "nome": "Angiorressonancia Venosa Braco Esquerdo",
   "nome_original": "ANGIORESSONANCIA VENOSA BRACO ESQUERDO",
   "categoria": "Ressonância",
   "codigo_tuss": null,
@@ -276,7 +276,7 @@
  },
  {
   "codigo": "ANRMVCXD",
-  "nome": "Angiorressonância Venosa Coxa Esquerda",
+  "nome": "Angiorressonancia Venosa Coxa Esquerda",
   "nome_original": "ANGIORESSONANCIA VENOSA COXA ESQUERDA",
   "categoria": "Ressonância",
   "codigo_tuss": null,
@@ -287,7 +287,7 @@
  },
  {
   "codigo": "ANRMVCXE",
-  "nome": "Angiorressonância Venosa Coxa Esquerda",
+  "nome": "Angiorressonancia Venosa Coxa Esquerda",
   "nome_original": "ANGIORESSONANCIA VENOSA COXA ESQUERDA",
   "categoria": "Ressonância",
   "codigo_tuss": null,
@@ -298,7 +298,7 @@
  },
  {
   "codigo": "ANRMVRCR",
-  "nome": "Angiorressonância Venosa Crânio",
+  "nome": "Angiorressonancia Venosa Cranio",
   "nome_original": "ANGIORESSONANCIA VENOSA CRANIO",
   "categoria": "Ressonância",
   "codigo_tuss": "41101545",
@@ -309,7 +309,7 @@
  },
  {
   "codigo": "ANRMVBRD",
-  "nome": "Angiorressonância Venosa de Antebraço Direito",
+  "nome": "Angiorressonancia Venosa de Antebraco Direito",
   "nome_original": "ANGIORESSONANCIA VENOSA DE ANTEBRACO DIREITO",
   "categoria": "Ressonância",
   "codigo_tuss": null,
@@ -320,7 +320,7 @@
  },
  {
   "codigo": "ANRMVJOD",
-  "nome": "Angiorressonância Venosa Joelho Direito",
+  "nome": "Angiorressonancia Venosa Joelho Direito",
   "nome_original": "ANGIORESSONANCIA VENOSA JOELHO DIREITO",
   "categoria": "Ressonância",
   "codigo_tuss": null,
@@ -331,7 +331,7 @@
  },
  {
   "codigo": "ANRMJOE",
-  "nome": "Angiorressonância Venosa Joelho Esquerdo",
+  "nome": "Angiorressonancia Venosa Joelho Esquerdo",
   "nome_original": "ANGIORESSONANCIA VENOSA JOELHO ESQUERDO",
   "categoria": "Ressonância",
   "codigo_tuss": null,
@@ -342,7 +342,7 @@
  },
  {
   "codigo": "ANRMVMAD",
-  "nome": "Angiorressonância Venosa Mão Direita",
+  "nome": "Angiorressonancia Venosa Mao Direita",
   "nome_original": "ANGIORESSONANCIA VENOSA MAO DIREITA",
   "categoria": "Ressonância",
   "codigo_tuss": null,
@@ -353,7 +353,7 @@
  },
  {
   "codigo": "ANRMVMAE",
-  "nome": "Angiorressonância Venosa Mão Esquerda",
+  "nome": "Angiorressonancia Venosa Mao Esquerda",
   "nome_original": "ANGIORESSONANCIA VENOSA MAO ESQUERDA",
   "categoria": "Ressonância",
   "codigo_tuss": null,
@@ -364,7 +364,7 @@
  },
  {
   "codigo": "ANRMVPED",
-  "nome": "Angiorressonância Venosa Pé Direito",
+  "nome": "Angiorressonancia Venosa Pe Direito",
   "nome_original": "ANGIORESSONANCIA VENOSA PE DIREITO",
   "categoria": "Ressonância",
   "codigo_tuss": null,
@@ -375,7 +375,7 @@
  },
  {
   "codigo": "ANRMVPEE",
-  "nome": "Angiorressonância Venosa Pé Esquerdo",
+  "nome": "Angiorressonancia Venosa Pe Esquerdo",
   "nome_original": "ANGIORESSONANCIA VENOSA PE ESQUERDO · Gerado automaticamente",
   "categoria": "Ressonância",
   "codigo_tuss": null,
@@ -386,7 +386,7 @@
  },
  {
   "codigo": "ANRMVPEL",
-  "nome": "Angiorressonância Venosa Pelve",
+  "nome": "Angiorressonancia Venosa Pelve",
   "nome_original": "ANGIORESSONANCIA VENOSA PELVE",
   "categoria": "Ressonância",
   "codigo_tuss": "41101600",
@@ -397,7 +397,7 @@
  },
  {
   "codigo": "ANRMVPRD",
-  "nome": "Angiorressonância Venosa Perna Direita",
+  "nome": "Angiorressonancia Venosa Perna Direita",
   "nome_original": "ANGIORESSONANCIA VENOSA PERNA DIREITA",
   "categoria": "Ressonância",
   "codigo_tuss": null,
@@ -408,7 +408,7 @@
  },
  {
   "codigo": "ANRMVPRE",
-  "nome": "Angiorressonância Venosa Perna Esquerda",
+  "nome": "Angiorressonancia Venosa Perna Esquerda",
   "nome_original": "ANGIORESSONANCIA VENOSA PERNA ESQUERDA",
   "categoria": "Ressonância",
   "codigo_tuss": null,
@@ -419,7 +419,7 @@
  },
  {
   "codigo": "ANRMVPES",
-  "nome": "Angiorressonância Venosa Pescoço",
+  "nome": "Angiorressonancia Venosa Pescoco",
   "nome_original": "ANGIORESSONANCIA VENOSA PESCOCO",
   "categoria": "Ressonância",
   "codigo_tuss": "41101626",
@@ -430,7 +430,7 @@
  },
  {
   "codigo": "ANRMVTOR",
-  "nome": "Angiorressonância Venosa Tórax",
+  "nome": "Angiorressonancia Venosa Torax",
   "nome_original": "ANGIORESSONANCIA VENOSA TORAX",
   "categoria": "Ressonância",
   "codigo_tuss": null,
@@ -452,7 +452,7 @@
  },
  {
   "codigo": "ANTCAOTO",
-  "nome": "Angiotomografia Aorta Torácica",
+  "nome": "Angiotomografia Aorta Toracica",
   "nome_original": "ANGIOTOMOGRAFIA AORTA TORACICA",
   "categoria": "Tomografia",
   "codigo_tuss": "41001176",
@@ -463,7 +463,7 @@
  },
  {
   "codigo": "ANTCACRA",
-  "nome": "Angiotomografia Arterial Crânio",
+  "nome": "Angiotomografia Arterial Cranio",
   "nome_original": "ANGIOTOMOGRAFIA ARTERIAL CRANIO",
   "categoria": "Tomografia",
   "codigo_tuss": "41001370",
@@ -518,7 +518,7 @@
  },
  {
   "codigo": "ANTCARPE",
-  "nome": "Angiotomografia Arterial Pescoço",
+  "nome": "Angiotomografia Arterial Pescoco",
   "nome_original": "ANGIOTOMOGRAFIA ARTERIAL PESCOCO",
   "categoria": "Tomografia",
   "codigo_tuss": "41001397",
@@ -540,7 +540,7 @@
  },
  {
   "codigo": "ANTCARTO",
-  "nome": "Angiotomografia Arterial Tórax",
+  "nome": "Angiotomografia Arterial Torax",
   "nome_original": "ANGIOTOMOGRAFIA ARTERIAL TORAX",
   "categoria": "Tomografia",
   "codigo_tuss": "41001419",
@@ -562,7 +562,7 @@
  },
  {
   "codigo": "ANTCVCRA",
-  "nome": "Angiotomografia Venosa Crânio",
+  "nome": "Angiotomografia Venosa Cranio",
   "nome_original": "ANGIOTOMOGRAFIA VENOSA CRANIO",
   "categoria": "Tomografia",
   "codigo_tuss": "41001389",
@@ -617,7 +617,7 @@
  },
  {
   "codigo": "ANTCVEPE",
-  "nome": "Angiotomografia Venosa Pescoço",
+  "nome": "Angiotomografia Venosa Pescoco",
   "nome_original": "ANGIOTOMOGRAFIA VENOSA PESCOCO",
   "categoria": "Tomografia",
   "codigo_tuss": "41001400",
@@ -628,7 +628,7 @@
  },
  {
   "codigo": "ANTCVETO",
-  "nome": "Angiotomografia Venosa Tórax",
+  "nome": "Angiotomografia Venosa Torax",
   "nome_original": "ANGIOTOMOGRAFIA VENOSA TORAX",
   "categoria": "Tomografia",
   "codigo_tuss": "41001427",
@@ -749,7 +749,7 @@
  },
  {
   "codigo": "DOCARVER",
-  "nome": "Doppler de Carótidas e Vertebrais",
+  "nome": "Doppler de Carotidas e Vertebrais",
   "nome_original": "DOPPLER DE CAROTIDAS E VERTEBRAIS",
   "categoria": "Ultrassom",
   "codigo_tuss": "40901360",
@@ -903,7 +903,7 @@
  },
  {
   "codigo": "RECOTRID",
-  "nome": "Reconstrucao Tridimensional-acrescentar Exame de Base",
+  "nome": "Reconstrucao Tridimensional acrescentar Exame de Base",
   "nome_original": "RECONSTRUCAO TRIDIMENSIONAL-ACRESCENTAR EXAME DE BASE",
   "categoria": "Outros",
   "codigo_tuss": null,
@@ -914,7 +914,7 @@
  },
  {
   "codigo": "RMCOLANG",
-  "nome": "Ressonância Colangio",
+  "nome": "Ressonancia Colangio",
   "nome_original": "RESSONANCIA COLANGIO",
   "categoria": "Ressonância",
   "codigo_tuss": "41101359",
@@ -925,7 +925,7 @@
  },
  {
   "codigo": "RMABDSUP",
-  "nome": "RM Abdome Superior (figado, Pancreas, Baco, Rins, Supra-rena",
+  "nome": "RM Abdome Superior figado Pancreas Baco Rins Supra rena",
   "nome_original": "RM ABDOME SUPERIOR (FIGADO, PANCREAS, BACO, RINS, SUPRA-RENA",
   "categoria": "Ressonância",
   "codigo_tuss": "41101170",
@@ -980,7 +980,7 @@
  },
  {
   "codigo": "RMANBRD",
-  "nome": "RM Antebraço Direito",
+  "nome": "RM Antebraco Direito",
   "nome_original": "RM ANTEBRACO DIREITO",
   "categoria": "Ressonância",
   "codigo_tuss": "41101251",
@@ -991,7 +991,7 @@
  },
  {
   "codigo": "RMANBRE",
-  "nome": "RM Antebraço Esquerdo",
+  "nome": "RM Antebraco Esquerdo",
   "nome_original": "RM ANTEBRACO ESQUERDO",
   "categoria": "Ressonância",
   "codigo_tuss": "41101251",
@@ -1002,7 +1002,7 @@
  },
  {
   "codigo": "RMARTEMP",
-  "nome": "RM Articulação Temporomandibular Bilateral",
+  "nome": "RM Articulacao Temporomandibular Bilateral",
   "nome_original": "RM ARTICULACAO TEMPOROMANDIBULAR BILATERAL",
   "categoria": "Ressonância",
   "codigo_tuss": "41101103",
@@ -1013,7 +1013,7 @@
  },
  {
   "codigo": "RMPARTIC",
-  "nome": "RM Articular (por Articulacao)",
+  "nome": "RM Articular por Articulacao",
   "nome_original": "RM ARTICULAR (POR ARTICULACAO)",
   "categoria": "Ressonância",
   "codigo_tuss": "41101316",
@@ -1035,7 +1035,7 @@
  },
  {
   "codigo": "RMBASCRA",
-  "nome": "RM Base do Crânio",
+  "nome": "RM Base do Cranio",
   "nome_original": "RM BASE DO CRANIO",
   "categoria": "Ressonância",
   "codigo_tuss": "41101030",
@@ -1046,7 +1046,7 @@
  },
  {
   "codigo": "RMBRACOD",
-  "nome": "RM Braço Direito",
+  "nome": "RM Braco Direito",
   "nome_original": "RM BRACO DIREITO",
   "categoria": "Ressonância",
   "codigo_tuss": "41101251",
@@ -1057,7 +1057,7 @@
  },
  {
   "codigo": "RMBRACOE",
-  "nome": "RM Braço Esquerdo",
+  "nome": "RM Braco Esquerdo",
   "nome_original": "RM BRACO ESQUERDO",
   "categoria": "Ressonância",
   "codigo_tuss": "41101251",
@@ -1068,7 +1068,7 @@
  },
  {
   "codigo": "RMCALCAD",
-  "nome": "RM Calcâneo Direito",
+  "nome": "RM Calcaneo Direito",
   "nome_original": "RM CALCANEO DIREITO",
   "categoria": "Ressonância",
   "codigo_tuss": null,
@@ -1079,7 +1079,7 @@
  },
  {
   "codigo": "RMCALCAE",
-  "nome": "RM Calcâneo Esquerdo",
+  "nome": "RM Calcaneo Esquerdo",
   "nome_original": "RM CALCANEO ESQUERDO",
   "categoria": "Ressonância",
   "codigo_tuss": null,
@@ -1222,7 +1222,7 @@
  },
  {
   "codigo": "RMCRANIO",
-  "nome": "RM Crânio",
+  "nome": "RM Cranio",
   "nome_original": "RM CRANIO",
   "categoria": "Ressonância",
   "codigo_tuss": "41101014",
@@ -1288,7 +1288,7 @@
  },
  {
   "codigo": "RMMAODIR",
-  "nome": "RM Mão Direita",
+  "nome": "RM Mao Direita",
   "nome_original": "RM MAO DIREITA",
   "categoria": "Ressonância",
   "codigo_tuss": "41101260",
@@ -1299,7 +1299,7 @@
  },
  {
   "codigo": "RMMAOESQ",
-  "nome": "RM Mão Esquerda",
+  "nome": "RM Mao Esquerda",
   "nome_original": "RM MAO ESQUERDA",
   "categoria": "Ressonância",
   "codigo_tuss": "41101260",
@@ -1310,7 +1310,7 @@
  },
  {
   "codigo": "RMMULPRO",
-  "nome": "RM Multiparametrica de Próstata",
+  "nome": "RM Multiparametrica de Prostata",
   "nome_original": "RM MULTIPARAMETRICA DE PROSTATA",
   "categoria": "Ressonância",
   "codigo_tuss": null,
@@ -1365,7 +1365,7 @@
  },
  {
   "codigo": "RMPEDIRE",
-  "nome": "RM Pé Direito",
+  "nome": "RM Pe Direito",
   "nome_original": "RM PE DIREITO",
   "categoria": "Ressonância",
   "codigo_tuss": "41101308",
@@ -1376,7 +1376,7 @@
  },
  {
   "codigo": "RMPEESQU",
-  "nome": "RM Pé Esquerdo",
+  "nome": "RM Pe Esquerdo",
   "nome_original": "RM PE ESQUERDO · Gerado automaticamente",
   "categoria": "Ressonância",
   "codigo_tuss": "41101308",
@@ -1431,7 +1431,7 @@
  },
  {
   "codigo": "RMPESCOC",
-  "nome": "RM Pescoço",
+  "nome": "RM Pescoco",
   "nome_original": "RM PESCOCO",
   "categoria": "Ressonância",
   "codigo_tuss": "41101111",
@@ -1442,7 +1442,7 @@
  },
  {
   "codigo": "RMPLEBRA",
-  "nome": "RM Plexo Braquial-lombo Sacral",
+  "nome": "RM Plexo Braquial lombo Sacral",
   "nome_original": "RM PLEXO BRAQUIAL-LOMBO SACRAL",
   "categoria": "Ressonância",
   "codigo_tuss": "41101243",
@@ -1530,7 +1530,7 @@
  },
  {
   "codigo": "RMSACILI",
-  "nome": "RM Sacroilíacas",
+  "nome": "RM Sacroiliacas",
   "nome_original": "RM SACROILIACAS",
   "categoria": "Ressonância",
   "codigo_tuss": "41101278",
@@ -1541,7 +1541,7 @@
  },
  {
   "codigo": "RMSELTUH",
-  "nome": "RM Sela Turcica (hipofise)",
+  "nome": "RM Sela Turcica hipofise",
   "nome_original": "RM SELA TURCICA (HIPOFISE)",
   "categoria": "Ressonância",
   "codigo_tuss": "41101022",
@@ -1552,7 +1552,7 @@
  },
  {
   "codigo": "RMTORAX",
-  "nome": "RM Tórax",
+  "nome": "RM Torax",
   "nome_original": "RM TORAX",
   "categoria": "Ressonância",
   "codigo_tuss": "41101120",
@@ -1618,7 +1618,7 @@
  },
  {
   "codigo": "RXANBRAD",
-  "nome": "RX Antebraço Direito",
+  "nome": "RX Antebraco Direito",
   "nome_original": "RX ANTEBRACO DIREITO",
   "categoria": "Raio-X",
   "codigo_tuss": "40803104",
@@ -1629,7 +1629,7 @@
  },
  {
   "codigo": "RXANBRAE",
-  "nome": "RX Antebraço Esquerdo",
+  "nome": "RX Antebraco Esquerdo",
   "nome_original": "RX ANTEBRACO ESQUERDO",
   "categoria": "Raio-X",
   "codigo_tuss": "40803104",
@@ -1640,7 +1640,7 @@
  },
  {
   "codigo": "RXAPOEST",
-  "nome": "RX Apofises Estiloides - Face",
+  "nome": "RX Apofises Estiloides Face",
   "nome_original": "RX APOFISES ESTILOIDES - FACE",
   "categoria": "Raio-X",
   "codigo_tuss": null,
@@ -1651,7 +1651,7 @@
  },
  {
   "codigo": "RXATACDI",
-  "nome": "RX Articulação Acromioclavicular Direita",
+  "nome": "RX Articulacao Acromioclavicular Direita",
   "nome_original": "RX ARTICULACAO ACROMIOCLAVICULAR DIREITA",
   "categoria": "Raio-X",
   "codigo_tuss": "40803066",
@@ -1662,7 +1662,7 @@
  },
  {
   "codigo": "RXATACES",
-  "nome": "RX Articulação Acromioclavicular Esquerda",
+  "nome": "RX Articulacao Acromioclavicular Esquerda",
   "nome_original": "RX ARTICULACAO ACROMIOCLAVICULAR ESQUERDA",
   "categoria": "Raio-X",
   "codigo_tuss": "40803066",
@@ -1673,7 +1673,7 @@
  },
  {
   "codigo": "RXARESUD",
-  "nome": "RX Articulação Escapulo Umeral Direita",
+  "nome": "RX Articulacao Escapulo Umeral Direita",
   "nome_original": "RX ARTICULACAO ESCAPULO UMERAL DIREITA",
   "categoria": "Raio-X",
   "codigo_tuss": "40803074",
@@ -1684,7 +1684,7 @@
  },
  {
   "codigo": "RXARESUE",
-  "nome": "RX Articulação Escapulo Umeral Esquerda",
+  "nome": "RX Articulacao Escapulo Umeral Esquerda",
   "nome_original": "RX ARTICULACAO ESCAPULO UMERAL ESQUERDA",
   "categoria": "Raio-X",
   "codigo_tuss": "40803074",
@@ -1695,7 +1695,7 @@
  },
  {
   "codigo": "RXAREDIR",
-  "nome": "RX Articulação Esternoclavicular Direita",
+  "nome": "RX Articulacao Esternoclavicular Direita",
   "nome_original": "RX ARTICULACAO ESTERNOCLAVICULAR DIREITA",
   "categoria": "Raio-X",
   "codigo_tuss": "40803023",
@@ -1706,7 +1706,7 @@
  },
  {
   "codigo": "RXAREESQ",
-  "nome": "RX Articulação Esternoclavicular Esquerda",
+  "nome": "RX Articulacao Esternoclavicular Esquerda",
   "nome_original": "RX ARTICULACAO ESTERNOCLAVICULAR ESQUERDA · Gerado automaticamente",
   "categoria": "Raio-X",
   "codigo_tuss": "40803023",
@@ -1717,7 +1717,7 @@
  },
  {
   "codigo": "RXARTEMP",
-  "nome": "RX Articulação Temporomandibular Bilateral",
+  "nome": "RX Articulacao Temporomandibular Bilateral",
   "nome_original": "RX ARTICULACAO TEMPOROMANDIBULAR BILATERAL",
   "categoria": "Raio-X",
   "codigo_tuss": "40801110",
@@ -1728,7 +1728,7 @@
  },
  {
   "codigo": "RXARSACR",
-  "nome": "RX Articulacoes Sacroilíacas",
+  "nome": "RX Articulacoes Sacroiliacas",
   "nome_original": "RX ARTICULACOES SACROILIACAS",
   "categoria": "Raio-X",
   "codigo_tuss": "40804020",
@@ -1750,7 +1750,7 @@
  },
  {
   "codigo": "RXBRADIR",
-  "nome": "RX Braço Direito",
+  "nome": "RX Braco Direito",
   "nome_original": "RX BRACO DIREITO",
   "categoria": "Raio-X",
   "codigo_tuss": "40803082",
@@ -1761,7 +1761,7 @@
  },
  {
   "codigo": "RXBRAESQ",
-  "nome": "RX Braço Esquerdo",
+  "nome": "RX Braco Esquerdo",
   "nome_original": "RX BRACO ESQUERDO",
   "categoria": "Raio-X",
   "codigo_tuss": "40803082",
@@ -1772,7 +1772,7 @@
  },
  {
   "codigo": "RXCALDIR",
-  "nome": "RX Calcâneo Direito",
+  "nome": "RX Calcaneo Direito",
   "nome_original": "RX CALCANEO DIREITO",
   "categoria": "Raio-X",
   "codigo_tuss": "40804100",
@@ -1783,7 +1783,7 @@
  },
  {
   "codigo": "RXCALESQ",
-  "nome": "RX Calcâneo Esquerdo",
+  "nome": "RX Calcaneo Esquerdo",
   "nome_original": "RX CALCANEO ESQUERDO",
   "categoria": "Raio-X",
   "codigo_tuss": "40804100",
@@ -1816,7 +1816,7 @@
  },
  {
   "codigo": "RXCOLPOO",
-  "nome": "RX Colangiografia Pos-operatoria - Pelo Dreno",
+  "nome": "RX Colangiografia Pos operatoria Pelo Dreno",
   "nome_original": "RX COLANGIOGRAFIA POS-OPERATORIA - PELO DRENO",
   "categoria": "Raio-X",
   "codigo_tuss": "40806111",
@@ -1871,7 +1871,7 @@
  },
  {
   "codigo": "RXCODLES",
-  "nome": "RX Coluna Dorso-lombar Para Escoliose",
+  "nome": "RX Coluna Dorso lombar Para Escoliose",
   "nome_original": "RX COLUNA DORSO-LOMBAR PARA ESCOLIOSE",
   "categoria": "Raio-X",
   "codigo_tuss": "40802086",
@@ -1970,7 +1970,7 @@
  },
  {
   "codigo": "RXCRANI2",
-  "nome": "RX Crânio 2 Incidencias",
+  "nome": "RX Cranio 2 Incidencias",
   "nome_original": "RX CRANIO 2 INCIDENCIAS",
   "categoria": "Raio-X",
   "codigo_tuss": "40801012",
@@ -1981,7 +1981,7 @@
  },
  {
   "codigo": "RXCRAN3",
-  "nome": "RX Crânio 3 Incidencias",
+  "nome": "RX Cranio 3 Incidencias",
   "nome_original": "RX CRANIO 3 INCIDENCIAS",
   "categoria": "Raio-X",
   "codigo_tuss": "40801020",
@@ -1992,7 +1992,7 @@
  },
  {
   "codigo": "RXCRAN4",
-  "nome": "RX Crânio 4 Incidencias",
+  "nome": "RX Cranio 4 Incidencias",
   "nome_original": "RX CRANIO 4 INCIDENCIAS",
   "categoria": "Raio-X",
   "codigo_tuss": "40801039",
@@ -2014,7 +2014,7 @@
  },
  {
   "codigo": "RXESHIES",
-  "nome": "RX Esôfago Hiato Estômago e Duodeno",
+  "nome": "RX Esofago Hiato Estomago e Duodeno",
   "nome_original": "RX ESOFAGO HIATO ESTOMAGO E DUODENO",
   "categoria": "Raio-X",
   "codigo_tuss": "40806057",
@@ -2091,7 +2091,7 @@
  },
  {
   "codigo": "RXMALARF",
-  "nome": "RX Malar - Face",
+  "nome": "RX Malar Face",
   "nome_original": "RX MALAR - FACE",
   "categoria": "Raio-X",
   "codigo_tuss": null,
@@ -2102,7 +2102,7 @@
  },
  {
   "codigo": "RXMAODIR",
-  "nome": "RX Mão Direita",
+  "nome": "RX Mao Direita",
   "nome_original": "RX MAO DIREITA",
   "categoria": "Raio-X",
   "codigo_tuss": "40803120",
@@ -2113,7 +2113,7 @@
  },
  {
   "codigo": "RXMAOESQ",
-  "nome": "RX Mão Esquerda",
+  "nome": "RX Mao Esquerda",
   "nome_original": "RX MAO ESQUERDA",
   "categoria": "Raio-X",
   "codigo_tuss": "40803120",
@@ -2124,7 +2124,7 @@
  },
  {
   "codigo": "RXMPUNID",
-  "nome": "RX Mãos e Punho Para Idade Ossea",
+  "nome": "RX Maos e Punho Para Idade Ossea",
   "nome_original": "RX MAOS E PUNHO PARA IDADE OSSEA",
   "categoria": "Raio-X",
   "codigo_tuss": "40803139",
@@ -2234,7 +2234,7 @@
  },
  {
   "codigo": "RXPEDIRE",
-  "nome": "RX Pé Direito",
+  "nome": "RX Pe Direito",
   "nome_original": "RX PE DIREITO",
   "categoria": "Raio-X",
   "codigo_tuss": "40804097",
@@ -2245,7 +2245,7 @@
  },
  {
   "codigo": "RXPEESQ",
-  "nome": "RX Pé Esquerdo",
+  "nome": "RX Pe Esquerdo",
   "nome_original": "RX PE ESQUERDO",
   "categoria": "Raio-X",
   "codigo_tuss": "40804097",
@@ -2278,7 +2278,7 @@
  },
  {
   "codigo": "RXPESCOC",
-  "nome": "RX Pescoço",
+  "nome": "RX Pescoco",
   "nome_original": "RX PESCOCO",
   "categoria": "Raio-X",
   "codigo_tuss": "40805077",
@@ -2366,7 +2366,7 @@
  },
  {
   "codigo": "RXTORAX1",
-  "nome": "RX Tórax 1 Incidencia",
+  "nome": "RX Torax 1 Incidencia",
   "nome_original": "RX TORAX 1 INCIDENCIA",
   "categoria": "Raio-X",
   "codigo_tuss": "40805018",
@@ -2377,7 +2377,7 @@
  },
  {
   "codigo": "RXTORAX2",
-  "nome": "RX Tórax 2 Incidencias",
+  "nome": "RX Torax 2 Incidencias",
   "nome_original": "RX TORAX 2 INCIDENCIAS",
   "categoria": "Raio-X",
   "codigo_tuss": "40805026",
@@ -2388,7 +2388,7 @@
  },
  {
   "codigo": "RXTORAX3",
-  "nome": "RX Tórax 3 Incidencias",
+  "nome": "RX Torax 3 Incidencias",
   "nome_original": "RX TORAX 3 INCIDENCIAS",
   "categoria": "Raio-X",
   "codigo_tuss": "40805034",
@@ -2399,7 +2399,7 @@
  },
  {
   "codigo": "RXTORAX4",
-  "nome": "RX Tórax 4 Incidencias",
+  "nome": "RX Torax 4 Incidencias",
   "nome_original": "RX TORAX 4 INCIDENCIAS",
   "categoria": "Raio-X",
   "codigo_tuss": "40805042",
@@ -2454,7 +2454,7 @@
  },
  {
   "codigo": "RXURECRI",
-  "nome": "RX Uretrocistografia de Crianca - Ate 12 Anos",
+  "nome": "RX Uretrocistografia de Crianca Ate 12 Anos",
   "nome_original": "RX URETROCISTOGRAFIA DE CRIANCA - ATE 12 ANOS",
   "categoria": "Raio-X",
   "codigo_tuss": "40807061",
@@ -2476,7 +2476,7 @@
  },
  {
   "codigo": "RXUVPOSM",
-  "nome": "RX Urografia Venosa com Bexiga Pre e Pos-miccional",
+  "nome": "RX Urografia Venosa com Bexiga Pre e Pos miccional",
   "nome_original": "RX UROGRAFIA VENOSA COM BEXIGA PRE E POS-MICCIONAL",
   "categoria": "Raio-X",
   "codigo_tuss": "40807010",
@@ -2487,7 +2487,7 @@
  },
  {
   "codigo": "RXZIGFAC",
-  "nome": "RX Zigomaticos - Face",
+  "nome": "RX Zigomaticos Face",
   "nome_original": "RX ZIGOMATICOS - FACE",
   "categoria": "Raio-X",
   "codigo_tuss": "40801101",
@@ -2520,7 +2520,7 @@
  },
  {
   "codigo": "TCANBRAD",
-  "nome": "TC Antebraço Direito",
+  "nome": "TC Antebraco Direito",
   "nome_original": "TC ANTEBRACO DIREITO",
   "categoria": "Tomografia",
   "codigo_tuss": null,
@@ -2531,7 +2531,7 @@
  },
  {
   "codigo": "TCANBRAE",
-  "nome": "TC Antebraço Esquerd",
+  "nome": "TC Antebraco Esquerd",
   "nome_original": "TC ANTEBRACO ESQUERD",
   "categoria": "Tomografia",
   "codigo_tuss": null,
@@ -2553,7 +2553,7 @@
  },
  {
   "codigo": "TCARTICU",
-  "nome": "TC Articulação",
+  "nome": "TC Articulacao",
   "nome_original": "TC ARTICULACAO",
   "categoria": "Tomografia",
   "codigo_tuss": "41001141",
@@ -2586,7 +2586,7 @@
  },
  {
   "codigo": "TCBRADIR",
-  "nome": "TC Braço Direito",
+  "nome": "TC Braco Direito",
   "nome_original": "TC BRACO DIREITO",
   "categoria": "Tomografia",
   "codigo_tuss": null,
@@ -2597,7 +2597,7 @@
  },
  {
   "codigo": "TCBRAESQ",
-  "nome": "TC Braço Esquerdo",
+  "nome": "TC Braco Esquerdo",
   "nome_original": "TC BRACO ESQUERDO",
   "categoria": "Tomografia",
   "codigo_tuss": null,
@@ -2696,7 +2696,7 @@
  },
  {
   "codigo": "TCCRSEOR",
-  "nome": "TC Crânio Ou Sela Turcica Ou Orbitas",
+  "nome": "TC Cranio Ou Sela Turcica Ou Orbitas",
   "nome_original": "TC CRANIO OU SELA TURCICA OU ORBITAS",
   "categoria": "Tomografia",
   "codigo_tuss": "41001010",
@@ -2751,7 +2751,7 @@
  },
  {
   "codigo": "TCMAODIR",
-  "nome": "TC Mão Direita",
+  "nome": "TC Mao Direita",
   "nome_original": "TC MAO DIREITA",
   "categoria": "Tomografia",
   "codigo_tuss": null,
@@ -2762,7 +2762,7 @@
  },
  {
   "codigo": "TCMAOESQ",
-  "nome": "TC Mão Esquerda",
+  "nome": "TC Mao Esquerda",
   "nome_original": "TC MAO ESQUERDA",
   "categoria": "Tomografia",
   "codigo_tuss": null,
@@ -2817,7 +2817,7 @@
  },
  {
   "codigo": "TCPEDIRE",
-  "nome": "TC Pé Direito",
+  "nome": "TC Pe Direito",
   "nome_original": "TC PE DIREITO",
   "categoria": "Tomografia",
   "codigo_tuss": null,
@@ -2828,7 +2828,7 @@
  },
  {
   "codigo": "TCPEESQU",
-  "nome": "TC Pé Esquerdo",
+  "nome": "TC Pe Esquerdo",
   "nome_original": "TC PE ESQUERDO",
   "categoria": "Tomografia",
   "codigo_tuss": null,
@@ -2872,7 +2872,7 @@
  },
  {
   "codigo": "TCPESCOC",
-  "nome": "TC Pescoço",
+  "nome": "TC Pescoco",
   "nome_original": "TC PESCOCO",
   "categoria": "Tomografia",
   "codigo_tuss": "41001060",
@@ -2938,7 +2938,7 @@
  },
  {
   "codigo": "TCSACRDI",
-  "nome": "TC Sacroilíacas Direita",
+  "nome": "TC Sacroiliacas Direita",
   "nome_original": "TC SACROILIACAS DIREITA",
   "categoria": "Tomografia",
   "codigo_tuss": "41101141",
@@ -2949,7 +2949,7 @@
  },
  {
   "codigo": "TCSACREQ",
-  "nome": "TC Sacroilíacas Esquerda",
+  "nome": "TC Sacroiliacas Esquerda",
   "nome_original": "TC SACROILIACAS ESQUERDA",
   "categoria": "Tomografia",
   "codigo_tuss": "41101141",
@@ -2982,7 +2982,7 @@
  },
  {
   "codigo": "TCTORAX",
-  "nome": "TC Tórax",
+  "nome": "TC Torax",
   "nome_original": "TC TORAX",
   "categoria": "Tomografia",
   "codigo_tuss": "41001079",
@@ -3037,7 +3037,7 @@
  },
  {
   "codigo": "TCVIUROT",
-  "nome": "TC Vias Urinárias (urotomografia)",
+  "nome": "TC Vias Urinarias urotomografia",
   "nome_original": "TC VIAS URINARIAS (UROTOMOGRAFIA)",
   "categoria": "Tomografia",
   "codigo_tuss": "41001095",
@@ -3048,7 +3048,7 @@
  },
  {
   "codigo": "TODIGMAM",
-  "nome": "Tomossíntese Digital de Mama",
+  "nome": "Tomossintese Digital de Mama",
   "nome_original": "TOMOSSINTESE DIGITAL DE MAMA",
   "categoria": "Tomossíntese",
   "codigo_tuss": null,
@@ -3114,7 +3114,7 @@
  },
  {
   "codigo": "USANBRAD",
-  "nome": "US Antebraço Direito",
+  "nome": "US Antebraco Direito",
   "nome_original": "US ANTEBRACO DIREITO",
   "categoria": "Ultrassom",
   "codigo_tuss": null,
@@ -3125,7 +3125,7 @@
  },
  {
   "codigo": "USANBRAE",
-  "nome": "US Antebraço Esquerdo",
+  "nome": "US Antebraco Esquerdo",
   "nome_original": "US ANTEBRACO ESQUERDO",
   "categoria": "Ultrassom",
   "codigo_tuss": null,
@@ -3169,7 +3169,7 @@
  },
  {
   "codigo": "USARTICU",
-  "nome": "US Articular (por Articulacao)",
+  "nome": "US Articular por Articulacao",
   "nome_original": "US ARTICULAR (POR ARTICULACAO)",
   "categoria": "Ultrassom",
   "codigo_tuss": "40901220",
@@ -3213,7 +3213,7 @@
  },
  {
   "codigo": "USBRADIR",
-  "nome": "US Braço Direito",
+  "nome": "US Braco Direito",
   "nome_original": "US BRACO DIREITO",
   "categoria": "Ultrassom",
   "codigo_tuss": null,
@@ -3224,7 +3224,7 @@
  },
  {
   "codigo": "USBRAESQ",
-  "nome": "US Braço Esquerdo",
+  "nome": "US Braco Esquerdo",
   "nome_original": "US BRACO ESQUERDO",
   "categoria": "Ultrassom",
   "codigo_tuss": null,
@@ -3235,7 +3235,7 @@
  },
  {
   "codigo": "USCALCAD",
-  "nome": "US Calcâneo Direito",
+  "nome": "US Calcaneo Direito",
   "nome_original": "US CALCANEO DIREITO",
   "categoria": "Ultrassom",
   "codigo_tuss": null,
@@ -3246,7 +3246,7 @@
  },
  {
   "codigo": "USCALCAE",
-  "nome": "US Calcâneo Esquerdo",
+  "nome": "US Calcaneo Esquerdo",
   "nome_original": "US CALCANEO ESQUERDO",
   "categoria": "Ultrassom",
   "codigo_tuss": null,
@@ -3257,7 +3257,7 @@
  },
  {
   "codigo": "USCAVTOR",
-  "nome": "US Cavidade Torácica",
+  "nome": "US Cavidade Toracica",
   "nome_original": "US CAVIDADE TORACICA",
   "categoria": "Ultrassom",
   "codigo_tuss": null,
@@ -3367,7 +3367,7 @@
  },
  {
   "codigo": "USDEPSUB",
-  "nome": "US Dermatologico - Pele e Subcutaneo",
+  "nome": "US Dermatologico Pele e Subcutaneo",
   "nome_original": "US DERMATOLOGICO - PELE E SUBCUTANEO",
   "categoria": "Ultrassom",
   "codigo_tuss": "40901190",
@@ -3378,7 +3378,7 @@
  },
  {
   "codigo": "USESSUPE",
-  "nome": "US Estruturas Superficiais (cervical Ou Axilas Ou Musculo",
+  "nome": "US Estruturas Superficiais cervical Ou Axilas Ou Musculo",
   "nome_original": "US ESTRUTURAS SUPERFICIAIS (CERVICAL OU AXILAS OU MUSCULO",
   "categoria": "Ultrassom",
   "codigo_tuss": "40901211",
@@ -3389,7 +3389,7 @@
  },
  {
   "codigo": "USGLASAL",
-  "nome": "US Glândulas Salivares",
+  "nome": "US Glandulas Salivares",
   "nome_original": "US GLANDULAS SALIVARES",
   "categoria": "Ultrassom",
   "codigo_tuss": "40901033",
@@ -3455,7 +3455,7 @@
  },
  {
   "codigo": "USMANDIB",
-  "nome": "US Mandíbula",
+  "nome": "US Mandibula",
   "nome_original": "US MANDIBULA · Gerado automaticamente",
   "categoria": "Ultrassom",
   "codigo_tuss": null,
@@ -3466,7 +3466,7 @@
  },
  {
   "codigo": "USMAODIR",
-  "nome": "US Mão Direita",
+  "nome": "US Mao Direita",
   "nome_original": "US MAO DIREITA",
   "categoria": "Ultrassom",
   "codigo_tuss": null,
@@ -3477,7 +3477,7 @@
  },
  {
   "codigo": "USMAOESQ",
-  "nome": "US Mão Esquerda",
+  "nome": "US Mao Esquerda",
   "nome_original": "US MAO ESQUERDA",
   "categoria": "Ultrassom",
   "codigo_tuss": null,
@@ -3488,7 +3488,7 @@
  },
  {
   "codigo": "USOBSTET",
-  "nome": "US Obstétrica",
+  "nome": "US Obstetrica",
   "nome_original": "US OBSTETRICA",
   "categoria": "Ultrassom",
   "codigo_tuss": "40901238",
@@ -3499,7 +3499,7 @@
  },
  {
   "codigo": "USOPTEND",
-  "nome": "US Obstétrica 1 Trimestre - Endovaginal",
+  "nome": "US Obstetrica 1 Trimestre Endovaginal",
   "nome_original": "US OBSTETRICA 1 TRIMESTRE - ENDOVAGINAL",
   "categoria": "Ultrassom",
   "codigo_tuss": "40901297",
@@ -3510,7 +3510,7 @@
  },
  {
   "codigo": "USOBCDOP",
-  "nome": "US Obstétrica com Doppler",
+  "nome": "US Obstetrica com Doppler",
   "nome_original": "US OBSTETRICA COM DOPPLER",
   "categoria": "Ultrassom",
   "codigo_tuss": "40901246",
@@ -3521,7 +3521,7 @@
  },
  {
   "codigo": "USOBTRNU",
-  "nome": "US Obstétrica com Translucencia Nucal",
+  "nome": "US Obstetrica com Translucencia Nucal",
   "nome_original": "US OBSTETRICA COM TRANSLUCENCIA NUCAL",
   "categoria": "Ultrassom",
   "codigo_tuss": "40901254",
@@ -3532,7 +3532,7 @@
  },
  {
   "codigo": "USMORSRI",
-  "nome": "US Obstétrica Morfologica 2 Trimestre",
+  "nome": "US Obstetrica Morfologica 2 Trimestre",
   "nome_original": "US OBSTETRICA MORFOLOGICA 2 TRIMESTRE",
   "categoria": "Ultrassom",
   "codigo_tuss": "40901262",
@@ -3543,7 +3543,7 @@
  },
  {
   "codigo": "USOBMODO",
-  "nome": "US Obstétrica Morfologica com Doppler",
+  "nome": "US Obstetrica Morfologica com Doppler",
   "nome_original": "US OBSTETRICA MORFOLOGICA COM DOPPLER",
   "categoria": "Ultrassom",
   "codigo_tuss": null,
@@ -3554,7 +3554,7 @@
  },
  {
   "codigo": "USMORPRI",
-  "nome": "US Obstétrica Morfologicoa 1 Trimestre",
+  "nome": "US Obstetrica Morfologicoa 1 Trimestre",
   "nome_original": "US OBSTETRICA MORFOLOGICOA 1 TRIMESTRE",
   "categoria": "Ultrassom",
   "codigo_tuss": "40901262",
@@ -3565,7 +3565,7 @@
  },
  {
   "codigo": "USPERBIF",
-  "nome": "US Obstétrica Perfil Biofasico Fetal",
+  "nome": "US Obstetrica Perfil Biofasico Fetal",
   "nome_original": "US OBSTETRICA PERFIL BIOFASICO FETAL",
   "categoria": "Ultrassom",
   "codigo_tuss": "40901505",
@@ -3576,7 +3576,7 @@
  },
  {
   "codigo": "USOBGEMF",
-  "nome": "US Obstétrico Gemelar - Cada Feto",
+  "nome": "US Obstetrico Gemelar Cada Feto",
   "nome_original": "US OBSTETRICO GEMELAR - CADA FETO",
   "categoria": "Ultrassom",
   "codigo_tuss": "40901270",
@@ -3587,7 +3587,7 @@
  },
  {
   "codigo": "USOBGDOF",
-  "nome": "US Obstétrico Gemelar com Doppler - Cada Feto",
+  "nome": "US Obstetrico Gemelar com Doppler Cada Feto",
   "nome_original": "US OBSTETRICO GEMELAR COM DOPPLER - CADA FETO",
   "categoria": "Ultrassom",
   "codigo_tuss": "40901289",
@@ -3686,7 +3686,7 @@
  },
  {
   "codigo": "USPEDIRE",
-  "nome": "US Pé Direito",
+  "nome": "US Pe Direito",
   "nome_original": "US PE DIREITO",
   "categoria": "Ultrassom",
   "codigo_tuss": null,
@@ -3697,7 +3697,7 @@
  },
  {
   "codigo": "USPEESQU",
-  "nome": "US Pé Esquerdo",
+  "nome": "US Pe Esquerdo",
   "nome_original": "US PE ESQUERDO",
   "categoria": "Ultrassom",
   "codigo_tuss": null,
@@ -3741,7 +3741,7 @@
  },
  {
   "codigo": "USPESCOC",
-  "nome": "US Pescoço",
+  "nome": "US Pescoco",
   "nome_original": "US PESCOCO",
   "categoria": "Ultrassom",
   "codigo_tuss": null,
@@ -3774,7 +3774,7 @@
  },
  {
   "codigo": "USPROTRA",
-  "nome": "US Próstata Transretal",
+  "nome": "US Prostata Transretal",
   "nome_original": "US PROSTATA TRANSRETAL",
   "categoria": "Ultrassom",
   "codigo_tuss": "40901335",
@@ -3785,7 +3785,7 @@
  },
  {
   "codigo": "USPROABD",
-  "nome": "US Próstata Via Abdominal",
+  "nome": "US Prostata Via Abdominal",
   "nome_original": "US PROSTATA VIA ABDOMINAL",
   "categoria": "Ultrassom",
   "codigo_tuss": "40901750",
@@ -3840,7 +3840,7 @@
  },
  {
   "codigo": "USREINDI",
-  "nome": "US Região Inguinal Direita",
+  "nome": "US Regiao Inguinal Direita",
   "nome_original": "US REGIAO INGUINAL DIREITA",
   "categoria": "Ultrassom",
   "codigo_tuss": null,
@@ -3851,7 +3851,7 @@
  },
  {
   "codigo": "USREINES",
-  "nome": "US Região Inguinal Esquerda",
+  "nome": "US Regiao Inguinal Esquerda",
   "nome_original": "US REGIAO INGUINAL ESQUERDA",
   "categoria": "Ultrassom",
   "codigo_tuss": null,
@@ -3862,7 +3862,7 @@
  },
  {
   "codigo": "USREGSAC",
-  "nome": "US Região Sacral",
+  "nome": "US Regiao Sacral",
   "nome_original": "US REGIAO SACRAL",
   "categoria": "Ultrassom",
   "codigo_tuss": null,
@@ -3873,7 +3873,7 @@
  },
  {
   "codigo": "USRESUMB",
-  "nome": "US Região Supra Umbilical",
+  "nome": "US Regiao Supra Umbilical",
   "nome_original": "US REGIAO SUPRA UMBILICAL",
   "categoria": "Ultrassom",
   "codigo_tuss": null,
@@ -3961,7 +3961,7 @@
  },
  {
   "codigo": "USTORAX",
-  "nome": "US Tórax",
+  "nome": "US Torax",
   "nome_original": "US TORAX",
   "categoria": "Ultrassom",
   "codigo_tuss": null,
@@ -4016,7 +4016,7 @@
  },
  {
   "codigo": "USACREBA",
-  "nome": "Usg 3d/4d - Acrescentar Exame Base",
+  "nome": "Usg 3d 4d Acrescentar Exame Base",
   "nome_original": "USG 3D/4D - ACRESCENTAR EXAME BASE",
   "categoria": "Ultrassom",
   "codigo_tuss": null,
@@ -4027,7 +4027,7 @@
  },
  {
   "codigo": "USORGSUP",
-  "nome": "USG Órgãos Superficiais (Tireoide ou Escroto ou Pênis)",
+  "nome": "USG Orgaos Superficiais Tireoide ou Escroto ou Penis",
   "nome_original": "USG ORGAOS SUPERFICIAIS (TIREOIDE OU ESCROTO OU PENIS · Gerado automaticamente",
   "categoria": "Ultrassom",
   "codigo_tuss": "40901203",
@@ -4049,7 +4049,7 @@
  },
  {
   "codigo": "TCCOLCDL",
-  "nome": "TC Coluna Cervical - Ate 3 Segmentos",
+  "nome": "TC Coluna Cervical Ate 3 Segmentos",
   "nome_original": "TC COLUNA CERVICAL - ATE 3 SEGMENTOS",
   "categoria": "Tomografia",
   "codigo_tuss": "41001125",
@@ -4060,7 +4060,7 @@
  },
  {
   "codigo": "TCCOLDC",
-  "nome": "TC Coluna Lombar - Ate 3 Segmentos",
+  "nome": "TC Coluna Lombar Ate 3 Segmentos",
   "nome_original": "TC COLUNA LOMBAR - ATE 3 SEGMENTOS",
   "categoria": "Tomografia",
   "codigo_tuss": "41001125",
@@ -4093,7 +4093,7 @@
  },
  {
   "codigo": "ANRMARAB",
-  "nome": "Angiorressonância Arterial Abdome Superior",
+  "nome": "Angiorressonancia Arterial Abdome Superior",
   "nome_original": "ANGIORESSONANCIA ARTERIAL ABDOME SUPERIOR",
   "categoria": "Ressonância",
   "codigo_tuss": "41101510",
@@ -4104,7 +4104,7 @@
  },
  {
   "codigo": "ANRMAPUL",
-  "nome": "Angiorressonância Arterial Pulmonar",
+  "nome": "Angiorressonancia Arterial Pulmonar",
   "nome_original": "ANGIORESSONANCIA ARTERIAL PULMONAR",
   "categoria": "Ressonância",
   "codigo_tuss": "41101499",
@@ -4115,7 +4115,7 @@
  },
  {
   "codigo": "ANRMARVE",
-  "nome": "Angiorressonância Venosa Abdome Superior",
+  "nome": "Angiorressonancia Venosa Abdome Superior",
   "nome_original": "ANGIORESSONANCIA VENOSA ABDOME SUPERIOR",
   "categoria": "Ressonância",
   "codigo_tuss": "41101529",
@@ -4126,7 +4126,7 @@
  },
  {
   "codigo": "ANRMVPUL",
-  "nome": "Angiorressonância Venosa Pulmonar",
+  "nome": "Angiorressonancia Venosa Pulmonar",
   "nome_original": "ANGIORESSONANCIA VENOSA PULMONAR",
   "categoria": "Ressonância",
   "codigo_tuss": "41101502",
@@ -4203,7 +4203,7 @@
  },
  {
   "codigo": "COREBIOP",
-  "nome": "Core Biopsy (adicionar Exame de Base) - Ate Dois Nodulos",
+  "nome": "Core Biopsy adicionar Exame de Base Ate Dois Nodulos",
   "nome_original": "CORE BIOPSY (ADICIONAR EXAME DE BASE) - ATE DOIS NODULOS",
   "categoria": "Outros",
   "codigo_tuss": "40808262",
@@ -4258,7 +4258,7 @@
  },
  {
   "codigo": "PUBIORRM",
-  "nome": "Puncao Biopsia Orientada por Ressonância",
+  "nome": "Puncao Biopsia Orientada por Ressonancia",
   "nome_original": "PUNCAO BIOPSIA ORIENTADA POR RESSONANCIA",
   "categoria": "Ressonância",
   "codigo_tuss": "40809188",
@@ -4302,7 +4302,7 @@
  },
  {
   "codigo": "RMANTESP",
-  "nome": "RM Antebraço Especialista",
+  "nome": "RM Antebraco Especialista",
   "nome_original": "RM ANTEBRACO ESPECIALISTA",
   "categoria": "Ressonância",
   "codigo_tuss": "41101251",
@@ -4313,7 +4313,7 @@
  },
  {
   "codigo": "RMANEESP",
-  "nome": "RM Antebraço Esquerdo Especialista",
+  "nome": "RM Antebraco Esquerdo Especialista",
   "nome_original": "RM ANTEBRACO ESQUERDO ESPECIALISTA",
   "categoria": "Ressonância",
   "codigo_tuss": "41101251",
@@ -4335,7 +4335,7 @@
  },
  {
   "codigo": "RMBRADES",
-  "nome": "RM Braço Direito Especialista",
+  "nome": "RM Braco Direito Especialista",
   "nome_original": "RM BRACO DIREITO ESPECIALISTA",
   "categoria": "Ressonância",
   "codigo_tuss": "41101251",
@@ -4346,7 +4346,7 @@
  },
  {
   "codigo": "RMBRAEES",
-  "nome": "RM Braço Esquerdo Especialista",
+  "nome": "RM Braco Esquerdo Especialista",
   "nome_original": "RM BRACO ESQUERDO ESPECIALISTA",
   "categoria": "Ressonância",
   "codigo_tuss": "41101251",
@@ -4390,7 +4390,7 @@
  },
  {
   "codigo": "RMCOMFUN",
-  "nome": "RM Coração Morfologico e Funcional",
+  "nome": "RM Coracao Morfologico e Funcional",
   "nome_original": "RM CORACAO MORFOLOGICO E FUNCIONAL · Gerado automaticamente",
   "categoria": "Ressonância",
   "codigo_tuss": "41101138",
@@ -4401,7 +4401,7 @@
  },
  {
   "codigo": "RMCOMFU",
-  "nome": "RM Coração Morfologico e Funcional + Perfusao + Estresse",
+  "nome": "RM Coracao Morfologico e Funcional Perfusao Estresse",
   "nome_original": "RM CORACAO MORFOLOGICO E FUNCIONAL + PERFUSAO + ESTRESSE · Gerado automaticamente",
   "categoria": "Ressonância",
   "codigo_tuss": "41101146",
@@ -4412,7 +4412,7 @@
  },
  {
   "codigo": "RMCOVIAP",
-  "nome": "RM Coração Morfologico e Funcional + Perfusao + Viabilid",
+  "nome": "RM Coracao Morfologico e Funcional Perfusao Viabilid",
   "nome_original": "RM CORACAO MORFOLOGICO E FUNCIONAL + PERFUSAO + VIABILID · Gerado automaticamente",
   "categoria": "Ressonância",
   "codigo_tuss": "41101154",
@@ -4467,7 +4467,7 @@
  },
  {
   "codigo": "RMCRESP",
-  "nome": "RM Crânio Especialista",
+  "nome": "RM Cranio Especialista",
   "nome_original": "RM CRANIO ESPECIALISTA",
   "categoria": "Ressonância",
   "codigo_tuss": "41101014",
@@ -4544,7 +4544,7 @@
  },
  {
   "codigo": "RMPEDESP",
-  "nome": "RM Pé Direito Especialista",
+  "nome": "RM Pe Direito Especialista",
   "nome_original": "RM PE DIREITO ESPECIALISTA",
   "categoria": "Ressonância",
   "codigo_tuss": "41101308",
@@ -4555,7 +4555,7 @@
  },
  {
   "codigo": "RMPEESES",
-  "nome": "RM Pé Esquerdo Especialista",
+  "nome": "RM Pe Esquerdo Especialista",
   "nome_original": "RM PE ESQUERDO ESPECIALISTA",
   "categoria": "Ressonância",
   "codigo_tuss": "41101308",
@@ -4632,7 +4632,7 @@
  },
  {
   "codigo": "RMSACROE",
-  "nome": "RM Sacroilíacas Especialista",
+  "nome": "RM Sacroiliacas Especialista",
   "nome_original": "RM SACROILIACAS ESPECIALISTA",
   "categoria": "Ressonância",
   "codigo_tuss": "41101278",
@@ -4665,7 +4665,7 @@
  },
  {
   "codigo": "RXCORACA",
-  "nome": "RX Coração",
+  "nome": "RX Coracao",
   "nome_original": "RX CORACAO",
   "categoria": "Raio-X",
   "codigo_tuss": "40805050",
@@ -4676,7 +4676,7 @@
  },
  {
   "codigo": "RXESOFAG",
-  "nome": "RX Esôfago",
+  "nome": "RX Esofago",
   "nome_original": "RX ESOFAGO",
   "categoria": "Raio-X",
   "codigo_tuss": "40806030",
@@ -4687,7 +4687,7 @@
  },
  {
   "codigo": "RXESDUOD",
-  "nome": "RX Estômago e Duodendo",
+  "nome": "RX Estomago e Duodendo",
   "nome_original": "RX ESTOMAGO E DUODENDO",
   "categoria": "Raio-X",
   "codigo_tuss": "40806049",
@@ -4698,7 +4698,7 @@
  },
  {
   "codigo": "RXINADCR",
-  "nome": "RX Incidencia Adicional de Crânio Ou Face",
+  "nome": "RX Incidencia Adicional de Cranio Ou Face",
   "nome_original": "RX INCIDENCIA ADICIONAL DE CRANIO OU FACE",
   "categoria": "Raio-X",
   "codigo_tuss": "40801209",
@@ -4731,7 +4731,7 @@
  },
  {
   "codigo": "TCCOLDLC",
-  "nome": "TC Coluna Dorsal - Ate 3 Segmentos",
+  "nome": "TC Coluna Dorsal Ate 3 Segmentos",
   "nome_original": "TC COLUNA DORSAL - ATE 3 SEGMENTOS",
   "categoria": "Tomografia",
   "codigo_tuss": "41001125",
@@ -4764,7 +4764,7 @@
  },
  {
   "codigo": "TCESCCAL",
-  "nome": "TC Escore de Cálcio",
+  "nome": "TC Escore de Calcio",
   "nome_original": "TC ESCORE DE CALCIO",
   "categoria": "Tomografia",
   "codigo_tuss": "41001087",
