@@ -1,8 +1,9 @@
 'use client'
 import { useState, useEffect } from 'react'
 import { createClient } from '@/lib/supabase/client'
-import { ClipboardList, Search, Filter, Calendar, User, Building2, CheckCircle } from 'lucide-react'
-import { formatDate, formatDateTime } from '@/lib/utils'
+import { ClipboardList, Search, Filter, Calendar, User, Building2, CheckCircle, Printer } from 'lucide-react'
+import { formatDate, formatDateTime, antecedenciaMax } from '@/lib/utils'
+import { imprimirFicha } from '@/lib/ficha'
 
 export default function HistoricoPage() {
   const supabase = createClient()
@@ -50,7 +51,7 @@ export default function HistoricoPage() {
         .select(`
           *,
           atendente:profiles!agendamentos_atendente_id_fkey(nome),
-          exames:agendamento_exames(exame:exames(nome))
+          exames:agendamento_exames(exame:exames(nome, preparo, categoria))
         `)
         .gte('created_at', dataLimite)
         .order('created_at', { ascending: false })
@@ -180,6 +181,23 @@ export default function HistoricoPage() {
                     {ag.medico_solicitante && (
                       <p className="text-xs text-gray-400 mt-0.5">Dr(a). {ag.medico_solicitante}</p>
                     )}
+                    <button
+                      onClick={() => imprimirFicha({
+                        pacienteNome: ag.paciente_nome,
+                        convenio: ag.convenio_nome,
+                        medicoSolicitante: ag.medico_solicitante,
+                        blocos: [{
+                          unidade: ag.unidade,
+                          data: formatDate(ag.data),
+                          horario: ag.horario,
+                          chegadaMin: antecedenciaMax((ag.exames ?? []).map((e: any) => e.exame?.categoria)),
+                          exames: (ag.exames ?? []).map((e: any) => ({ nome: e.exame?.nome, preparo: e.exame?.preparo, categoria: e.exame?.categoria })),
+                        }],
+                      })}
+                      className="mt-2 inline-flex items-center gap-1 text-xs font-medium text-blue-700 bg-blue-50 hover:bg-blue-100 rounded-lg px-2.5 py-1.5"
+                    >
+                      <Printer size={13} /> Imprimir / PDF
+                    </button>
                   </div>
                 </div>
                 {ag.created_at && (

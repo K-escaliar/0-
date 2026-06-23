@@ -2,11 +2,12 @@
 import { useState, useEffect, useCallback } from 'react'
 import { createClient } from '@/lib/supabase/client'
 import toast from 'react-hot-toast'
-import { CalendarPlus, Search, X, AlertTriangle, CheckCircle, Copy, Check, Info, Pencil, Save, Building2, MessageSquare } from 'lucide-react'
+import { CalendarPlus, Search, X, AlertTriangle, CheckCircle, Copy, Check, Info, Pencil, Save, Building2, MessageSquare, Printer } from 'lucide-react'
 import {
   gerarMensagemAgendamento, gerarMensagemPreparo, antecedenciaMax, semAcento,
   ENDERECOS, formatDate, type BlocoAgendamento,
 } from '@/lib/utils'
+import { imprimirFicha, type FichaDados } from '@/lib/ficha'
 import AvisosBanner from '@/components/AvisosBanner'
 import type { Exame, Convenio } from '@/types'
 
@@ -22,6 +23,7 @@ export default function AgendamentoPage() {
   const [carregando, setCarregando] = useState(false)
   const [msgAgendamento, setMsgAgendamento] = useState('')
   const [msgPreparo, setMsgPreparo] = useState('')
+  const [comprovante, setComprovante] = useState<FichaDados | null>(null)
   const [copiado, setCopiado] = useState<'' | 'ag' | 'prep'>('')
   const [erros, setErros] = useState<string[]>([])
   const [avisos, setAvisos] = useState<string[]>([])
@@ -242,6 +244,20 @@ export default function AgendamentoPage() {
       const preparos = todos.filter(e => e.preparo).map(e => ({ nome: e.nome, preparo: e.preparo! }))
       setMsgPreparo(gerarMensagemPreparo({ pacienteNome: form.pacienteNome, preparos }))
 
+      // FICHA / PDF
+      setComprovante({
+        pacienteNome: form.pacienteNome,
+        convenio: form.convenio,
+        medicoSolicitante: form.medicoSolicitante || null,
+        blocos: blocosForm.map(b => ({
+          unidade: b.unidade,
+          data: formatDate(b.data),
+          horario: b.horario,
+          chegadaMin: antecedenciaMax(b.exames.map(e => e.categoria)),
+          exames: b.exames.map(e => ({ nome: e.nome, preparo: e.preparo, categoria: e.categoria })),
+        })),
+      })
+
       toast.success('Agendamento realizado com sucesso!')
       setForm({
         pacienteNome: '', convenio: '', medicoSolicitante: '',
@@ -416,7 +432,12 @@ export default function AgendamentoPage() {
             <>
               <MensagemCard titulo="1️⃣ Mensagem de Agendamento" texto={msgAgendamento} ativo={copiado === 'ag'} onCopy={() => copiar(msgAgendamento, 'ag')} />
               <MensagemCard titulo="2️⃣ Mensagem de Preparo" texto={msgPreparo} ativo={copiado === 'prep'} onCopy={() => copiar(msgPreparo, 'prep')} />
-              <p className="text-xs text-gray-400 text-center">Cole as duas mensagens em sequência no WhatsApp do paciente.</p>
+              {comprovante && (
+                <button onClick={() => imprimirFicha(comprovante)} className="btn-secondary w-full flex items-center justify-center gap-2 py-2.5">
+                  <Printer size={16} /> Imprimir ficha / Salvar PDF
+                </button>
+              )}
+              <p className="text-xs text-gray-400 text-center">Cole as duas mensagens no WhatsApp ou gere a ficha em PDF para o paciente.</p>
             </>
           ) : (
             <div className="card flex flex-col items-center justify-center py-16 text-center text-gray-400">
