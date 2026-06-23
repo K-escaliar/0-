@@ -4,6 +4,7 @@ import { useRouter } from 'next/navigation'
 import { createClient } from '@/lib/supabase/client'
 import toast from 'react-hot-toast'
 import { Eye, EyeOff, LogIn } from 'lucide-react'
+import MedicalBackground from '@/components/MedicalBackground'
 
 // Domínio técnico interno — o usuário nunca vê isso, só digita o nome de usuário
 const DOMINIO_INTERNO = '@cdi.local'
@@ -27,7 +28,7 @@ export default function LoginPage() {
         toast.error('Usuário ou senha incorretos.')
         return
       }
-      router.push('/agendamento')
+      router.push('/')
       router.refresh()
     } catch {
       toast.error('Erro ao fazer login. Tente novamente.')
@@ -37,8 +38,9 @@ export default function LoginPage() {
   }
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-blue-900 to-blue-700 flex items-center justify-center p-4">
-      <div className="bg-white rounded-2xl shadow-2xl w-full max-w-md p-8">
+    <div className="relative min-h-screen bg-gradient-to-br from-blue-900 to-blue-700 flex items-center justify-center p-4 overflow-hidden">
+      <MedicalBackground variant="hero" />
+      <div className="relative z-10 bg-white/95 backdrop-blur-sm rounded-2xl shadow-2xl w-full max-w-md p-8">
         {/* Logo / Header */}
         <div className="text-center mb-8">
           <div className="inline-flex items-center justify-center w-16 h-16 bg-blue-800 rounded-2xl mb-4">

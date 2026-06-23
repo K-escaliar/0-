@@ -17,8 +17,8 @@ export default function PreparosPage() {
     async function carregar() {
       const { data } = await supabase
         .from('exames')
-        .select('id, nome, categoria, preparo')
-        .not('preparo', 'is', null)
+        .select('id, nome, categoria, preparo, avisos')
+        .or('preparo.not.is.null,avisos.not.is.null')
         .order('categoria')
         .order('nome')
       if (data) setExames(data)
@@ -108,9 +108,17 @@ export default function PreparosPage() {
                     {exame.categoria}
                   </span>
                 </div>
-                <div className="bg-gray-50 rounded-lg p-4 border border-gray-100">
-                  <p className="text-sm text-gray-700 whitespace-pre-line leading-relaxed">{exame.preparo}</p>
-                </div>
+                {exame.avisos && (
+                  <div className="bg-amber-50 rounded-lg p-3 border border-amber-200 mb-3 flex items-start gap-2">
+                    <span className="flex-shrink-0">⚠️</span>
+                    <p className="text-sm text-amber-800 whitespace-pre-line leading-relaxed">{exame.avisos}</p>
+                  </div>
+                )}
+                {exame.preparo && (
+                  <div className="bg-gray-50 rounded-lg p-4 border border-gray-100">
+                    <p className="text-sm text-gray-700 whitespace-pre-line leading-relaxed">{exame.preparo}</p>
+                  </div>
+                )}
               </div>
             ))
           )}

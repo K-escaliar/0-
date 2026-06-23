@@ -17,11 +17,16 @@ export interface Exame {
   id: string
   nome: string
   categoria: CategoriaExame
+  codigo?: string
   codigo_tuss?: string
   preparo?: string
   observacoes_tuss?: string
   unidades: Unidade[]
   requer_sedacao: boolean
+  valor_particular?: number | null
+  valor_unimed_279?: number | null
+  valor_unimed_completa?: number | null
+  avisos?: string | null
   created_at: string
 }
 

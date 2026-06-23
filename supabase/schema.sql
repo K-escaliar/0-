@@ -29,13 +29,21 @@ create table if not exists exames (
   id uuid primary key default uuid_generate_v4(),
   nome text not null,
   categoria text not null check (categoria in ('Ultrassom', 'Raio-X', 'Mamografia', 'Tomossíntese', 'Ressonância', 'Tomografia', 'Outros')),
+  codigo text,                       -- codigo interno da clinica (ex: ANTCAMSD), vindo do PDF
   codigo_tuss text,
   preparo text,
   observacoes_tuss text,
   unidades text[] not null default '{}',
   requer_sedacao boolean not null default false,
+  valor_particular numeric,          -- preco tabela Particular (admin, nao exibido no agendamento)
+  valor_unimed_279 numeric,          -- preco tabela Unimed 279
+  valor_unimed_completa numeric,     -- preco tabela Unimed 279 Completa
+  avisos text,                       -- aviso editavel pelo admin, exibido no agendamento/exames
   created_at timestamptz not null default now()
 );
+-- OBS: o catalogo real (434 exames) e importado via supabase/import-catalogo.mjs a partir
+-- de catalogo_exames.json (gerado por parse_pdf.py + normalize_exames.py do PDF oficial).
+-- Os INSERTs de exames abaixo sao apenas o seed legado/historico.
 
 -- ============================================================
 -- TABELA: exame_conflitos

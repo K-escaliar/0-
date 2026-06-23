@@ -7,7 +7,7 @@ import toast from 'react-hot-toast'
 import {
   CalendarPlus, ClipboardList, Users, BookOpen,
   CreditCard, Network, Hash, Bed, BarChart3,
-  Settings, LogOut, Menu, X, ChevronDown, ChevronRight, Megaphone,
+  Settings, LogOut, Menu, X, ChevronDown, ChevronRight, Megaphone, FileBarChart,
 } from 'lucide-react'
 
 interface NavItem {
@@ -22,6 +22,7 @@ const navItems: NavItem[] = [
   { href: '/agendamento', label: 'Agendamento', icon: <CalendarPlus size={20} /> },
   { href: '/novidades', label: 'Novidades', icon: <Megaphone size={20} /> },
   { href: '/historico', label: 'Histórico', icon: <ClipboardList size={20} /> },
+  { href: '/registros', label: 'Registros', icon: <FileBarChart size={20} /> },
   { href: '/medicos', label: 'Médicos & Exames', icon: <Users size={20} /> },
   { href: '/preparos', label: 'Central de Preparos', icon: <BookOpen size={20} /> },
   { href: '/convenios', label: 'Convênios & Regras', icon: <CreditCard size={20} /> },

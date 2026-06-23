@@ -56,15 +56,15 @@ export default function SedacaoPage() {
         </div>
       </div>
 
-      {/* Regra de segurança 30 dias */}
-      <div className="bg-red-50 border-2 border-red-300 rounded-xl p-4 mb-6 flex items-start gap-3">
-        <CalendarClock size={24} className="text-red-600 flex-shrink-0 mt-0.5" />
+      {/* Regra de segurança 30 dias — informativa (atendente apenas avisa o paciente) */}
+      <div className="bg-blue-50 border-2 border-blue-200 rounded-xl p-4 mb-6 flex items-start gap-3">
+        <CalendarClock size={24} className="text-blue-600 flex-shrink-0 mt-0.5" />
         <div>
-          <p className="font-bold text-red-800">Regra de segurança</p>
-          <p className="text-red-700 mt-1">
+          <p className="font-bold text-blue-800">Oriente o paciente</p>
+          <p className="text-blue-700 mt-1">
             Cada paciente pode fazer <strong>apenas 1 exame com sedação a cada 30 dias</strong>. Se o paciente
-            tiver 2 exames com sedação, faça o primeiro e marque o segundo somente 30 dias depois.
-            O sistema bloqueia automaticamente agendamentos fora dessa regra.
+            tiver 2 exames com sedação, oriente que o primeiro seja feito agora e o segundo somente 30 dias depois.
+            <strong> Apenas informe o paciente</strong> — esta orientação não bloqueia o agendamento.
           </p>
         </div>
       </div>
@@ -129,11 +129,6 @@ export default function SedacaoPage() {
                   </p>
                 )}
                 <p className="text-xs text-gray-400 mt-1">Pagamento direto com anestesista + NF</p>
-              </div>
-              <div className="bg-white rounded-lg p-3 border border-blue-100">
-                <p className="font-semibold text-gray-900">Sedação (material e medicamento)</p>
-                <p className="text-gray-600">Valor: <span className="font-bold text-blue-700">R$ 483,00</span></p>
-                <p className="text-xs text-gray-400 mt-1">Pago na recepção</p>
               </div>
             </div>
             <p className="text-xs text-amber-700 bg-amber-50 rounded p-2 mt-2">

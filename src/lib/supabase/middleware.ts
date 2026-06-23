@@ -26,15 +26,19 @@ export async function updateSession(request: NextRequest) {
 
   const { data: { user } } = await supabase.auth.getUser()
 
-  if (!user && !request.nextUrl.pathname.startsWith('/login')) {
+  // Rotas públicas (não exigem login): página inicial e login
+  const isPublic = request.nextUrl.pathname === '/' || request.nextUrl.pathname.startsWith('/login')
+
+  if (!user && !isPublic) {
     const url = request.nextUrl.clone()
     url.pathname = '/login'
     return NextResponse.redirect(url)
   }
 
+  // Após logar, leva à página inicial (não direto ao agendamento)
   if (user && request.nextUrl.pathname === '/login') {
     const url = request.nextUrl.clone()
-    url.pathname = '/agendamento'
+    url.pathname = '/'
     return NextResponse.redirect(url)
   }
 

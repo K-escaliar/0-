@@ -10,8 +10,9 @@ const UNIDADES = ['CDI Prime', 'CDI Treze de Maio']
 
 const exameVazio = {
   nome: '', categoria: 'Ultrassom' as CategoriaExame,
-  codigo_tuss: '', preparo: '', observacoes_tuss: '',
-  unidades: [] as string[], requer_sedacao: false,
+  codigo: '', codigo_tuss: '', preparo: '', observacoes_tuss: '',
+  unidades: [] as string[], requer_sedacao: false, avisos: '',
+  valor_particular: '', valor_unimed_279: '', valor_unimed_completa: '',
 }
 
 export default function AdminExamesPage() {
@@ -36,11 +37,16 @@ export default function AdminExamesPage() {
       setForm({
         nome: exame.nome,
         categoria: exame.categoria,
+        codigo: exame.codigo ?? '',
         codigo_tuss: exame.codigo_tuss ?? '',
         preparo: exame.preparo ?? '',
         observacoes_tuss: exame.observacoes_tuss ?? '',
         unidades: exame.unidades ?? [],
         requer_sedacao: exame.requer_sedacao ?? false,
+        avisos: exame.avisos ?? '',
+        valor_particular: exame.valor_particular != null ? String(exame.valor_particular) : '',
+        valor_unimed_279: exame.valor_unimed_279 != null ? String(exame.valor_unimed_279) : '',
+        valor_unimed_completa: exame.valor_unimed_completa != null ? String(exame.valor_unimed_completa) : '',
       })
     } else {
       setEditando(null)
@@ -63,14 +69,23 @@ export default function AdminExamesPage() {
     if (form.unidades.length === 0) return toast.error('Selecione pelo menos uma unidade.')
     setSalvando(true)
     try {
+      const numOrNull = (v: string) => {
+        const n = parseFloat(String(v).replace(/\./g, '').replace(',', '.'))
+        return v.trim() && Number.isFinite(n) ? n : null
+      }
       const dados = {
         nome: form.nome.trim(),
         categoria: form.categoria,
+        codigo: form.codigo || null,
         codigo_tuss: form.codigo_tuss || null,
         preparo: form.preparo || null,
         observacoes_tuss: form.observacoes_tuss || null,
         unidades: form.unidades,
         requer_sedacao: form.requer_sedacao,
+        avisos: form.avisos || null,
+        valor_particular: numOrNull(form.valor_particular),
+        valor_unimed_279: numOrNull(form.valor_unimed_279),
+        valor_unimed_completa: numOrNull(form.valor_unimed_completa),
       }
       if (editando) {
         await supabase.from('exames').update(dados).eq('id', editando.id)
@@ -136,7 +151,10 @@ export default function AdminExamesPage() {
               <tr key={exame.id} className="hover:bg-gray-50">
                 <td className="px-4 py-3">
                   <p className="font-medium text-gray-900 text-sm">{exame.nome}</p>
-                  {exame.requer_sedacao && <span className="badge-yellow text-xs">Sedação</span>}
+                  <div className="flex flex-wrap gap-1 mt-0.5">
+                    {exame.requer_sedacao && <span className="badge-yellow text-xs">Sedação</span>}
+                    {exame.avisos && <span className="text-xs bg-amber-100 text-amber-700 rounded px-1.5 py-0.5" title={exame.avisos}>⚠️ Aviso</span>}
+                  </div>
                 </td>
                 <td className="px-4 py-3 hidden sm:table-cell">
                   <span className="badge-blue text-xs">{exame.categoria}</span>
@@ -180,12 +198,16 @@ export default function AdminExamesPage() {
                 <label className="block text-sm font-medium text-gray-700 mb-1">Nome *</label>
                 <input type="text" value={form.nome} onChange={e => setForm(f => ({ ...f, nome: e.target.value }))} className="input-field" />
               </div>
-              <div className="grid grid-cols-2 gap-4">
+              <div className="grid grid-cols-3 gap-4">
                 <div>
                   <label className="block text-sm font-medium text-gray-700 mb-1">Categoria *</label>
                   <select value={form.categoria} onChange={e => setForm(f => ({ ...f, categoria: e.target.value as CategoriaExame }))} className="input-field">
                     {CATEGORIAS.map(c => <option key={c} value={c}>{c}</option>)}
                   </select>
+                </div>
+                <div>
+                  <label className="block text-sm font-medium text-gray-700 mb-1">Código interno</label>
+                  <input type="text" value={form.codigo} onChange={e => setForm(f => ({ ...f, codigo: e.target.value }))} className="input-field" placeholder="ex: ANTCAMSD" />
                 </div>
                 <div>
                   <label className="block text-sm font-medium text-gray-700 mb-1">Código TUSS</label>
@@ -208,8 +230,29 @@ export default function AdminExamesPage() {
                 <textarea value={form.preparo} onChange={e => setForm(f => ({ ...f, preparo: e.target.value }))} className="input-field h-28 resize-none" placeholder="Instruções de preparo para o paciente..." />
               </div>
               <div>
+                <label className="block text-sm font-medium text-gray-700 mb-1">⚠️ Aviso do exame (aparece no agendamento e na lista de exames)</label>
+                <textarea value={form.avisos} onChange={e => setForm(f => ({ ...f, avisos: e.target.value }))} className="input-field h-20 resize-none" placeholder="Ex.: Somente às 3ª e 5ª. Trazer pedido com 2 vias." />
+              </div>
+              <div>
                 <label className="block text-sm font-medium text-gray-700 mb-1">Observações TUSS</label>
                 <textarea value={form.observacoes_tuss} onChange={e => setForm(f => ({ ...f, observacoes_tuss: e.target.value }))} className="input-field h-20 resize-none" />
+              </div>
+              <div>
+                <p className="block text-sm font-medium text-gray-700 mb-1">Valores (uso interno do admin — não aparecem no agendamento)</p>
+                <div className="grid grid-cols-3 gap-3">
+                  <div>
+                    <label className="block text-xs text-gray-500 mb-1">Particular</label>
+                    <input type="text" value={form.valor_particular} onChange={e => setForm(f => ({ ...f, valor_particular: e.target.value }))} className="input-field" placeholder="R$" />
+                  </div>
+                  <div>
+                    <label className="block text-xs text-gray-500 mb-1">Unimed 279</label>
+                    <input type="text" value={form.valor_unimed_279} onChange={e => setForm(f => ({ ...f, valor_unimed_279: e.target.value }))} className="input-field" placeholder="R$" />
+                  </div>
+                  <div>
+                    <label className="block text-xs text-gray-500 mb-1">Unimed Completa</label>
+                    <input type="text" value={form.valor_unimed_completa} onChange={e => setForm(f => ({ ...f, valor_unimed_completa: e.target.value }))} className="input-field" placeholder="R$" />
+                  </div>
+                </div>
               </div>
               <label className="flex items-center gap-2 cursor-pointer">
                 <input type="checkbox" checked={form.requer_sedacao} onChange={e => setForm(f => ({ ...f, requer_sedacao: e.target.checked }))} className="w-4 h-4 accent-blue-600" />
