@@ -55,13 +55,19 @@ ACENTOS = {
 SIGLAS = {'TC', 'RM', 'RX', 'US', 'ATM', 'TUSS', 'DE', 'DA', 'DO', 'DOS', 'DAS', 'E', 'COM', 'SEM'}
 MINUSC = {'de', 'da', 'do', 'dos', 'das', 'e', 'com', 'sem', 'por'}
 
+def strip_rodape(nome):
+    # remove texto de rodape do PDF que vaza no ultimo exame de cada pagina
+    nome = re.sub(r'\s*[·•\-]?\s*Gerado\s+Automaticamente.*$', '', nome, flags=re.IGNORECASE)
+    nome = re.sub(r'\s*Organizado\s+por\s+conv[eê]nio.*$', '', nome, flags=re.IGNORECASE)
+    return nome.strip()
+
 def fix_truncado(nome):
     nome = re.sub(r' D$', ' DIREITO', nome)
     nome = re.sub(r' E$', ' ESQUERDO', nome)
     return nome
 
 def norm_nome(nome):
-    nome = fix_truncado(nome.strip())
+    nome = fix_truncado(strip_rodape(nome.strip()))
     out = []
     for i, w in enumerate(nome.split()):
         wu = w.upper()

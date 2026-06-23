@@ -89,7 +89,7 @@
  },
  {
   "codigo": "ANRMACXE",
-  "nome": "Angiorressonância Arterial Coxa Esquerda · Gerado Automaticamente",
+  "nome": "Angiorressonância Arterial Coxa Esquerda",
   "nome_original": "ANGIORESSONANCIA ARTERIAL COXA ESQUERDA · Gerado automaticamente",
   "categoria": "Ressonância",
   "codigo_tuss": "41101553",
@@ -232,7 +232,7 @@
  },
  {
   "codigo": "ANRMATOR",
-  "nome": "Angiorressonância Arterial Tórax · Gerado Automaticamente",
+  "nome": "Angiorressonância Arterial Tórax",
   "nome_original": "ANGIORESSONANCIA ARTERIAL TORAX · Gerado automaticamente",
   "categoria": "Ressonância",
   "codigo_tuss": null,
@@ -375,7 +375,7 @@
  },
  {
   "codigo": "ANRMVPEE",
-  "nome": "Angiorressonância Venosa Pé Esquerdo · Gerado Automaticamente",
+  "nome": "Angiorressonância Venosa Pé Esquerdo",
   "nome_original": "ANGIORESSONANCIA VENOSA PE ESQUERDO · Gerado automaticamente",
   "categoria": "Ressonância",
   "codigo_tuss": null,
@@ -595,7 +595,7 @@
  },
  {
   "codigo": "ANTCMSD",
-  "nome": "Angiotomografia Venosa Membro Superior Direito · Gerado Automaticamente",
+  "nome": "Angiotomografia Venosa Membro Superior Direito",
   "nome_original": "ANGIOTOMOGRAFIA VENOSA MEMBRO SUPERIOR DIREITO · Gerado automaticamente",
   "categoria": "Tomografia",
   "codigo_tuss": null,
@@ -859,7 +859,7 @@
  },
  {
   "codigo": "ENTRESSO",
-  "nome": "Enteroressonancia · Gerado Automaticamente",
+  "nome": "Enteroressonancia",
   "nome_original": "ENTERORESSONANCIA · Gerado automaticamente",
   "categoria": "Ressonância",
   "codigo_tuss": "41101170",
@@ -969,7 +969,7 @@
  },
  {
   "codigo": "RMACRESQ",
-  "nome": "RM Acromoclavicular Esquerda · Gerado Automaticamente",
+  "nome": "RM Acromoclavicular Esquerda",
   "nome_original": "RM ACROMOCLAVICULAR ESQUERDA · Gerado automaticamente",
   "categoria": "Ressonância",
   "codigo_tuss": null,
@@ -1112,7 +1112,7 @@
  },
  {
   "codigo": "RMCOCCIX",
-  "nome": "RM Coccix · Gerado Automaticamente",
+  "nome": "RM Coccix",
   "nome_original": "RM COCCIX · Gerado automaticamente",
   "categoria": "Ressonância",
   "codigo_tuss": null,
@@ -1255,7 +1255,7 @@
  },
  {
   "codigo": "RMJOEDIR",
-  "nome": "RM Joelho Direito · Gerado Automaticamente",
+  "nome": "RM Joelho Direito",
   "nome_original": "RM JOELHO DIREITO · Gerado automaticamente",
   "categoria": "Ressonância",
   "codigo_tuss": "41101316",
@@ -1376,7 +1376,7 @@
  },
  {
   "codigo": "RMPEESQU",
-  "nome": "RM Pé Esquerdo · Gerado Automaticamente",
+  "nome": "RM Pé Esquerdo",
   "nome_original": "RM PE ESQUERDO · Gerado automaticamente",
   "categoria": "Ressonância",
   "codigo_tuss": "41101308",
@@ -1486,7 +1486,7 @@
  },
  {
   "codigo": "RMQUAESQ",
-  "nome": "RM Quadril Esquerdo · Gerado Automaticamente",
+  "nome": "RM Quadril Esquerdo",
   "nome_original": "RM QUADRIL ESQUERDO · Gerado automaticamente",
   "categoria": "Ressonância",
   "codigo_tuss": "41101316",
@@ -1706,7 +1706,7 @@
  },
  {
   "codigo": "RXAREESQ",
-  "nome": "RX Articulação Esternoclavicular Esquerda · Gerado Automaticamente",
+  "nome": "RX Articulação Esternoclavicular Esquerda",
   "nome_original": "RX ARTICULACAO ESTERNOCLAVICULAR ESQUERDA · Gerado automaticamente",
   "categoria": "Raio-X",
   "codigo_tuss": "40803023",
@@ -2080,7 +2080,7 @@
  },
  {
   "codigo": "RXJOEESQ",
-  "nome": "RX Joelho Esquerdo · Gerado Automaticamente",
+  "nome": "RX Joelho Esquerdo",
   "nome_original": "RX JOELHO ESQUERDO · Gerado automaticamente",
   "categoria": "Raio-X",
   "codigo_tuss": "40804054",
@@ -2465,7 +2465,7 @@
  },
  {
   "codigo": "RXURERET",
-  "nome": "RX Uretrocistografia Retrogada · Gerado Automaticamente",
+  "nome": "RX Uretrocistografia Retrogada",
   "nome_original": "RX URETROCISTOGRAFIA RETROGADA · Gerado automaticamente",
   "categoria": "Raio-X",
   "codigo_tuss": "40807096",
@@ -2674,7 +2674,7 @@
  },
  {
   "codigo": "TCCOXADI",
-  "nome": "TC Coxa Direita · Gerado Automaticamente",
+  "nome": "TC Coxa Direita",
   "nome_original": "TC COXA DIREITA · Gerado automaticamente",
   "categoria": "Tomografia",
   "codigo_tuss": null,
@@ -2905,7 +2905,7 @@
  },
  {
   "codigo": "TCQUADIR",
-  "nome": "TC Quadril Direito · Gerado Automaticamente",
+  "nome": "TC Quadril Direito",
   "nome_original": "TC QUADRIL DIREITO · Gerado automaticamente",
   "categoria": "Tomografia",
   "codigo_tuss": "41001141",
@@ -3092,7 +3092,7 @@
  },
  {
   "codigo": "USABDSUP",
-  "nome": "US Abdome Superior · Gerado Automaticamente",
+  "nome": "US Abdome Superior",
   "nome_original": "US ABDOME SUPERIOR · Gerado automaticamente",
   "categoria": "Ultrassom",
   "codigo_tuss": "40901130",
@@ -3455,7 +3455,7 @@
  },
  {
   "codigo": "USMANDIB",
-  "nome": "US Mandibula · Gerado Automaticamente",
+  "nome": "US Mandíbula",
   "nome_original": "US MANDIBULA · Gerado automaticamente",
   "categoria": "Ultrassom",
   "codigo_tuss": null,
@@ -3796,7 +3796,7 @@
  },
  {
   "codigo": "USPUNDIR",
-  "nome": "US Punho Direito · Gerado Automaticamente",
+  "nome": "US Punho Direito",
   "nome_original": "US PUNHO DIREITO · Gerado automaticamente",
   "categoria": "Ultrassom",
   "codigo_tuss": "40901220",
@@ -4027,7 +4027,7 @@
  },
  {
   "codigo": "USORGSUP",
-  "nome": "Usg Órgãos Superficiais (tireoide Ou Escroto Ou Penis · Gerado Automaticamente",
+  "nome": "USG Órgãos Superficiais (Tireoide ou Escroto ou Pênis)",
   "nome_original": "USG ORGAOS SUPERFICIAIS (TIREOIDE OU ESCROTO OU PENIS · Gerado automaticamente",
   "categoria": "Ultrassom",
   "codigo_tuss": "40901203",
@@ -4269,7 +4269,7 @@
  },
  {
   "codigo": "PUARTORI",
-  "nome": "Puncao Orientada por Tomografia · Gerado Automaticamente",
+  "nome": "Puncao Orientada por Tomografia",
   "nome_original": "PUNCAO ORIENTADA POR TOMOGRAFIA · Gerado automaticamente",
   "categoria": "Tomografia",
   "codigo_tuss": "40809170",
@@ -4379,7 +4379,7 @@
  },
  {
   "codigo": "RMCOLLES",
-  "nome": "RM Coluna Lombar Especialista · Gerado Automaticamente",
+  "nome": "RM Coluna Lombar Especialista",
   "nome_original": "RM COLUNA LOMBAR ESPECIALISTA · Gerado automaticamente",
   "categoria": "Ressonância",
   "codigo_tuss": "41101227",
@@ -4390,7 +4390,7 @@
  },
  {
   "codigo": "RMCOMFUN",
-  "nome": "RM Coração Morfologico e Funcional · Gerado Automaticamente",
+  "nome": "RM Coração Morfologico e Funcional",
   "nome_original": "RM CORACAO MORFOLOGICO E FUNCIONAL · Gerado automaticamente",
   "categoria": "Ressonância",
   "codigo_tuss": "41101138",
@@ -4401,7 +4401,7 @@
  },
  {
   "codigo": "RMCOMFU",
-  "nome": "RM Coração Morfologico e Funcional + Perfusao + Estresse · Gerado Automaticamente",
+  "nome": "RM Coração Morfologico e Funcional + Perfusao + Estresse",
   "nome_original": "RM CORACAO MORFOLOGICO E FUNCIONAL + PERFUSAO + ESTRESSE · Gerado automaticamente",
   "categoria": "Ressonância",
   "codigo_tuss": "41101146",
@@ -4412,7 +4412,7 @@
  },
  {
   "codigo": "RMCOVIAP",
-  "nome": "RM Coração Morfologico e Funcional + Perfusao + Viabilid · Gerado Automaticamente",
+  "nome": "RM Coração Morfologico e Funcional + Perfusao + Viabilid",
   "nome_original": "RM CORACAO MORFOLOGICO E FUNCIONAL + PERFUSAO + VIABILID · Gerado automaticamente",
   "categoria": "Ressonância",
   "codigo_tuss": "41101154",
@@ -4643,7 +4643,7 @@
  },
  {
   "codigo": "RMTODES",
-  "nome": "RM Tornozelo Direito Especialista · Gerado Automaticamente",
+  "nome": "RM Tornozelo Direito Especialista",
   "nome_original": "RM TORNOZELO DIREITO ESPECIALISTA · Gerado automaticamente",
   "categoria": "Ressonância",
   "codigo_tuss": "41101316",
