@@ -1,8 +1,8 @@
 // ==UserScript==
 // @name         CDI - Auto Enviar WhatsApp
 // @namespace    https://cdi.local/
-// @version      1.1
-// @description  Envia automaticamente a mensagem de agendamento do CDI System no WhatsApp Web
+// @version      1.2
+// @description  Envia automaticamente a mensagem de agendamento do CDI System no WhatsApp Web (Chrome e Edge)
 // @author       CDI System
 // @match        https://web.whatsapp.com/*
 // @grant        none
@@ -20,24 +20,23 @@
   if (!temMensagem()) return
 
   let tentativas = 0
-  const MAX = 60 // 30 segundos (500ms × 60)
+  const MAX = 80 // 40 segundos (500ms × 80) — Edge pode demorar mais
 
   const intervalo = setInterval(() => {
     tentativas++
     if (tentativas > MAX) { clearInterval(intervalo); return }
 
-    // Botão de enviar do WhatsApp Web (data-testid muda entre versões, tentamos vários seletores)
+    // Seletores compatíveis com Chrome e Edge (Chromium)
     const btn =
       document.querySelector('button[data-testid="send"]') ||
       document.querySelector('button[aria-label="Enviar"]') ||
-      document.querySelector('span[data-icon="send"]')?.closest('button')
+      document.querySelector('button[aria-label="Send"]') ||
+      document.querySelector('span[data-icon="send"]')?.closest('button') ||
+      document.querySelector('[data-testid="compose-btn-send"]')
 
     if (btn) {
       clearInterval(intervalo)
-      // Pequeno delay para garantir que o texto já foi inserido no input
-      setTimeout(() => {
-        btn.click()
-      }, 800)
+      setTimeout(() => btn.click(), 1000)
     }
   }, 500)
 })()
