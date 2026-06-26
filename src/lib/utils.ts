@@ -69,26 +69,33 @@ export function gerarMensagemAgendamento(dados: {
   const { pacienteNome, convenio, blocos } = dados
   const multi = blocos.length > 1
 
-  const blocosTexto = blocos.map((b, i) => {
+  const blocosTexto = blocos.map((b) => {
     const titulo = multi ? `\n*— ${b.unidade} —*\n` : ''
-    const listaExames = b.exames.join('\n📋 ')
-    return `${titulo}📋 *Exame${b.exames.length > 1 ? 's' : ''}:* ${listaExames}
-🏥 *Unidade:* ${b.unidade}
+    const listaExames = b.exames.length > 1
+      ? b.exames.map(e => `   • ${e}`).join('\n')
+      : b.exames[0]
+    return `${titulo}🔬 *Exame${b.exames.length > 1 ? 's' : ''}:*\n${listaExames}
 📅 *Data:* ${b.data}
 ⏰ *Horário:* ${b.horario}
-⏳ *Chegada:* Chegar com ${b.chegadaMin} minutos de antecedência.
-📍 *Endereço:* ${b.enderecoUnidade}`
-  }).join('\n')
+⏳ *Chegada:* ${b.chegadaMin} minutos de antecedência
+${b.enderecoUnidade}`
+  }).join('\n\n')
 
-  return `${pacienteNome}
-Confirmamos seu agendamento no *CDI*:
+  return `Olá, *${pacienteNome}*! 👋
+
+✅ Seu agendamento no *CDI* está confirmado!
+
 👤 *Convênio:* ${convenio}
+
 ${blocosTexto}
-📝 *DOCUMENTOS NECESSÁRIOS NO DIA:*
-- Documento oficial com foto (RG ou CNH);
-- Pedido médico original dentro da validade;
-Sua opinião é muito importante! Após o atendimento, você receberá nossa pesquisa de satisfação (NPS). Conte-nos como foi sua experiência! 😊
-Agradecemos a preferência! 💖`
+
+📋 *DOCUMENTOS NECESSÁRIOS NO DIA:*
+   • Documento oficial com foto (RG ou CNH)
+   • Pedido médico original dentro da validade
+
+_Em caso de dúvidas ou necessidade de reagendamento, entre em contato conosco com antecedência._
+
+Agradecemos a preferência! 💙`
 }
 
 // MENSAGEM 2 — Preparo (separada, para colar em seguida no WhatsApp).
@@ -111,6 +118,6 @@ Qualquer dúvida, estamos à disposição! 💖`
 }
 
 export const ENDERECOS = {
-  'CDI Prime': '*CDI Prime*: Fica a 2 quadras do CDI 13 de Maio, atrás do Laboratório Vitória.',
-  'CDI Treze de Maio': '*CDI Treze de Maio*: Hospital 13 de Maio - Avenida principal.',
+  'CDI Prime': '📍 *CDI Prime*\nR. das Margaridas, 711 - Alphaville, Sorriso - MT\nCEP: 78891-076\n🗺 Fica a 2 quadras do CDI Treze de Maio, atrás do Laboratório Vitória.',
+  'CDI Treze de Maio': '📍 *CDI Treze de Maio*\nAv. Brasil, 2346 - Vila Romana, Sorriso - MT\n🏥 Em anexo ao Hospital 13 de Maio.',
 }
