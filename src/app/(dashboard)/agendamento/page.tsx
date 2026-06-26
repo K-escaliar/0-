@@ -235,7 +235,7 @@ export default function AgendamentoPage() {
         horario: b.horario,
         exames: b.exames.map(e => e.nome),
         enderecoUnidade: ENDERECOS[b.unidade as keyof typeof ENDERECOS] ?? b.unidade,
-        chegadaMin: antecedenciaMax(b.exames.map(e => e.categoria)),
+        chegadaMin: antecedenciaMax(b.exames.map(e => ({ nome: e.nome, categoria: e.categoria }))),
       }))
       setMsgAgendamento(gerarMensagemAgendamento({ pacienteNome: form.pacienteNome, convenio: form.convenio, blocos: blocosMsg }))
 
@@ -253,7 +253,7 @@ export default function AgendamentoPage() {
           unidade: b.unidade,
           data: formatDate(b.data),
           horario: b.horario,
-          chegadaMin: antecedenciaMax(b.exames.map(e => e.categoria)),
+          chegadaMin: antecedenciaMax(b.exames.map(e => ({ nome: e.nome, categoria: e.categoria }))),
           exames: b.exames.map(e => ({ nome: e.nome, preparo: e.preparo, categoria: e.categoria })),
         })),
       })
@@ -281,10 +281,10 @@ export default function AgendamentoPage() {
     <div className="p-6 max-w-4xl mx-auto">
       <AvisosBanner />
       <div className="flex items-center gap-3 mb-6">
-        <div className="p-2 bg-blue-100 rounded-lg"><CalendarPlus className="text-blue-700" size={24} /></div>
+        <div className="p-2.5 bg-blue-100 rounded-xl ring-1 ring-blue-200/60"><CalendarPlus className="text-blue-700" size={24} /></div>
         <div>
-          <h1 className="text-2xl font-bold text-gray-900">Novo Agendamento</h1>
-          <p className="text-gray-500 text-sm">Preencha os dados do paciente</p>
+          <h1 className="text-2xl font-bold text-gray-900 tracking-tight">Novo Agendamento</h1>
+          <p className="text-gray-500 text-sm">Preencha os dados do paciente e gere as mensagens</p>
         </div>
       </div>
 
@@ -293,7 +293,7 @@ export default function AgendamentoPage() {
         <div className="flex items-center justify-between mb-1">
           <h3 className="text-sm font-semibold text-indigo-800 flex items-center gap-2"><Info size={15} /> Instruções para atendentes</h3>
           {isAdmin && !editInstr && (
-            <button onClick={() => setEditInstr(true)} className="text-indigo-600 hover:text-indigo-800" title="Editar instruções"><Pencil size={14} /></button>
+            <button onClick={() => setEditInstr(true)} className="text-indigo-600 hover:text-indigo-800 cursor-pointer p-1 -m-1 rounded focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-indigo-400" title="Editar instruções" aria-label="Editar instruções"><Pencil size={14} /></button>
           )}
         </div>
         {editInstr ? (
@@ -312,84 +312,102 @@ export default function AgendamentoPage() {
       <div className="grid lg:grid-cols-2 gap-6">
         {/* Formulário */}
         <div className="card">
-          <form onSubmit={handleSubmit} className="space-y-4">
-            <div>
-              <label className="block text-sm font-medium text-gray-700 mb-1">Nome do Paciente <span className="text-red-500">*</span></label>
-              <input type="text" value={form.pacienteNome} onChange={e => setForm(f => ({ ...f, pacienteNome: e.target.value }))} className="input-field" placeholder="Nome completo" required />
-            </div>
-
-            <div>
-              <label className="block text-sm font-medium text-gray-700 mb-1">Convênio <span className="text-red-500">*</span></label>
-              <select value={form.convenio} onChange={e => setForm(f => ({ ...f, convenio: e.target.value }))} className="input-field" required>
-                <option value="">Selecionar convênio...</option>
-                {CONVENIOS_PADRAO.map(c => <option key={c} value={c}>{c}</option>)}
-              </select>
-            </div>
-
-            {/* BLOCO 1 */}
-            <div>
-              <label className="block text-sm font-medium text-gray-700 mb-1">Unidade <span className="text-red-500">*</span></label>
-              <select
-                value={form.unidade}
-                onChange={e => setForm(f => ({ ...f, unidade: e.target.value as UnidadeT, unidade2: f.outraUnidade ? outraUnidadeDe(e.target.value) : '' }))}
-                className="input-field" required
-              >
-                <option value="">Selecionar unidade...</option>
-                {UNIDADES.map(u => <option key={u} value={u}>{u}</option>)}
-              </select>
-            </div>
-
-            <div className="grid grid-cols-2 gap-3">
+          <form onSubmit={handleSubmit} className="space-y-6">
+            {/* Dados do paciente */}
+            <div className="space-y-4">
+              <h2 className="section-label">Dados do paciente</h2>
               <div>
-                <label className="block text-sm font-medium text-gray-700 mb-1">Data <span className="text-red-500">*</span></label>
-                <input type="date" value={form.data} onChange={e => setForm(f => ({ ...f, data: e.target.value }))} className="input-field" required min={new Date().toISOString().split('T')[0]} />
+                <label htmlFor="pacienteNome" className="block text-sm font-medium text-gray-700 mb-1">Nome do paciente <span className="text-red-500">*</span></label>
+                <input id="pacienteNome" type="text" value={form.pacienteNome} onChange={e => setForm(f => ({ ...f, pacienteNome: e.target.value }))} className="input-field" placeholder="Nome completo" required autoComplete="off" />
               </div>
-              <div>
-                <label className="block text-sm font-medium text-gray-700 mb-1">Horário <span className="text-red-500">*</span></label>
-                <input type="time" value={form.horario} onChange={e => setForm(f => ({ ...f, horario: e.target.value }))} className="input-field" required />
-              </div>
-            </div>
-
-            <div>
-              <label className="block text-sm font-medium text-gray-700 mb-1">Exames {form.outraUnidade && <span className="text-gray-400">({form.unidade || 'unidade 1'})</span>} <span className="text-red-500">*</span></label>
-              <ExamePicker
-                selecionados={form.examesSelecionados}
-                busca={busca1} setBusca={setBusca1}
-                aberto={aberto1} setAberto={setAberto1}
-                filtrados={filtrar(busca1, form.examesSelecionados)}
-                onAdd={e => addExame(e, 1)} onRemove={id => removerExame(id, 1)}
-              />
-            </div>
-
-            {/* Opção: paciente tem exames na outra unidade */}
-            <label className="flex items-center gap-2 cursor-pointer bg-gray-50 border border-gray-200 rounded-lg px-3 py-2">
-              <input type="checkbox" checked={form.outraUnidade} onChange={e => toggleOutraUnidade(e.target.checked)} className="w-4 h-4 accent-blue-600" />
-              <span className="text-sm text-gray-700 flex items-center gap-1"><Building2 size={14} /> Paciente tem exames na outra unidade</span>
-            </label>
-
-            {/* BLOCO 2 */}
-            {form.outraUnidade && (
-              <div className="border-l-4 border-blue-300 pl-4 space-y-4">
+              <div className="grid sm:grid-cols-2 gap-3">
                 <div>
-                  <label className="block text-sm font-medium text-gray-700 mb-1">Outra unidade <span className="text-red-500">*</span></label>
-                  <select value={form.unidade2} onChange={e => setForm(f => ({ ...f, unidade2: e.target.value as UnidadeT }))} className="input-field" required>
+                  <label htmlFor="convenio" className="block text-sm font-medium text-gray-700 mb-1">Convênio <span className="text-red-500">*</span></label>
+                  <select id="convenio" value={form.convenio} onChange={e => setForm(f => ({ ...f, convenio: e.target.value }))} className="input-field" required>
+                    <option value="">Selecionar convênio...</option>
+                    {CONVENIOS_PADRAO.map(c => <option key={c} value={c}>{c}</option>)}
+                  </select>
+                </div>
+                <div>
+                  <label htmlFor="medicoSolicitante" className="block text-sm font-medium text-gray-700 mb-1">Médico solicitante</label>
+                  <input id="medicoSolicitante" type="text" value={form.medicoSolicitante} onChange={e => setForm(f => ({ ...f, medicoSolicitante: e.target.value }))} className="input-field" placeholder="Opcional" />
+                </div>
+              </div>
+            </div>
+
+            <hr className="border-gray-100" />
+
+            {/* Agendamento — BLOCO 1 */}
+            <div className="space-y-4">
+              <h2 className="section-label">Agendamento {form.outraUnidade && <span className="normal-case tracking-normal font-normal text-gray-400">· {form.unidade || 'unidade 1'}</span>}</h2>
+              <div>
+                <label htmlFor="unidade" className="block text-sm font-medium text-gray-700 mb-1">Unidade <span className="text-red-500">*</span></label>
+                <select
+                  id="unidade"
+                  value={form.unidade}
+                  onChange={e => setForm(f => ({ ...f, unidade: e.target.value as UnidadeT, unidade2: f.outraUnidade ? outraUnidadeDe(e.target.value) : '' }))}
+                  className="input-field" required
+                >
+                  <option value="">Selecionar unidade...</option>
+                  {UNIDADES.map(u => <option key={u} value={u}>{u}</option>)}
+                </select>
+              </div>
+
+              <div className="grid grid-cols-2 gap-3">
+                <div>
+                  <label htmlFor="data" className="block text-sm font-medium text-gray-700 mb-1">Data <span className="text-red-500">*</span></label>
+                  <input id="data" type="date" value={form.data} onChange={e => setForm(f => ({ ...f, data: e.target.value }))} className="input-field" required min={new Date().toISOString().split('T')[0]} />
+                </div>
+                <div>
+                  <label htmlFor="horario" className="block text-sm font-medium text-gray-700 mb-1">Horário <span className="text-red-500">*</span></label>
+                  <input id="horario" type="time" value={form.horario} onChange={e => setForm(f => ({ ...f, horario: e.target.value }))} className="input-field" required />
+                </div>
+              </div>
+
+              <div>
+                <label htmlFor="exames1" className="block text-sm font-medium text-gray-700 mb-1">Exames <span className="text-red-500">*</span></label>
+                <ExamePicker
+                  inputId="exames1"
+                  selecionados={form.examesSelecionados}
+                  busca={busca1} setBusca={setBusca1}
+                  aberto={aberto1} setAberto={setAberto1}
+                  filtrados={filtrar(busca1, form.examesSelecionados)}
+                  onAdd={e => addExame(e, 1)} onRemove={id => removerExame(id, 1)}
+                />
+              </div>
+
+              {/* Opção: paciente tem exames na outra unidade */}
+              <label className="flex items-center gap-2 cursor-pointer bg-gray-50 hover:bg-gray-100 border border-gray-200 rounded-lg px-3 py-2.5 transition-colors">
+                <input type="checkbox" checked={form.outraUnidade} onChange={e => toggleOutraUnidade(e.target.checked)} className="w-4 h-4 accent-blue-600" />
+                <span className="text-sm text-gray-700 flex items-center gap-1.5"><Building2 size={15} /> Paciente tem exames na outra unidade</span>
+              </label>
+            </div>
+
+            {/* Agendamento — BLOCO 2 */}
+            {form.outraUnidade && (
+              <div className="space-y-4 border-l-4 border-blue-300 pl-4">
+                <h2 className="section-label">Outra unidade <span className="normal-case tracking-normal font-normal text-gray-400">· {form.unidade2 || 'unidade 2'}</span></h2>
+                <div>
+                  <label htmlFor="unidade2" className="block text-sm font-medium text-gray-700 mb-1">Unidade <span className="text-red-500">*</span></label>
+                  <select id="unidade2" value={form.unidade2} onChange={e => setForm(f => ({ ...f, unidade2: e.target.value as UnidadeT }))} className="input-field" required>
                     <option value="">Selecionar unidade...</option>
                     {UNIDADES.map(u => <option key={u} value={u}>{u}</option>)}
                   </select>
                 </div>
                 <div className="grid grid-cols-2 gap-3">
                   <div>
-                    <label className="block text-sm font-medium text-gray-700 mb-1">Data <span className="text-red-500">*</span></label>
-                    <input type="date" value={form.data2} onChange={e => setForm(f => ({ ...f, data2: e.target.value }))} className="input-field" min={new Date().toISOString().split('T')[0]} />
+                    <label htmlFor="data2" className="block text-sm font-medium text-gray-700 mb-1">Data <span className="text-red-500">*</span></label>
+                    <input id="data2" type="date" value={form.data2} onChange={e => setForm(f => ({ ...f, data2: e.target.value }))} className="input-field" min={new Date().toISOString().split('T')[0]} />
                   </div>
                   <div>
-                    <label className="block text-sm font-medium text-gray-700 mb-1">Horário <span className="text-red-500">*</span></label>
-                    <input type="time" value={form.horario2} onChange={e => setForm(f => ({ ...f, horario2: e.target.value }))} className="input-field" />
+                    <label htmlFor="horario2" className="block text-sm font-medium text-gray-700 mb-1">Horário <span className="text-red-500">*</span></label>
+                    <input id="horario2" type="time" value={form.horario2} onChange={e => setForm(f => ({ ...f, horario2: e.target.value }))} className="input-field" />
                   </div>
                 </div>
                 <div>
-                  <label className="block text-sm font-medium text-gray-700 mb-1">Exames ({form.unidade2 || 'unidade 2'})</label>
+                  <label htmlFor="exames2" className="block text-sm font-medium text-gray-700 mb-1">Exames</label>
                   <ExamePicker
+                    inputId="exames2"
                     selecionados={form.examesSelecionados2}
                     busca={busca2} setBusca={setBusca2}
                     aberto={aberto2} setAberto={setAberto2}
@@ -400,20 +418,15 @@ export default function AgendamentoPage() {
               </div>
             )}
 
-            <div>
-              <label className="block text-sm font-medium text-gray-700 mb-1">Médico Solicitante</label>
-              <input type="text" value={form.medicoSolicitante} onChange={e => setForm(f => ({ ...f, medicoSolicitante: e.target.value }))} className="input-field" placeholder="Nome do médico (opcional)" />
-            </div>
-
             {erros.length > 0 && (
-              <div className="bg-red-50 border border-red-200 rounded-lg p-3 space-y-1">
+              <div role="alert" className="bg-red-50 border border-red-200 rounded-lg p-3 space-y-1">
                 {erros.map((erro, i) => (
                   <div key={i} className="flex items-start gap-2 text-sm text-red-700"><X size={16} className="mt-0.5 flex-shrink-0" />{erro}</div>
                 ))}
               </div>
             )}
             {avisos.length > 0 && (
-              <div className="bg-yellow-50 border border-yellow-200 rounded-lg p-3 space-y-1">
+              <div aria-live="polite" className="bg-yellow-50 border border-yellow-200 rounded-lg p-3 space-y-1">
                 {avisos.map((aviso, i) => (
                   <div key={i} className="flex items-start gap-2 text-sm text-yellow-800"><AlertTriangle size={16} className="mt-0.5 flex-shrink-0" />{aviso}</div>
                 ))}
@@ -421,17 +434,17 @@ export default function AgendamentoPage() {
             )}
 
             <button type="submit" disabled={carregando || erros.length > 0} className="btn-primary w-full py-3 flex items-center justify-center gap-2">
-              {carregando ? <div className="w-5 h-5 border-2 border-white border-t-transparent rounded-full animate-spin" /> : <><CheckCircle size={18} /> Confirmar Agendamento</>}
+              {carregando ? <div className="w-5 h-5 border-2 border-white border-t-transparent rounded-full animate-spin" /> : <><CheckCircle size={18} /> Confirmar agendamento</>}
             </button>
           </form>
         </div>
 
         {/* Mensagens WhatsApp */}
-        <div className="space-y-4">
+        <div className="space-y-4 lg:sticky lg:top-6 lg:self-start">
           {msgAgendamento ? (
             <>
-              <MensagemCard titulo="1️⃣ Mensagem de Agendamento" texto={msgAgendamento} ativo={copiado === 'ag'} onCopy={() => copiar(msgAgendamento, 'ag')} />
-              <MensagemCard titulo="2️⃣ Mensagem de Preparo" texto={msgPreparo} ativo={copiado === 'prep'} onCopy={() => copiar(msgPreparo, 'prep')} />
+              <MensagemCard numero={1} titulo="Mensagem de agendamento" texto={msgAgendamento} ativo={copiado === 'ag'} onCopy={() => copiar(msgAgendamento, 'ag')} />
+              <MensagemCard numero={2} titulo="Mensagem de preparo" texto={msgPreparo} ativo={copiado === 'prep'} onCopy={() => copiar(msgPreparo, 'prep')} />
               {comprovante && (
                 <button onClick={() => imprimirFicha(comprovante)} className="btn-secondary w-full flex items-center justify-center gap-2 py-2.5">
                   <Printer size={16} /> Imprimir ficha / Salvar PDF
@@ -440,10 +453,10 @@ export default function AgendamentoPage() {
               <p className="text-xs text-gray-400 text-center">Cole as duas mensagens no WhatsApp ou gere a ficha em PDF para o paciente.</p>
             </>
           ) : (
-            <div className="card flex flex-col items-center justify-center py-16 text-center text-gray-400">
-              <MessageSquare size={48} className="mb-3 opacity-30" />
-              <p className="font-medium">As mensagens do WhatsApp aparecerão aqui</p>
-              <p className="text-sm mt-1">são duas: agendamento e preparo</p>
+            <div className="card flex flex-col items-center justify-center py-16 text-center">
+              <div className="p-4 bg-gray-50 rounded-full mb-3"><MessageSquare size={36} className="text-gray-300" /></div>
+              <p className="font-medium text-gray-500">As mensagens do WhatsApp aparecerão aqui</p>
+              <p className="text-sm mt-1 text-gray-400">São duas: agendamento e preparo</p>
             </div>
           )}
 
@@ -464,7 +477,8 @@ export default function AgendamentoPage() {
 }
 
 // Seletor de exames de um bloco — em escopo de módulo para não remontar (e perder foco) a cada tecla.
-function ExamePicker({ selecionados, busca, setBusca, aberto, setAberto, filtrados, onAdd, onRemove }: {
+function ExamePicker({ inputId, selecionados, busca, setBusca, aberto, setAberto, filtrados, onAdd, onRemove }: {
+  inputId?: string
   selecionados: Exame[]
   busca: string
   setBusca: (v: string) => void
@@ -479,30 +493,36 @@ function ExamePicker({ selecionados, busca, setBusca, aberto, setAberto, filtrad
       {selecionados.length > 0 && (
         <div className="flex flex-wrap gap-2 mb-2">
           {selecionados.map(exame => (
-            <span key={exame.id} className="inline-flex items-center gap-1 bg-blue-100 text-blue-800 text-xs font-medium px-2.5 py-1 rounded-full">
+            <span key={exame.id} className="inline-flex items-center gap-1 bg-blue-100 text-blue-800 text-xs font-medium pl-2.5 pr-1 py-1 rounded-full">
               {exame.nome}
-              <button type="button" onClick={() => onRemove(exame.id)} className="hover:text-red-600 ml-1"><X size={12} /></button>
+              <button type="button" onClick={() => onRemove(exame.id)} aria-label={`Remover ${exame.nome}`} className="ml-0.5 p-0.5 rounded-full text-blue-500 hover:text-white hover:bg-red-500 cursor-pointer transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-red-400"><X size={13} /></button>
             </span>
           ))}
         </div>
       )}
       <div className="relative">
-        <Search size={16} className="absolute left-3 top-1/2 -translate-y-1/2 text-gray-400" />
+        <Search size={16} className="absolute left-3 top-1/2 -translate-y-1/2 text-gray-400 pointer-events-none" />
         <input
+          id={inputId}
           type="text" value={busca}
           onChange={e => { setBusca(e.target.value); setAberto(true) }}
           onFocus={() => setAberto(true)}
-          className="input-field pl-9" placeholder="Buscar exame..."
+          className="input-field pl-9" placeholder="Buscar exame..." autoComplete="off"
         />
         {aberto && busca && filtrados.length > 0 && (
           <div className="absolute z-20 w-full mt-1 bg-white border border-gray-200 rounded-lg shadow-lg max-h-48 overflow-y-auto">
             {filtrados.slice(0, 20).map(exame => (
               <button key={exame.id} type="button" onClick={() => onAdd(exame)}
-                className="w-full text-left px-3 py-2 hover:bg-blue-50 text-sm flex items-center justify-between">
-                <span>{exame.nome}</span>
-                <span className="text-xs text-gray-400 ml-2">{exame.categoria}</span>
+                className="w-full text-left px-3 py-2.5 hover:bg-blue-50 text-sm flex items-center justify-between gap-2 cursor-pointer border-b border-gray-50 last:border-0">
+                <span className="text-gray-700">{exame.nome}</span>
+                <span className="text-xs text-gray-400 shrink-0">{exame.categoria}</span>
               </button>
             ))}
+          </div>
+        )}
+        {aberto && busca && filtrados.length === 0 && (
+          <div className="absolute z-20 w-full mt-1 bg-white border border-gray-200 rounded-lg shadow-lg px-3 py-3 text-sm text-gray-400">
+            Nenhum exame encontrado para “{busca}”.
           </div>
         )}
       </div>
@@ -510,12 +530,15 @@ function ExamePicker({ selecionados, busca, setBusca, aberto, setAberto, filtrad
   )
 }
 
-function MensagemCard({ titulo, texto, ativo, onCopy }: { titulo: string; texto: string; ativo: boolean; onCopy: () => void }) {
+function MensagemCard({ numero, titulo, texto, ativo, onCopy }: { numero: number; titulo: string; texto: string; ativo: boolean; onCopy: () => void }) {
   return (
     <div className="card">
-      <div className="flex items-center justify-between mb-3">
-        <h2 className="font-semibold text-gray-900 text-sm">{titulo}</h2>
-        <button onClick={onCopy} className={`flex items-center gap-2 text-sm font-medium px-3 py-1.5 rounded-lg transition-colors ${ativo ? 'bg-green-100 text-green-700' : 'bg-blue-100 text-blue-700 hover:bg-blue-200'}`}>
+      <div className="flex items-center justify-between mb-3 gap-2">
+        <h2 className="font-semibold text-gray-900 text-sm flex items-center gap-2">
+          <span className="flex items-center justify-center w-5 h-5 rounded-full bg-blue-800 text-white text-xs font-bold shrink-0">{numero}</span>
+          {titulo}
+        </h2>
+        <button onClick={onCopy} aria-label={ativo ? 'Mensagem copiada' : `Copiar ${titulo}`} className={`flex items-center gap-2 text-sm font-medium px-3 py-1.5 rounded-lg transition-colors cursor-pointer focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-offset-1 ${ativo ? 'bg-green-100 text-green-700 focus-visible:ring-green-400' : 'bg-blue-100 text-blue-700 hover:bg-blue-200 focus-visible:ring-blue-400'}`}>
           {ativo ? <Check size={14} /> : <Copy size={14} />}{ativo ? 'Copiado!' : 'Copiar'}
         </button>
       </div>

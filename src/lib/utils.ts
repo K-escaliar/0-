@@ -34,15 +34,21 @@ export function semAcento(s: string): string {
   return (s || '').toLowerCase().normalize('NFD').replace(/[̀-ͯ]/g, '')
 }
 
-// Minutos de antecedência por categoria (US=15, RM=30, TC=15). Demais: 15.
-export function antecedenciaPorCategoria(categoria?: string): number {
+// Minutos de antecedência por exame. RM=30, AngioTC Coronária=30, demais=15.
+export function antecedenciaPorExame(nome?: string, categoria?: string): number {
   if (categoria === 'Ressonância') return 30
+  if (nome && semAcento(nome).includes('angio') && semAcento(nome).includes('coronar')) return 30
   return 15
 }
 
-// Maior antecedência entre as categorias de um conjunto de exames.
-export function antecedenciaMax(categorias: (string | undefined)[]): number {
-  return categorias.reduce((max, c) => Math.max(max, antecedenciaPorCategoria(c)), 15)
+// Maior antecedência entre um conjunto de exames.
+export function antecedenciaMax(exames: { nome?: string; categoria?: string }[]): number {
+  return exames.reduce((max, e) => Math.max(max, antecedenciaPorExame(e.nome, e.categoria)), 15)
+}
+
+/** @deprecated Use antecedenciaMax com objetos { nome, categoria } */
+export function antecedenciaPorCategoria(categoria?: string): number {
+  return antecedenciaPorExame(undefined, categoria)
 }
 
 export interface BlocoAgendamento {

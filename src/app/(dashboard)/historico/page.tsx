@@ -190,7 +190,7 @@ export default function HistoricoPage() {
                           unidade: ag.unidade,
                           data: formatDate(ag.data),
                           horario: ag.horario,
-                          chegadaMin: antecedenciaMax((ag.exames ?? []).map((e: any) => e.exame?.categoria)),
+                          chegadaMin: antecedenciaMax((ag.exames ?? []).map((e: any) => ({ nome: e.exame?.nome, categoria: e.exame?.categoria }))),
                           exames: (ag.exames ?? []).map((e: any) => ({ nome: e.exame?.nome, preparo: e.exame?.preparo, categoria: e.exame?.categoria })),
                         }],
                       })}
