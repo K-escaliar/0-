@@ -26,7 +26,7 @@ const navItems: NavItem[] = [
   { href: '/medicos', label: 'Médicos & Exames', icon: <Users size={20} /> },
   { href: '/preparos', label: 'Central de Preparos', icon: <BookOpen size={20} /> },
   { href: '/convenios', label: 'Convênios & Regras', icon: <CreditCard size={20} /> },
-  { href: '/rede-externa', label: 'Rede Externa', icon: <Network size={20} /> },
+  { href: '/rede-externa', label: 'Contatos Externos', icon: <Network size={20} /> },
   { href: '/codigos-tuss', label: 'Códigos TUSS', icon: <Hash size={20} /> },
   { href: '/sedacao', label: 'Exames com Sedação', icon: <Bed size={20} /> },
   {
