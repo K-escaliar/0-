@@ -1,6 +1,6 @@
 'use client'
-import { useState } from 'react'
-import { useRouter } from 'next/navigation'
+import { useState, useEffect } from 'react'
+import { useRouter, useSearchParams } from 'next/navigation'
 import { createClient } from '@/lib/supabase/client'
 import toast from 'react-hot-toast'
 import { Eye, EyeOff, LogIn } from 'lucide-react'
@@ -15,19 +15,33 @@ export default function LoginPage() {
   const [mostrarSenha, setMostrarSenha] = useState(false)
   const [carregando, setCarregando] = useState(false)
   const router = useRouter()
+  const searchParams = useSearchParams()
   const supabase = createClient()
+
+  useEffect(() => {
+    if (searchParams.get('motivo') === 'sessao_encerrada') {
+      toast.error('Sua sessão foi encerrada porque outro dispositivo fez login com este usuário.', { duration: 6000 })
+    }
+  }, [])
 
   async function handleLogin(e: React.FormEvent) {
     e.preventDefault()
     setCarregando(true)
     try {
-      // Converte o nome de usuário em e-mail técnico para o Supabase
       const email = usuario.trim().toLowerCase() + DOMINIO_INTERNO
-      const { error } = await supabase.auth.signInWithPassword({ email, password: senha })
-      if (error) {
+      const { data, error } = await supabase.auth.signInWithPassword({ email, password: senha })
+      if (error || !data.user) {
         toast.error('Usuário ou senha incorretos.')
         return
       }
+
+      // Gera token único de sessão e salva no banco
+      const sessionToken = crypto.randomUUID()
+      await supabase.from('profiles').update({ session_token: sessionToken }).eq('id', data.user.id)
+
+      // Salva no cookie para o middleware validar
+      document.cookie = `cdi_session_id=${sessionToken}; path=/; SameSite=Lax; max-age=86400`
+
       router.push('/')
       router.refresh()
     } catch {
