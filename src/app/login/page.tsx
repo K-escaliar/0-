@@ -1,6 +1,6 @@
 'use client'
 import { useState, useEffect } from 'react'
-import { useRouter, useSearchParams } from 'next/navigation'
+import { useRouter } from 'next/navigation'
 import { createClient } from '@/lib/supabase/client'
 import toast from 'react-hot-toast'
 import { Eye, EyeOff, LogIn } from 'lucide-react'
@@ -15,12 +15,12 @@ export default function LoginPage() {
   const [mostrarSenha, setMostrarSenha] = useState(false)
   const [carregando, setCarregando] = useState(false)
   const router = useRouter()
-  const searchParams = useSearchParams()
   const supabase = createClient()
 
   useEffect(() => {
-    if (searchParams.get('motivo') === 'sessao_encerrada') {
-      toast.error('Sua sessão foi encerrada porque outro dispositivo fez login com este usuário.', { duration: 6000 })
+    const params = new URLSearchParams(window.location.search)
+    if (params.get('motivo') === 'sessao_encerrada') {
+      toast.error('Sua sessão foi encerrada pois outro dispositivo fez login com este usuário.', { duration: 6000 })
     }
   }, [])
 
