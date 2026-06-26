@@ -2,7 +2,7 @@
 import { useState, useEffect, useCallback } from 'react'
 import { createClient } from '@/lib/supabase/client'
 import toast from 'react-hot-toast'
-import { CalendarPlus, Search, X, AlertTriangle, CheckCircle, Copy, Check, Info, Pencil, Save, Building2, MessageSquare, Printer } from 'lucide-react'
+import { CalendarPlus, Search, X, AlertTriangle, CheckCircle, Copy, Check, Info, Pencil, Save, Building2, MessageSquare, Printer, Send } from 'lucide-react'
 import {
   gerarMensagemAgendamento, gerarMensagemPreparo, antecedenciaMax, semAcento,
   ENDERECOS, formatDate, type BlocoAgendamento,
@@ -42,6 +42,7 @@ export default function AgendamentoPage() {
 
   const [form, setForm] = useState({
     pacienteNome: '',
+    telefone: '',
     convenio: '',
     medicoSolicitante: '',
     // bloco 1
@@ -260,7 +261,7 @@ export default function AgendamentoPage() {
 
       toast.success('Agendamento realizado com sucesso!')
       setForm({
-        pacienteNome: '', convenio: '', medicoSolicitante: '',
+        pacienteNome: '', telefone: '', convenio: '', medicoSolicitante: '',
         unidade: '', data: '', horario: '', examesSelecionados: [],
         outraUnidade: false, unidade2: '', data2: '', horario2: '', examesSelecionados2: [],
       })
@@ -268,6 +269,15 @@ export default function AgendamentoPage() {
     } catch (err) {
       toast.error('Erro ao salvar agendamento.'); console.error(err)
     } finally { setCarregando(false) }
+  }
+
+  function enviarWhatsApp() {
+    if (!form.telefone.trim()) { toast.error('Informe o telefone do paciente.'); return }
+    const digits = form.telefone.replace(/\D/g, '')
+    const phone = digits.startsWith('55') ? digits : `55${digits}`
+    const msg = `${msgAgendamento}\n\n${msgPreparo}`
+    const url = `https://web.whatsapp.com/send?phone=${phone}&text=${encodeURIComponent(msg)}`
+    window.open(url, 'cdi_whatsapp')
   }
 
   async function copiar(texto: string, qual: 'ag' | 'prep') {
@@ -445,12 +455,40 @@ export default function AgendamentoPage() {
             <>
               <MensagemCard numero={1} titulo="Mensagem de agendamento" texto={msgAgendamento} ativo={copiado === 'ag'} onCopy={() => copiar(msgAgendamento, 'ag')} />
               <MensagemCard numero={2} titulo="Mensagem de preparo" texto={msgPreparo} ativo={copiado === 'prep'} onCopy={() => copiar(msgPreparo, 'prep')} />
+
+              <div className="border border-gray-200 rounded-xl p-4 space-y-3 bg-gray-50">
+                <div>
+                  <label htmlFor="telefoneWpp" className="block text-sm font-medium text-gray-700 mb-1">
+                    WhatsApp do paciente <span className="text-gray-400 font-normal">(opcional)</span>
+                  </label>
+                  <input
+                    id="telefoneWpp"
+                    type="tel"
+                    value={form.telefone}
+                    onChange={e => setForm(f => ({ ...f, telefone: e.target.value }))}
+                    className="input-field"
+                    placeholder="(66) 99999-9999"
+                    autoComplete="off"
+                  />
+                </div>
+                <button
+                  onClick={enviarWhatsApp}
+                  className="w-full flex items-center justify-center gap-2 py-3 rounded-xl font-semibold text-white transition-colors"
+                  style={{ backgroundColor: '#25D366' }}
+                  onMouseEnter={e => (e.currentTarget.style.backgroundColor = '#1ebe5d')}
+                  onMouseLeave={e => (e.currentTarget.style.backgroundColor = '#25D366')}
+                >
+                  <Send size={18} />
+                  Enviar confirmação para o paciente
+                </button>
+              </div>
+
               {comprovante && (
                 <button onClick={() => imprimirFicha(comprovante)} className="btn-secondary w-full flex items-center justify-center gap-2 py-2.5">
                   <Printer size={16} /> Imprimir ficha / Salvar PDF
                 </button>
               )}
-              <p className="text-xs text-gray-400 text-center">Cole as duas mensagens no WhatsApp ou gere a ficha em PDF para o paciente.</p>
+              <p className="text-xs text-gray-400 text-center">O WhatsApp abrirá com a mensagem pronta. Informe o telefone do paciente para envio automático.</p>
             </>
           ) : (
             <div className="card flex flex-col items-center justify-center py-16 text-center">

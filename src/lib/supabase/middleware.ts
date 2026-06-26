@@ -30,6 +30,10 @@ export async function updateSession(request: NextRequest) {
   const isPublic = request.nextUrl.pathname === '/' || request.nextUrl.pathname.startsWith('/login')
 
   if (!user && !isPublic) {
+    // APIs retornam 401 JSON em vez de redirecionar
+    if (request.nextUrl.pathname.startsWith('/api/')) {
+      return NextResponse.json({ error: 'Não autenticado' }, { status: 401 })
+    }
     const url = request.nextUrl.clone()
     url.pathname = '/login'
     return NextResponse.redirect(url)
