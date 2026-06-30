@@ -8,6 +8,7 @@ import {
   CalendarPlus, ClipboardList, Users, BookOpen,
   CreditCard, Network, Hash, Bed, BarChart3,
   Settings, LogOut, Menu, X, ChevronDown, ChevronRight, Megaphone, FileBarChart,
+  StickyNote, MessageCircle,
 } from 'lucide-react'
 
 interface NavItem {
@@ -20,6 +21,8 @@ interface NavItem {
 
 const navItems: NavItem[] = [
   { href: '/agendamento', label: 'Agendamento', icon: <CalendarPlus size={20} /> },
+  { href: '/anotacoes', label: 'Minhas Anotações', icon: <StickyNote size={20} /> },
+  { href: '/mensagens', label: 'Mensagens', icon: <MessageCircle size={20} /> },
   { href: '/novidades', label: 'Novidades', icon: <Megaphone size={20} /> },
   { href: '/historico', label: 'Histórico', icon: <ClipboardList size={20} /> },
   { href: '/registros', label: 'Registros', icon: <FileBarChart size={20} /> },

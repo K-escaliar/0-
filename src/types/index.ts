@@ -111,3 +111,23 @@ export interface ExameSedacao {
   indicacoes?: string
   exame?: Exame
 }
+
+export interface NotaPessoal {
+  id: string
+  user_id: string
+  titulo: string
+  conteudo: string
+  created_at: string
+  updated_at: string
+}
+
+export interface MensagemInterna {
+  id: string
+  remetente_id: string
+  destinatario_id: string
+  conteudo: string
+  lida: boolean
+  created_at: string
+  remetente?: Profile
+  destinatario?: Profile
+}
