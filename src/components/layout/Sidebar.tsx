@@ -69,6 +69,13 @@ export default function Sidebar({ userRole, userName }: SidebarProps) {
     setMensagensNaoLidas(count ?? 0)
   }, [])
 
+  // Pede permissão de notificação do navegador assim que a sidebar carrega
+  useEffect(() => {
+    if (typeof window !== 'undefined' && 'Notification' in window && Notification.permission === 'default') {
+      Notification.requestPermission()
+    }
+  }, [])
+
   useEffect(() => {
     atualizarContagem()
 
@@ -77,14 +84,36 @@ export default function Sidebar({ userRole, userName }: SidebarProps) {
       if (!user) return
       channel = supabase
         .channel('sidebar_mensagens')
-        .on('postgres_changes', { event: '*', schema: 'public', table: 'mensagens_internas' }, () => {
+        .on('postgres_changes', { event: 'INSERT', schema: 'public', table: 'mensagens_internas' }, async (payload) => {
+          const nova = payload.new as { destinatario_id: string; remetente_id: string; conteudo: string; imagem_url: string | null }
           atualizarContagem()
+
+          // Só notifica se a mensagem é PARA mim e eu não estou na página de mensagens olhando
+          if (nova.destinatario_id === user.id && !window.location.pathname.startsWith('/mensagens')) {
+            const { data: remetente } = await supabase.from('profiles').select('nome').eq('id', nova.remetente_id).single()
+            const corpo = nova.imagem_url ? '📷 Enviou uma foto' : nova.conteudo
+
+            if (typeof window !== 'undefined' && 'Notification' in window && Notification.permission === 'granted') {
+              const notif = new Notification(`💬 ${remetente?.nome ?? 'Nova mensagem'}`, {
+                body: corpo,
+                icon: '/icon.svg',
+                tag: 'cdi-mensagem',
+              })
+              notif.onclick = () => {
+                window.focus()
+                router.push('/mensagens')
+                notif.close()
+              }
+            } else {
+              toast(`${remetente?.nome ?? 'Mensagem'}: ${corpo}`, { icon: '💬' })
+            }
+          }
         })
         .subscribe()
     })
 
     return () => { if (channel) supabase.removeChannel(channel) }
-  }, [atualizarContagem])
+  }, [atualizarContagem, router])
 
   async function handleLogout() {
     await supabase.auth.signOut()
