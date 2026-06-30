@@ -4,6 +4,7 @@ import { createClient } from '@/lib/supabase/client'
 import toast from 'react-hot-toast'
 import { MessageCircle, Send, User, Image as ImageIcon, X } from 'lucide-react'
 import type { Profile, MensagemInterna } from '@/types'
+import ChatBackground from '@/components/ChatBackground'
 
 const BUCKET = 'mensagens-anexos'
 
@@ -200,21 +201,26 @@ export default function MensagensPage() {
         </div>
 
         {/* Conversa */}
-        <div className="flex flex-col">
+        <div className="flex flex-col relative">
           {!contatoSelecionado ? (
-            <div className="flex-1 flex flex-col items-center justify-center text-gray-300">
-              <User size={48} />
-              <p className="mt-2 text-sm text-gray-400">Selecione um usuário para conversar</p>
+            <div className="flex-1 flex flex-col items-center justify-center text-gray-300 relative">
+              <ChatBackground />
+              <div className="relative z-10 flex flex-col items-center">
+                <User size={48} />
+                <p className="mt-2 text-sm text-gray-400">Selecione um usuário para conversar</p>
+              </div>
             </div>
           ) : (
             <>
-              <div className="px-4 py-3 border-b border-gray-100 font-medium text-gray-800 flex items-center gap-2">
+              <div className="px-4 py-3 border-b border-gray-100 font-medium text-gray-800 flex items-center gap-2 relative z-10 bg-white">
                 <div className="w-7 h-7 rounded-full bg-indigo-100 flex items-center justify-center text-indigo-700 font-semibold text-xs">
                   {contatoSelecionado.nome?.[0]?.toUpperCase()}
                 </div>
                 {contatoSelecionado.nome}
               </div>
-              <div className="flex-1 overflow-y-auto p-4 space-y-2">
+              <div className="flex-1 overflow-y-auto p-4 space-y-2 relative">
+                <ChatBackground />
+                <div className="relative z-10 space-y-2">
                 {mensagens.map(m => (
                   <div key={m.id} className={`flex ${m.remetente_id === meuId ? 'justify-end' : 'justify-start'}`}>
                     <div className={`max-w-[70%] px-3 py-2 rounded-2xl text-sm ${m.remetente_id === meuId ? 'bg-blue-600 text-white rounded-br-sm' : 'bg-gray-100 text-gray-800 rounded-bl-sm'}`}>
@@ -231,10 +237,11 @@ export default function MensagensPage() {
                   </div>
                 ))}
                 <div ref={fimRef} />
+                </div>
               </div>
 
               {previewUrl && (
-                <div className="px-3 pt-2 flex items-center gap-2">
+                <div className="px-3 pt-2 flex items-center gap-2 relative z-10 bg-white">
                   <div className="relative">
                     <img src={previewUrl} alt="Preview" className="h-16 w-16 object-cover rounded-lg border border-gray-200" />
                     <button onClick={removerImagemSelecionada} className="absolute -top-1.5 -right-1.5 bg-red-500 text-white rounded-full p-0.5">
@@ -245,7 +252,7 @@ export default function MensagensPage() {
                 </div>
               )}
 
-              <div className="p-3 border-t border-gray-100 flex gap-2 items-center">
+              <div className="p-3 border-t border-gray-100 flex gap-2 items-center relative z-10 bg-white">
                 <input ref={fileInputRef} type="file" accept="image/*" onChange={selecionarImagem} className="hidden" />
                 <button
                   onClick={() => fileInputRef.current?.click()}
