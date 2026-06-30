@@ -2,7 +2,7 @@
 import Link from 'next/link'
 import { usePathname, useRouter } from 'next/navigation'
 import { createClient } from '@/lib/supabase/client'
-import { useState } from 'react'
+import { useState, useEffect, useCallback } from 'react'
 import toast from 'react-hot-toast'
 import {
   CalendarPlus, ClipboardList, Users, BookOpen,
@@ -55,7 +55,36 @@ export default function Sidebar({ userRole, userName }: SidebarProps) {
   const [collapsed, setCollapsed] = useState(false)
   const [mobileOpen, setMobileOpen] = useState(false)
   const [adminOpen, setAdminOpen] = useState(false)
+  const [mensagensNaoLidas, setMensagensNaoLidas] = useState(0)
   const isAdmin = userRole === 'admin'
+
+  const atualizarContagem = useCallback(async () => {
+    const { data: { user } } = await supabase.auth.getUser()
+    if (!user) return
+    const { count } = await supabase
+      .from('mensagens_internas')
+      .select('id', { count: 'exact', head: true })
+      .eq('destinatario_id', user.id)
+      .eq('lida', false)
+    setMensagensNaoLidas(count ?? 0)
+  }, [])
+
+  useEffect(() => {
+    atualizarContagem()
+
+    let channel: ReturnType<typeof supabase.channel> | null = null
+    supabase.auth.getUser().then(({ data: { user } }) => {
+      if (!user) return
+      channel = supabase
+        .channel('sidebar_mensagens')
+        .on('postgres_changes', { event: '*', schema: 'public', table: 'mensagens_internas' }, () => {
+          atualizarContagem()
+        })
+        .subscribe()
+    })
+
+    return () => { if (channel) supabase.removeChannel(channel) }
+  }, [atualizarContagem])
 
   async function handleLogout() {
     await supabase.auth.signOut()
@@ -118,17 +147,35 @@ export default function Sidebar({ userRole, userName }: SidebarProps) {
             )
           }
 
+          const isMensagens = item.href === '/mensagens'
+
           return (
             <Link
               key={item.href}
               href={item.href}
-              className={`flex items-center gap-3 px-3 py-2.5 rounded-lg transition-colors ${
+              className={`flex items-center gap-3 px-3 py-2.5 rounded-lg transition-colors relative ${
                 isActive ? 'bg-blue-700 text-white' : 'text-blue-100 hover:bg-blue-700/50'
               }`}
               title={collapsed ? item.label : undefined}
             >
-              <span className="flex-shrink-0">{item.icon}</span>
-              {!collapsed && <span className="text-sm font-medium">{item.label}</span>}
+              <span className="flex-shrink-0 relative">
+                {item.icon}
+                {isMensagens && mensagensNaoLidas > 0 && collapsed && (
+                  <span className="absolute -top-1.5 -right-1.5 bg-red-500 text-white text-[9px] font-bold rounded-full w-4 h-4 flex items-center justify-center">
+                    {mensagensNaoLidas > 9 ? '9+' : mensagensNaoLidas}
+                  </span>
+                )}
+              </span>
+              {!collapsed && (
+                <span className="text-sm font-medium flex-1 flex items-center justify-between">
+                  {item.label}
+                  {isMensagens && mensagensNaoLidas > 0 && (
+                    <span className="bg-red-500 text-white text-[10px] font-bold rounded-full min-w-[20px] h-5 px-1 flex items-center justify-center">
+                      {mensagensNaoLidas > 99 ? '99+' : mensagensNaoLidas}
+                    </span>
+                  )}
+                </span>
+              )}
             </Link>
           )
         })}

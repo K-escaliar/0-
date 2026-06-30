@@ -68,7 +68,7 @@ export default function MensagensPage() {
         const nova = payload.new as MensagemInterna
         if (nova.destinatario_id === meuId || nova.remetente_id === meuId) {
           if (contatoSelecionado && (nova.remetente_id === contatoSelecionado.id || nova.destinatario_id === contatoSelecionado.id)) {
-            setMensagens(prev => [...prev, nova])
+            setMensagens(prev => prev.some(m => m.id === nova.id) ? prev : [...prev, nova])
             if (nova.destinatario_id === meuId) {
               supabase.from('mensagens_internas').update({ lida: true }).eq('id', nova.id)
             }
@@ -86,16 +86,24 @@ export default function MensagensPage() {
   async function enviar() {
     if (!texto.trim() || !contatoSelecionado || !meuId) return
     setEnviando(true)
+    const textoEnviado = texto.trim()
+    setTexto('')
     try {
-      const { error } = await supabase.from('mensagens_internas').insert({
-        remetente_id: meuId,
-        destinatario_id: contatoSelecionado.id,
-        conteudo: texto.trim(),
-      })
+      const { data, error } = await supabase
+        .from('mensagens_internas')
+        .insert({
+          remetente_id: meuId,
+          destinatario_id: contatoSelecionado.id,
+          conteudo: textoEnviado,
+        })
+        .select()
+        .single()
       if (error) throw error
-      setTexto('')
+      // Mostra a mensagem na hora, sem esperar o realtime
+      setMensagens(prev => prev.some(m => m.id === data.id) ? prev : [...prev, data])
     } catch (err) {
       toast.error('Erro ao enviar mensagem.'); console.error(err)
+      setTexto(textoEnviado)
     } finally {
       setEnviando(false)
     }
