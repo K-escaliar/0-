@@ -2,8 +2,21 @@
 import { useState, useEffect, useCallback } from 'react'
 import { createClient } from '@/lib/supabase/client'
 import toast from 'react-hot-toast'
-import { StickyNote, Plus, Trash2, Save, X, Search } from 'lucide-react'
+import { StickyNote, Plus, Trash2, Save, X, Search, Calendar, AlertCircle } from 'lucide-react'
 import type { NotaPessoal } from '@/types'
+
+function fmtData(d: string) {
+  const [ano, mes, dia] = d.split('-')
+  return `${dia}/${mes}/${ano}`
+}
+
+function statusLembrete(d?: string | null): 'hoje' | 'atrasado' | 'futuro' | null {
+  if (!d) return null
+  const hoje = new Date().toISOString().split('T')[0]
+  if (d === hoje) return 'hoje'
+  if (d < hoje) return 'atrasado'
+  return 'futuro'
+}
 
 export default function AnotacoesPage() {
   const supabase = createClient()
@@ -14,12 +27,13 @@ export default function AnotacoesPage() {
   const [selecionada, setSelecionada] = useState<NotaPessoal | null>(null)
   const [titulo, setTitulo] = useState('')
   const [conteudo, setConteudo] = useState('')
+  const [dataLembrete, setDataLembrete] = useState('')
   const [salvando, setSalvando] = useState(false)
   const [sujo, setSujo] = useState(false)
 
   const carregar = useCallback(async () => {
     setCarregando(true)
-    const { data } = await supabase.from('notas_pessoais').select('*').order('updated_at', { ascending: false })
+    const { data } = await supabase.from('notas_pessoais').select('*').order('data_lembrete', { ascending: true, nullsFirst: false }).order('updated_at', { ascending: false })
     setNotas(data ?? [])
     setCarregando(false)
   }, [])
@@ -30,6 +44,7 @@ export default function AnotacoesPage() {
     setSelecionada(null)
     setTitulo('')
     setConteudo('')
+    setDataLembrete('')
     setSujo(false)
   }
 
@@ -37,6 +52,7 @@ export default function AnotacoesPage() {
     setSelecionada(nota)
     setTitulo(nota.titulo)
     setConteudo(nota.conteudo)
+    setDataLembrete(nota.data_lembrete ?? '')
     setSujo(false)
   }
 
@@ -47,17 +63,19 @@ export default function AnotacoesPage() {
       const { data: { user } } = await supabase.auth.getUser()
       if (!user) return
 
+      const payload = { titulo, conteudo, data_lembrete: dataLembrete || null }
+
       if (selecionada) {
         const { error } = await supabase
           .from('notas_pessoais')
-          .update({ titulo, conteudo, updated_at: new Date().toISOString() })
+          .update({ ...payload, updated_at: new Date().toISOString() })
           .eq('id', selecionada.id)
         if (error) throw error
         toast.success('Nota atualizada!')
       } else {
         const { data, error } = await supabase
           .from('notas_pessoais')
-          .insert({ user_id: user.id, titulo, conteudo })
+          .insert({ user_id: user.id, ...payload })
           .select().single()
         if (error) throw error
         setSelecionada(data)
@@ -86,13 +104,15 @@ export default function AnotacoesPage() {
     n.conteudo.toLowerCase().includes(busca.toLowerCase())
   )
 
+  const statusAtual = statusLembrete(dataLembrete)
+
   return (
     <div className="p-6 max-w-6xl mx-auto">
       <div className="flex items-center gap-3 mb-6">
         <div className="p-2.5 bg-amber-100 rounded-xl ring-1 ring-amber-200/60"><StickyNote className="text-amber-700" size={24} /></div>
         <div>
           <h1 className="text-2xl font-bold text-gray-900 tracking-tight">Minhas Anotações</h1>
-          <p className="text-gray-500 text-sm">Notas privadas — só você pode ver</p>
+          <p className="text-gray-500 text-sm">Notas privadas e avisos com data — só você pode ver</p>
         </div>
       </div>
 
@@ -113,22 +133,37 @@ export default function AnotacoesPage() {
               <div className="p-4 text-center text-sm text-gray-400">Carregando...</div>
             ) : notasFiltradas.length === 0 ? (
               <div className="p-4 text-center text-sm text-gray-400">Nenhuma nota encontrada.</div>
-            ) : notasFiltradas.map(n => (
-              <button
-                key={n.id}
-                onClick={() => abrirNota(n)}
-                className={`w-full text-left px-4 py-3 border-b border-gray-50 hover:bg-amber-50 transition-colors ${selecionada?.id === n.id ? 'bg-amber-50' : ''}`}
-              >
-                <div className="font-medium text-gray-800 text-sm truncate">{n.titulo}</div>
-                <div className="text-xs text-gray-400 truncate mt-0.5">{n.conteudo || 'Sem conteúdo'}</div>
-              </button>
-            ))}
+            ) : notasFiltradas.map(n => {
+              const status = statusLembrete(n.data_lembrete)
+              return (
+                <button
+                  key={n.id}
+                  onClick={() => abrirNota(n)}
+                  className={`w-full text-left px-4 py-3 border-b border-gray-50 hover:bg-amber-50 transition-colors ${selecionada?.id === n.id ? 'bg-amber-50' : ''}`}
+                >
+                  <div className="flex items-center justify-between gap-2">
+                    <div className="font-medium text-gray-800 text-sm truncate">{n.titulo}</div>
+                    {status && (
+                      <span className={`text-[10px] px-1.5 py-0.5 rounded-full font-medium shrink-0 flex items-center gap-1 ${
+                        status === 'atrasado' ? 'bg-red-100 text-red-700' :
+                        status === 'hoje' ? 'bg-amber-100 text-amber-700' :
+                        'bg-blue-100 text-blue-700'
+                      }`}>
+                        {status === 'atrasado' && <AlertCircle size={10} />}
+                        {fmtData(n.data_lembrete!)}
+                      </span>
+                    )}
+                  </div>
+                  <div className="text-xs text-gray-400 truncate mt-0.5">{n.conteudo || 'Sem conteúdo'}</div>
+                </button>
+              )
+            })}
           </div>
         </div>
 
         {/* Editor */}
         <div className="card">
-          <div className="flex items-center justify-between mb-4 gap-2">
+          <div className="flex items-center justify-between mb-3 gap-2">
             <input
               value={titulo}
               onChange={e => { setTitulo(e.target.value); setSujo(true) }}
@@ -148,11 +183,38 @@ export default function AnotacoesPage() {
               )}
             </div>
           </div>
+
+          <div className="flex items-center gap-2 mb-4 pb-4 border-b border-gray-100">
+            <Calendar size={15} className="text-gray-400" />
+            <label htmlFor="dataLembrete" className="text-sm text-gray-600">Lembrete / aviso para:</label>
+            <input
+              id="dataLembrete"
+              type="date"
+              value={dataLembrete}
+              onChange={e => { setDataLembrete(e.target.value); setSujo(true) }}
+              className="input-field w-auto text-sm py-1"
+            />
+            {dataLembrete && (
+              <button onClick={() => { setDataLembrete(''); setSujo(true) }} className="text-xs text-gray-400 hover:text-red-500">
+                Remover data
+              </button>
+            )}
+            {statusAtual && (
+              <span className={`text-xs px-2 py-0.5 rounded-full font-medium ${
+                statusAtual === 'atrasado' ? 'bg-red-100 text-red-700' :
+                statusAtual === 'hoje' ? 'bg-amber-100 text-amber-700' :
+                'bg-blue-100 text-blue-700'
+              }`}>
+                {statusAtual === 'atrasado' ? 'Atrasado' : statusAtual === 'hoje' ? 'Hoje' : 'Agendado'}
+              </span>
+            )}
+          </div>
+
           <textarea
             value={conteudo}
             onChange={e => { setConteudo(e.target.value); setSujo(true) }}
             placeholder="Escreva sua anotação aqui..."
-            className="w-full h-96 resize-none border-0 focus:outline-none focus:ring-0 text-sm text-gray-700 leading-relaxed"
+            className="w-full h-80 resize-none border-0 focus:outline-none focus:ring-0 text-sm text-gray-700 leading-relaxed"
           />
           <div className="flex justify-end pt-3 border-t border-gray-100">
             <button onClick={salvar} disabled={salvando || !sujo} className="btn-primary flex items-center gap-2 disabled:opacity-40">

@@ -117,6 +117,7 @@ export interface NotaPessoal {
   user_id: string
   titulo: string
   conteudo: string
+  data_lembrete?: string | null
   created_at: string
   updated_at: string
 }
