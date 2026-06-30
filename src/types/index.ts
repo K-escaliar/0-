@@ -127,6 +127,7 @@ export interface MensagemInterna {
   remetente_id: string
   destinatario_id: string
   conteudo: string
+  imagem_url?: string | null
   lida: boolean
   created_at: string
   remetente?: Profile

@@ -2,8 +2,30 @@
 import { useState, useEffect, useCallback, useRef } from 'react'
 import { createClient } from '@/lib/supabase/client'
 import toast from 'react-hot-toast'
-import { MessageCircle, Send, User } from 'lucide-react'
+import { MessageCircle, Send, User, Image as ImageIcon, X } from 'lucide-react'
 import type { Profile, MensagemInterna } from '@/types'
+
+const BUCKET = 'mensagens-anexos'
+
+function ImagemMensagem({ path }: { path: string }) {
+  const supabase = createClient()
+  const [url, setUrl] = useState<string | null>(null)
+
+  useEffect(() => {
+    let ativo = true
+    supabase.storage.from(BUCKET).createSignedUrl(path, 3600).then(({ data }) => {
+      if (ativo && data) setUrl(data.signedUrl)
+    })
+    return () => { ativo = false }
+  }, [path])
+
+  if (!url) return <div className="w-48 h-32 bg-gray-100 rounded-lg animate-pulse" />
+  return (
+    <a href={url} target="_blank" rel="noopener noreferrer">
+      <img src={url} alt="Imagem enviada" className="max-w-[240px] max-h-[240px] rounded-lg object-cover cursor-pointer" />
+    </a>
+  )
+}
 
 export default function MensagensPage() {
   const supabase = createClient()
@@ -14,7 +36,10 @@ export default function MensagensPage() {
   const [naoLidas, setNaoLidas] = useState<Record<string, number>>({})
   const [texto, setTexto] = useState('')
   const [enviando, setEnviando] = useState(false)
+  const [imagemSelecionada, setImagemSelecionada] = useState<File | null>(null)
+  const [previewUrl, setPreviewUrl] = useState<string | null>(null)
   const fimRef = useRef<HTMLDivElement>(null)
+  const fileInputRef = useRef<HTMLInputElement>(null)
 
   const carregarUsuarios = useCallback(async () => {
     const { data: { user } } = await supabase.auth.getUser()
@@ -83,23 +108,51 @@ export default function MensagensPage() {
 
   useEffect(() => { fimRef.current?.scrollIntoView({ behavior: 'smooth' }) }, [mensagens])
 
+  function selecionarImagem(e: React.ChangeEvent<HTMLInputElement>) {
+    const file = e.target.files?.[0]
+    if (!file) return
+    if (!file.type.startsWith('image/')) { toast.error('Selecione apenas imagens.'); return }
+    if (file.size > 10 * 1024 * 1024) { toast.error('Imagem muito grande (máx. 10MB).'); return }
+    setImagemSelecionada(file)
+    setPreviewUrl(URL.createObjectURL(file))
+  }
+
+  function removerImagemSelecionada() {
+    setImagemSelecionada(null)
+    if (previewUrl) URL.revokeObjectURL(previewUrl)
+    setPreviewUrl(null)
+    if (fileInputRef.current) fileInputRef.current.value = ''
+  }
+
   async function enviar() {
-    if (!texto.trim() || !contatoSelecionado || !meuId) return
+    if ((!texto.trim() && !imagemSelecionada) || !contatoSelecionado || !meuId) return
     setEnviando(true)
     const textoEnviado = texto.trim()
+    const imagemEnviada = imagemSelecionada
     setTexto('')
+    removerImagemSelecionada()
     try {
+      let imagemPath: string | null = null
+
+      if (imagemEnviada) {
+        const ext = imagemEnviada.name.split('.').pop()
+        const path = `${meuId}/${Date.now()}.${ext}`
+        const { error: uploadError } = await supabase.storage.from(BUCKET).upload(path, imagemEnviada)
+        if (uploadError) throw uploadError
+        imagemPath = path
+      }
+
       const { data, error } = await supabase
         .from('mensagens_internas')
         .insert({
           remetente_id: meuId,
           destinatario_id: contatoSelecionado.id,
           conteudo: textoEnviado,
+          imagem_url: imagemPath,
         })
         .select()
         .single()
       if (error) throw error
-      // Mostra a mensagem na hora, sem esperar o realtime
       setMensagens(prev => prev.some(m => m.id === data.id) ? prev : [...prev, data])
     } catch (err) {
       toast.error('Erro ao enviar mensagem.'); console.error(err)
@@ -165,7 +218,12 @@ export default function MensagensPage() {
                 {mensagens.map(m => (
                   <div key={m.id} className={`flex ${m.remetente_id === meuId ? 'justify-end' : 'justify-start'}`}>
                     <div className={`max-w-[70%] px-3 py-2 rounded-2xl text-sm ${m.remetente_id === meuId ? 'bg-blue-600 text-white rounded-br-sm' : 'bg-gray-100 text-gray-800 rounded-bl-sm'}`}>
-                      {m.conteudo}
+                      {m.imagem_url && (
+                        <div className="mb-1.5">
+                          <ImagemMensagem path={m.imagem_url} />
+                        </div>
+                      )}
+                      {m.conteudo && <span>{m.conteudo}</span>}
                       <div className={`text-[10px] mt-1 ${m.remetente_id === meuId ? 'text-blue-100' : 'text-gray-400'}`}>
                         {new Date(m.created_at).toLocaleTimeString('pt-BR', { hour: '2-digit', minute: '2-digit' })}
                       </div>
@@ -174,7 +232,29 @@ export default function MensagensPage() {
                 ))}
                 <div ref={fimRef} />
               </div>
-              <div className="p-3 border-t border-gray-100 flex gap-2">
+
+              {previewUrl && (
+                <div className="px-3 pt-2 flex items-center gap-2">
+                  <div className="relative">
+                    <img src={previewUrl} alt="Preview" className="h-16 w-16 object-cover rounded-lg border border-gray-200" />
+                    <button onClick={removerImagemSelecionada} className="absolute -top-1.5 -right-1.5 bg-red-500 text-white rounded-full p-0.5">
+                      <X size={12} />
+                    </button>
+                  </div>
+                  <span className="text-xs text-gray-400">Pronta para enviar</span>
+                </div>
+              )}
+
+              <div className="p-3 border-t border-gray-100 flex gap-2 items-center">
+                <input ref={fileInputRef} type="file" accept="image/*" onChange={selecionarImagem} className="hidden" />
+                <button
+                  onClick={() => fileInputRef.current?.click()}
+                  className="p-2.5 text-gray-500 hover:bg-gray-100 rounded-lg shrink-0"
+                  title="Enviar foto"
+                  type="button"
+                >
+                  <ImageIcon size={18} />
+                </button>
                 <input
                   value={texto}
                   onChange={e => setTexto(e.target.value)}
@@ -182,7 +262,7 @@ export default function MensagensPage() {
                   placeholder="Digite uma mensagem..."
                   className="input-field flex-1"
                 />
-                <button onClick={enviar} disabled={enviando || !texto.trim()} className="btn-primary px-4 disabled:opacity-40">
+                <button onClick={enviar} disabled={enviando || (!texto.trim() && !imagemSelecionada)} className="btn-primary px-4 disabled:opacity-40 shrink-0">
                   <Send size={16} />
                 </button>
               </div>
